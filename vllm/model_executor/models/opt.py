@@ -235,7 +235,7 @@ class OPTDecoder(nn.Module):
             inputs_embeds = self.project_in(inputs_embeds)
         hidden_states = inputs_embeds + pos_embeds
 
-        #TODO: wyq add
+        #  TODO: wyq add
         torch.cuda.synchronize()
         # from vllm.utils import ctx_get_inteval_datetime
         # with ctx_get_inteval_datetime("Transformer blocks"):
@@ -292,7 +292,7 @@ class OPTForCausalLM(nn.Module):
         input_metadata: InputMetadata,
         cache_events: Optional[List[torch.cuda.Event]],
     ) -> SamplerOutput:
-        #TODO: Add by wyq
+        # TODO: Add by wyq
         # from vllm.utils import ctx_get_inteval_datetime
         # with ctx_get_inteval_datetime("Original OPTForCausalLM"):
         hidden_states = self.model(input_ids, positions, kv_caches,

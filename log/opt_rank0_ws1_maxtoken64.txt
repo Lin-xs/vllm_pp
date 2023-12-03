@@ -1,0 +1,2390 @@
+INFO 12-03 16:35:58 llm_engine.py:72] Initializing an LLM engine with config: model='facebook/opt-6.7b', tokenizer='facebook/opt-6.7b', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, quantization=None, seed=0)
+INFO 12-03 16:36:07 llm_engine.py:207] # GPU blocks: 3796, # CPU blocks: 512
+[LOG] Enter: Warm Up. Time NOW: 2023-12-03 16:36:08.363192
+[LOG]   Enter: RUNSTEP 0. Time NOW: 2023-12-03 16:36:08.367291
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.367354
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.367606
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.401584
+[LOG] Interval of :Worker Excute model, 0 sec 33978 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.401638
+[LOG] Interval of :Engine Step, 0 sec 34284 us.
+[LOG]   Exit: RUNSTEP 0. Time NOW: 2023-12-03 16:36:08.401952
+[LOG] Interval of :RUNSTEP 0, 0 sec 34661 us.
+[LOG]   Enter: RUNSTEP 1. Time NOW: 2023-12-03 16:36:08.401989
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.402040
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.402188
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.425613
+[LOG] Interval of :Worker Excute model, 0 sec 23425 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.425644
+[LOG] Interval of :Engine Step, 0 sec 23604 us.
+[LOG]   Exit: RUNSTEP 1. Time NOW: 2023-12-03 16:36:08.425763
+[LOG] Interval of :RUNSTEP 1, 0 sec 23774 us.
+[LOG] Exit: Warm Up. Time NOW: 2023-12-03 16:36:08.425937
+[LOG] Interval of :Warm Up, 0 sec 62745 us.
+Time cost_1: 0.0628 s
+[LOG] Enter: 0 th request for batch size = 1. Time NOW: 2023-12-03 16:36:08.726152
+[LOG]   Enter: RUNSTEP 0. Time NOW: 2023-12-03 16:36:08.727014
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.727116
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.727412
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.753680
+[LOG] Interval of :Worker Excute model, 0 sec 26268 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.753709
+[LOG] Interval of :Engine Step, 0 sec 26593 us.
+[LOG]   Exit: RUNSTEP 0. Time NOW: 2023-12-03 16:36:08.753884
+[LOG] Interval of :RUNSTEP 0, 0 sec 26870 us.
+[LOG]   Enter: RUNSTEP 1. Time NOW: 2023-12-03 16:36:08.753910
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.753946
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.754069
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.776574
+[LOG] Interval of :Worker Excute model, 0 sec 22505 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.776601
+[LOG] Interval of :Engine Step, 0 sec 22655 us.
+[LOG]   Exit: RUNSTEP 1. Time NOW: 2023-12-03 16:36:08.776692
+[LOG] Interval of :RUNSTEP 1, 0 sec 22782 us.
+[LOG]   Enter: RUNSTEP 2. Time NOW: 2023-12-03 16:36:08.776719
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.776753
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.776876
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.799426
+[LOG] Interval of :Worker Excute model, 0 sec 22550 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.799453
+[LOG] Interval of :Engine Step, 0 sec 22700 us.
+[LOG]   Exit: RUNSTEP 2. Time NOW: 2023-12-03 16:36:08.799542
+[LOG] Interval of :RUNSTEP 2, 0 sec 22823 us.
+[LOG]   Enter: RUNSTEP 3. Time NOW: 2023-12-03 16:36:08.799568
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.799602
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.799721
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.822296
+[LOG] Interval of :Worker Excute model, 0 sec 22575 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.822324
+[LOG] Interval of :Engine Step, 0 sec 22722 us.
+[LOG]   Exit: RUNSTEP 3. Time NOW: 2023-12-03 16:36:08.822415
+[LOG] Interval of :RUNSTEP 3, 0 sec 22847 us.
+[LOG]   Enter: RUNSTEP 4. Time NOW: 2023-12-03 16:36:08.822440
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.822473
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.822595
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.845113
+[LOG] Interval of :Worker Excute model, 0 sec 22518 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.845141
+[LOG] Interval of :Engine Step, 0 sec 22668 us.
+[LOG]   Exit: RUNSTEP 4. Time NOW: 2023-12-03 16:36:08.845230
+[LOG] Interval of :RUNSTEP 4, 0 sec 22790 us.
+[LOG]   Enter: RUNSTEP 5. Time NOW: 2023-12-03 16:36:08.845254
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.845292
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.845411
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.867919
+[LOG] Interval of :Worker Excute model, 0 sec 22508 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.867945
+[LOG] Interval of :Engine Step, 0 sec 22653 us.
+[LOG]   Exit: RUNSTEP 5. Time NOW: 2023-12-03 16:36:08.868039
+[LOG] Interval of :RUNSTEP 5, 0 sec 22785 us.
+[LOG]   Enter: RUNSTEP 6. Time NOW: 2023-12-03 16:36:08.868063
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.868093
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.868210
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.890728
+[LOG] Interval of :Worker Excute model, 0 sec 22518 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.890755
+[LOG] Interval of :Engine Step, 0 sec 22662 us.
+[LOG]   Exit: RUNSTEP 6. Time NOW: 2023-12-03 16:36:08.890836
+[LOG] Interval of :RUNSTEP 6, 0 sec 22773 us.
+[LOG]   Enter: RUNSTEP 7. Time NOW: 2023-12-03 16:36:08.890859
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.890891
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.891007
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.913585
+[LOG] Interval of :Worker Excute model, 0 sec 22578 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.913611
+[LOG] Interval of :Engine Step, 0 sec 22720 us.
+[LOG]   Exit: RUNSTEP 7. Time NOW: 2023-12-03 16:36:08.913690
+[LOG] Interval of :RUNSTEP 7, 0 sec 22831 us.
+[LOG]   Enter: RUNSTEP 8. Time NOW: 2023-12-03 16:36:08.913713
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.913742
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.913859
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.936376
+[LOG] Interval of :Worker Excute model, 0 sec 22517 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.936403
+[LOG] Interval of :Engine Step, 0 sec 22661 us.
+[LOG]   Exit: RUNSTEP 8. Time NOW: 2023-12-03 16:36:08.936482
+[LOG] Interval of :RUNSTEP 8, 0 sec 22769 us.
+[LOG]   Enter: RUNSTEP 9. Time NOW: 2023-12-03 16:36:08.936506
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.936534
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.936647
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.959155
+[LOG] Interval of :Worker Excute model, 0 sec 22508 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.959182
+[LOG] Interval of :Engine Step, 0 sec 22648 us.
+[LOG]   Exit: RUNSTEP 9. Time NOW: 2023-12-03 16:36:08.959261
+[LOG] Interval of :RUNSTEP 9, 0 sec 22755 us.
+[LOG]   Enter: RUNSTEP 10. Time NOW: 2023-12-03 16:36:08.959284
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.959311
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.959426
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:08.981958
+[LOG] Interval of :Worker Excute model, 0 sec 22532 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:08.981985
+[LOG] Interval of :Engine Step, 0 sec 22674 us.
+[LOG]   Exit: RUNSTEP 10. Time NOW: 2023-12-03 16:36:08.982064
+[LOG] Interval of :RUNSTEP 10, 0 sec 22780 us.
+[LOG]   Enter: RUNSTEP 11. Time NOW: 2023-12-03 16:36:08.982088
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:08.982116
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:08.982233
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.004764
+[LOG] Interval of :Worker Excute model, 0 sec 22531 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.004791
+[LOG] Interval of :Engine Step, 0 sec 22675 us.
+[LOG]   Exit: RUNSTEP 11. Time NOW: 2023-12-03 16:36:09.004869
+[LOG] Interval of :RUNSTEP 11, 0 sec 22781 us.
+[LOG]   Enter: RUNSTEP 12. Time NOW: 2023-12-03 16:36:09.004892
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.004919
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.005036
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.027571
+[LOG] Interval of :Worker Excute model, 0 sec 22535 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.027598
+[LOG] Interval of :Engine Step, 0 sec 22679 us.
+[LOG]   Exit: RUNSTEP 12. Time NOW: 2023-12-03 16:36:09.027675
+[LOG] Interval of :RUNSTEP 12, 0 sec 22783 us.
+[LOG]   Enter: RUNSTEP 13. Time NOW: 2023-12-03 16:36:09.027699
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.027727
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.027843
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.050425
+[LOG] Interval of :Worker Excute model, 0 sec 22582 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.050453
+[LOG] Interval of :Engine Step, 0 sec 22726 us.
+[LOG]   Exit: RUNSTEP 13. Time NOW: 2023-12-03 16:36:09.050534
+[LOG] Interval of :RUNSTEP 13, 0 sec 22835 us.
+[LOG]   Enter: RUNSTEP 14. Time NOW: 2023-12-03 16:36:09.050558
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.050587
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.050706
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.073243
+[LOG] Interval of :Worker Excute model, 0 sec 22537 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.073304
+[LOG] Interval of :Engine Step, 0 sec 22717 us.
+[LOG]   Exit: RUNSTEP 14. Time NOW: 2023-12-03 16:36:09.073385
+[LOG] Interval of :RUNSTEP 14, 0 sec 22827 us.
+[LOG]   Enter: RUNSTEP 15. Time NOW: 2023-12-03 16:36:09.073409
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.073437
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.073563
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.096083
+[LOG] Interval of :Worker Excute model, 0 sec 22520 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.096110
+[LOG] Interval of :Engine Step, 0 sec 22673 us.
+[LOG]   Exit: RUNSTEP 15. Time NOW: 2023-12-03 16:36:09.096189
+[LOG] Interval of :RUNSTEP 15, 0 sec 22780 us.
+[LOG]   Enter: RUNSTEP 16. Time NOW: 2023-12-03 16:36:09.096213
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.096241
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.096357
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.118884
+[LOG] Interval of :Worker Excute model, 0 sec 22527 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.118911
+[LOG] Interval of :Engine Step, 0 sec 22670 us.
+[LOG]   Exit: RUNSTEP 16. Time NOW: 2023-12-03 16:36:09.118989
+[LOG] Interval of :RUNSTEP 16, 0 sec 22776 us.
+[LOG]   Enter: RUNSTEP 17. Time NOW: 2023-12-03 16:36:09.119012
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.119040
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.119155
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.141715
+[LOG] Interval of :Worker Excute model, 0 sec 22560 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.141743
+[LOG] Interval of :Engine Step, 0 sec 22703 us.
+[LOG]   Exit: RUNSTEP 17. Time NOW: 2023-12-03 16:36:09.141823
+[LOG] Interval of :RUNSTEP 17, 0 sec 22811 us.
+[LOG]   Enter: RUNSTEP 18. Time NOW: 2023-12-03 16:36:09.141848
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.141877
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.142000
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.164532
+[LOG] Interval of :Worker Excute model, 0 sec 22532 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.164559
+[LOG] Interval of :Engine Step, 0 sec 22682 us.
+[LOG]   Exit: RUNSTEP 18. Time NOW: 2023-12-03 16:36:09.164638
+[LOG] Interval of :RUNSTEP 18, 0 sec 22790 us.
+[LOG]   Enter: RUNSTEP 19. Time NOW: 2023-12-03 16:36:09.164661
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.164689
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.164805
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.187346
+[LOG] Interval of :Worker Excute model, 0 sec 22541 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.187373
+[LOG] Interval of :Engine Step, 0 sec 22684 us.
+[LOG]   Exit: RUNSTEP 19. Time NOW: 2023-12-03 16:36:09.187452
+[LOG] Interval of :RUNSTEP 19, 0 sec 22791 us.
+[LOG]   Enter: RUNSTEP 20. Time NOW: 2023-12-03 16:36:09.187475
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.187503
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.187618
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.210148
+[LOG] Interval of :Worker Excute model, 0 sec 22530 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.210175
+[LOG] Interval of :Engine Step, 0 sec 22672 us.
+[LOG]   Exit: RUNSTEP 20. Time NOW: 2023-12-03 16:36:09.210254
+[LOG] Interval of :RUNSTEP 20, 0 sec 22779 us.
+[LOG]   Enter: RUNSTEP 21. Time NOW: 2023-12-03 16:36:09.210278
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.210306
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.210423
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.232940
+[LOG] Interval of :Worker Excute model, 0 sec 22517 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.232967
+[LOG] Interval of :Engine Step, 0 sec 22661 us.
+[LOG]   Exit: RUNSTEP 21. Time NOW: 2023-12-03 16:36:09.233057
+[LOG] Interval of :RUNSTEP 21, 0 sec 22779 us.
+[LOG]   Enter: RUNSTEP 22. Time NOW: 2023-12-03 16:36:09.233079
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.233108
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.233232
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.255770
+[LOG] Interval of :Worker Excute model, 0 sec 22538 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.255796
+[LOG] Interval of :Engine Step, 0 sec 22688 us.
+[LOG]   Exit: RUNSTEP 22. Time NOW: 2023-12-03 16:36:09.255962
+[LOG] Interval of :RUNSTEP 22, 0 sec 22883 us.
+[LOG]   Enter: RUNSTEP 23. Time NOW: 2023-12-03 16:36:09.255985
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.256013
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.256130
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.278658
+[LOG] Interval of :Worker Excute model, 0 sec 22528 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.278685
+[LOG] Interval of :Engine Step, 0 sec 22672 us.
+[LOG]   Exit: RUNSTEP 23. Time NOW: 2023-12-03 16:36:09.278762
+[LOG] Interval of :RUNSTEP 23, 0 sec 22777 us.
+[LOG]   Enter: RUNSTEP 24. Time NOW: 2023-12-03 16:36:09.278785
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.278812
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.278927
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.301470
+[LOG] Interval of :Worker Excute model, 0 sec 22543 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.301497
+[LOG] Interval of :Engine Step, 0 sec 22685 us.
+[LOG]   Exit: RUNSTEP 24. Time NOW: 2023-12-03 16:36:09.301575
+[LOG] Interval of :RUNSTEP 24, 0 sec 22790 us.
+[LOG]   Enter: RUNSTEP 25. Time NOW: 2023-12-03 16:36:09.301598
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.301626
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.301742
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.324279
+[LOG] Interval of :Worker Excute model, 0 sec 22537 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.324306
+[LOG] Interval of :Engine Step, 0 sec 22680 us.
+[LOG]   Exit: RUNSTEP 25. Time NOW: 2023-12-03 16:36:09.324383
+[LOG] Interval of :RUNSTEP 25, 0 sec 22785 us.
+[LOG]   Enter: RUNSTEP 26. Time NOW: 2023-12-03 16:36:09.324406
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.324435
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.324551
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.347100
+[LOG] Interval of :Worker Excute model, 0 sec 22549 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.347127
+[LOG] Interval of :Engine Step, 0 sec 22692 us.
+[LOG]   Exit: RUNSTEP 26. Time NOW: 2023-12-03 16:36:09.347208
+[LOG] Interval of :RUNSTEP 26, 0 sec 22802 us.
+[LOG]   Enter: RUNSTEP 27. Time NOW: 2023-12-03 16:36:09.347232
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.347260
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.347378
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.369927
+[LOG] Interval of :Worker Excute model, 0 sec 22549 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.369955
+[LOG] Interval of :Engine Step, 0 sec 22695 us.
+[LOG]   Exit: RUNSTEP 27. Time NOW: 2023-12-03 16:36:09.370037
+[LOG] Interval of :RUNSTEP 27, 0 sec 22805 us.
+[LOG]   Enter: RUNSTEP 28. Time NOW: 2023-12-03 16:36:09.370060
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.370089
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.370209
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.392755
+[LOG] Interval of :Worker Excute model, 0 sec 22546 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.392782
+[LOG] Interval of :Engine Step, 0 sec 22693 us.
+[LOG]   Exit: RUNSTEP 28. Time NOW: 2023-12-03 16:36:09.392866
+[LOG] Interval of :RUNSTEP 28, 0 sec 22806 us.
+[LOG]   Enter: RUNSTEP 29. Time NOW: 2023-12-03 16:36:09.392889
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.392945
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.393074
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.415624
+[LOG] Interval of :Worker Excute model, 0 sec 22550 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.415650
+[LOG] Interval of :Engine Step, 0 sec 22705 us.
+[LOG]   Exit: RUNSTEP 29. Time NOW: 2023-12-03 16:36:09.415728
+[LOG] Interval of :RUNSTEP 29, 0 sec 22839 us.
+[LOG]   Enter: RUNSTEP 30. Time NOW: 2023-12-03 16:36:09.415751
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.415779
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.415895
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.438460
+[LOG] Interval of :Worker Excute model, 0 sec 22565 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.438488
+[LOG] Interval of :Engine Step, 0 sec 22709 us.
+[LOG]   Exit: RUNSTEP 30. Time NOW: 2023-12-03 16:36:09.438569
+[LOG] Interval of :RUNSTEP 30, 0 sec 22818 us.
+[LOG]   Enter: RUNSTEP 31. Time NOW: 2023-12-03 16:36:09.438594
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.438623
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.438743
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.461293
+[LOG] Interval of :Worker Excute model, 0 sec 22550 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.461325
+[LOG] Interval of :Engine Step, 0 sec 22702 us.
+[LOG]   Exit: RUNSTEP 31. Time NOW: 2023-12-03 16:36:09.461407
+[LOG] Interval of :RUNSTEP 31, 0 sec 22813 us.
+[LOG]   Enter: RUNSTEP 32. Time NOW: 2023-12-03 16:36:09.461431
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.461460
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.461579
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.484121
+[LOG] Interval of :Worker Excute model, 0 sec 22542 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.484148
+[LOG] Interval of :Engine Step, 0 sec 22688 us.
+[LOG]   Exit: RUNSTEP 32. Time NOW: 2023-12-03 16:36:09.484226
+[LOG] Interval of :RUNSTEP 32, 0 sec 22795 us.
+[LOG]   Enter: RUNSTEP 33. Time NOW: 2023-12-03 16:36:09.484249
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.484276
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.484391
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.507006
+[LOG] Interval of :Worker Excute model, 0 sec 22615 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.507033
+[LOG] Interval of :Engine Step, 0 sec 22757 us.
+[LOG]   Exit: RUNSTEP 33. Time NOW: 2023-12-03 16:36:09.507113
+[LOG] Interval of :RUNSTEP 33, 0 sec 22864 us.
+[LOG]   Enter: RUNSTEP 34. Time NOW: 2023-12-03 16:36:09.507137
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.507166
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.507285
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.529869
+[LOG] Interval of :Worker Excute model, 0 sec 22584 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.529896
+[LOG] Interval of :Engine Step, 0 sec 22730 us.
+[LOG]   Exit: RUNSTEP 34. Time NOW: 2023-12-03 16:36:09.529987
+[LOG] Interval of :RUNSTEP 34, 0 sec 22850 us.
+[LOG]   Enter: RUNSTEP 35. Time NOW: 2023-12-03 16:36:09.530011
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.530041
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.530159
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.552708
+[LOG] Interval of :Worker Excute model, 0 sec 22549 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.552735
+[LOG] Interval of :Engine Step, 0 sec 22694 us.
+[LOG]   Exit: RUNSTEP 35. Time NOW: 2023-12-03 16:36:09.552813
+[LOG] Interval of :RUNSTEP 35, 0 sec 22802 us.
+[LOG]   Enter: RUNSTEP 36. Time NOW: 2023-12-03 16:36:09.552836
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.552864
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.552980
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.575527
+[LOG] Interval of :Worker Excute model, 0 sec 22547 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.575554
+[LOG] Interval of :Engine Step, 0 sec 22690 us.
+[LOG]   Exit: RUNSTEP 36. Time NOW: 2023-12-03 16:36:09.575631
+[LOG] Interval of :RUNSTEP 36, 0 sec 22795 us.
+[LOG]   Enter: RUNSTEP 37. Time NOW: 2023-12-03 16:36:09.575654
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.575682
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.575796
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.598352
+[LOG] Interval of :Worker Excute model, 0 sec 22556 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.598379
+[LOG] Interval of :Engine Step, 0 sec 22697 us.
+[LOG]   Exit: RUNSTEP 37. Time NOW: 2023-12-03 16:36:09.598462
+[LOG] Interval of :RUNSTEP 37, 0 sec 22808 us.
+[LOG]   Enter: RUNSTEP 38. Time NOW: 2023-12-03 16:36:09.598486
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.598516
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.598636
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.621189
+[LOG] Interval of :Worker Excute model, 0 sec 22553 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.621233
+[LOG] Interval of :Engine Step, 0 sec 22717 us.
+[LOG]   Exit: RUNSTEP 38. Time NOW: 2023-12-03 16:36:09.621312
+[LOG] Interval of :RUNSTEP 38, 0 sec 22826 us.
+[LOG]   Enter: RUNSTEP 39. Time NOW: 2023-12-03 16:36:09.621336
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.621364
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.621481
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.644036
+[LOG] Interval of :Worker Excute model, 0 sec 22555 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.644062
+[LOG] Interval of :Engine Step, 0 sec 22698 us.
+[LOG]   Exit: RUNSTEP 39. Time NOW: 2023-12-03 16:36:09.644140
+[LOG] Interval of :RUNSTEP 39, 0 sec 22804 us.
+[LOG]   Enter: RUNSTEP 40. Time NOW: 2023-12-03 16:36:09.644163
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.644191
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.644307
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.666860
+[LOG] Interval of :Worker Excute model, 0 sec 22553 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.666887
+[LOG] Interval of :Engine Step, 0 sec 22696 us.
+[LOG]   Exit: RUNSTEP 40. Time NOW: 2023-12-03 16:36:09.666966
+[LOG] Interval of :RUNSTEP 40, 0 sec 22803 us.
+[LOG]   Enter: RUNSTEP 41. Time NOW: 2023-12-03 16:36:09.666990
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.667018
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.667137
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.689693
+[LOG] Interval of :Worker Excute model, 0 sec 22556 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.689719
+[LOG] Interval of :Engine Step, 0 sec 22701 us.
+[LOG]   Exit: RUNSTEP 41. Time NOW: 2023-12-03 16:36:09.689798
+[LOG] Interval of :RUNSTEP 41, 0 sec 22808 us.
+[LOG]   Enter: RUNSTEP 42. Time NOW: 2023-12-03 16:36:09.689822
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.689850
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.689966
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.712511
+[LOG] Interval of :Worker Excute model, 0 sec 22545 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.712537
+[LOG] Interval of :Engine Step, 0 sec 22687 us.
+[LOG]   Exit: RUNSTEP 42. Time NOW: 2023-12-03 16:36:09.712618
+[LOG] Interval of :RUNSTEP 42, 0 sec 22796 us.
+[LOG]   Enter: RUNSTEP 43. Time NOW: 2023-12-03 16:36:09.712641
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.712669
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.712784
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.735372
+[LOG] Interval of :Worker Excute model, 0 sec 22588 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.735427
+[LOG] Interval of :Engine Step, 0 sec 22758 us.
+[LOG]   Exit: RUNSTEP 43. Time NOW: 2023-12-03 16:36:09.735512
+[LOG] Interval of :RUNSTEP 43, 0 sec 22871 us.
+[LOG]   Enter: RUNSTEP 44. Time NOW: 2023-12-03 16:36:09.735535
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.735571
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.735689
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.758338
+[LOG] Interval of :Worker Excute model, 0 sec 22649 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.758365
+[LOG] Interval of :Engine Step, 0 sec 22794 us.
+[LOG]   Exit: RUNSTEP 44. Time NOW: 2023-12-03 16:36:09.758444
+[LOG] Interval of :RUNSTEP 44, 0 sec 22909 us.
+[LOG]   Enter: RUNSTEP 45. Time NOW: 2023-12-03 16:36:09.758469
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.758496
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.758613
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.781149
+[LOG] Interval of :Worker Excute model, 0 sec 22536 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.781176
+[LOG] Interval of :Engine Step, 0 sec 22680 us.
+[LOG]   Exit: RUNSTEP 45. Time NOW: 2023-12-03 16:36:09.781259
+[LOG] Interval of :RUNSTEP 45, 0 sec 22790 us.
+[LOG]   Enter: RUNSTEP 46. Time NOW: 2023-12-03 16:36:09.781283
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.781311
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.781428
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.803982
+[LOG] Interval of :Worker Excute model, 0 sec 22554 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.804009
+[LOG] Interval of :Engine Step, 0 sec 22698 us.
+[LOG]   Exit: RUNSTEP 46. Time NOW: 2023-12-03 16:36:09.804099
+[LOG] Interval of :RUNSTEP 46, 0 sec 22816 us.
+[LOG]   Enter: RUNSTEP 47. Time NOW: 2023-12-03 16:36:09.804121
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.804149
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.804265
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.826818
+[LOG] Interval of :Worker Excute model, 0 sec 22553 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.826844
+[LOG] Interval of :Engine Step, 0 sec 22695 us.
+[LOG]   Exit: RUNSTEP 47. Time NOW: 2023-12-03 16:36:09.826924
+[LOG] Interval of :RUNSTEP 47, 0 sec 22803 us.
+[LOG]   Enter: RUNSTEP 48. Time NOW: 2023-12-03 16:36:09.826947
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.826975
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.827091
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.849684
+[LOG] Interval of :Worker Excute model, 0 sec 22593 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.849710
+[LOG] Interval of :Engine Step, 0 sec 22735 us.
+[LOG]   Exit: RUNSTEP 48. Time NOW: 2023-12-03 16:36:09.849789
+[LOG] Interval of :RUNSTEP 48, 0 sec 22842 us.
+[LOG]   Enter: RUNSTEP 49. Time NOW: 2023-12-03 16:36:09.849811
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.849934
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.850050
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.872593
+[LOG] Interval of :Worker Excute model, 0 sec 22543 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.872620
+[LOG] Interval of :Engine Step, 0 sec 22686 us.
+[LOG]   Exit: RUNSTEP 49. Time NOW: 2023-12-03 16:36:09.872698
+[LOG] Interval of :RUNSTEP 49, 0 sec 22887 us.
+[LOG]   Enter: RUNSTEP 50. Time NOW: 2023-12-03 16:36:09.872721
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.872749
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.872864
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.895623
+[LOG] Interval of :Worker Excute model, 0 sec 22759 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.895650
+[LOG] Interval of :Engine Step, 0 sec 22901 us.
+[LOG]   Exit: RUNSTEP 50. Time NOW: 2023-12-03 16:36:09.895729
+[LOG] Interval of :RUNSTEP 50, 0 sec 23008 us.
+[LOG]   Enter: RUNSTEP 51. Time NOW: 2023-12-03 16:36:09.895753
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.895781
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.895898
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.918473
+[LOG] Interval of :Worker Excute model, 0 sec 22575 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.918500
+[LOG] Interval of :Engine Step, 0 sec 22719 us.
+[LOG]   Exit: RUNSTEP 51. Time NOW: 2023-12-03 16:36:09.918581
+[LOG] Interval of :RUNSTEP 51, 0 sec 22828 us.
+[LOG]   Enter: RUNSTEP 52. Time NOW: 2023-12-03 16:36:09.918604
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.918632
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.918749
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.941310
+[LOG] Interval of :Worker Excute model, 0 sec 22561 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.941341
+[LOG] Interval of :Engine Step, 0 sec 22709 us.
+[LOG]   Exit: RUNSTEP 52. Time NOW: 2023-12-03 16:36:09.941422
+[LOG] Interval of :RUNSTEP 52, 0 sec 22818 us.
+[LOG]   Enter: RUNSTEP 53. Time NOW: 2023-12-03 16:36:09.941445
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.941473
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.941589
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.964132
+[LOG] Interval of :Worker Excute model, 0 sec 22543 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.964158
+[LOG] Interval of :Engine Step, 0 sec 22685 us.
+[LOG]   Exit: RUNSTEP 53. Time NOW: 2023-12-03 16:36:09.964244
+[LOG] Interval of :RUNSTEP 53, 0 sec 22799 us.
+[LOG]   Enter: RUNSTEP 54. Time NOW: 2023-12-03 16:36:09.964270
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.964300
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.964445
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:09.987055
+[LOG] Interval of :Worker Excute model, 0 sec 22610 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:09.987082
+[LOG] Interval of :Engine Step, 0 sec 22782 us.
+[LOG]   Exit: RUNSTEP 54. Time NOW: 2023-12-03 16:36:09.987162
+[LOG] Interval of :RUNSTEP 54, 0 sec 22892 us.
+[LOG]   Enter: RUNSTEP 55. Time NOW: 2023-12-03 16:36:09.987185
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:09.987214
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:09.987331
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.009935
+[LOG] Interval of :Worker Excute model, 0 sec 22604 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.009961
+[LOG] Interval of :Engine Step, 0 sec 22747 us.
+[LOG]   Exit: RUNSTEP 55. Time NOW: 2023-12-03 16:36:10.010042
+[LOG] Interval of :RUNSTEP 55, 0 sec 22857 us.
+[LOG]   Enter: RUNSTEP 56. Time NOW: 2023-12-03 16:36:10.010065
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.010093
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.010210
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.032810
+[LOG] Interval of :Worker Excute model, 0 sec 22600 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.032837
+[LOG] Interval of :Engine Step, 0 sec 22744 us.
+[LOG]   Exit: RUNSTEP 56. Time NOW: 2023-12-03 16:36:10.032916
+[LOG] Interval of :RUNSTEP 56, 0 sec 22851 us.
+[LOG]   Enter: RUNSTEP 57. Time NOW: 2023-12-03 16:36:10.032939
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.032968
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.033084
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.055707
+[LOG] Interval of :Worker Excute model, 0 sec 22623 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.055734
+[LOG] Interval of :Engine Step, 0 sec 22766 us.
+[LOG]   Exit: RUNSTEP 57. Time NOW: 2023-12-03 16:36:10.055813
+[LOG] Interval of :RUNSTEP 57, 0 sec 22874 us.
+[LOG]   Enter: RUNSTEP 58. Time NOW: 2023-12-03 16:36:10.055836
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.055895
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.056022
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.078620
+[LOG] Interval of :Worker Excute model, 0 sec 22598 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.078647
+[LOG] Interval of :Engine Step, 0 sec 22752 us.
+[LOG]   Exit: RUNSTEP 58. Time NOW: 2023-12-03 16:36:10.078726
+[LOG] Interval of :RUNSTEP 58, 0 sec 22890 us.
+[LOG]   Enter: RUNSTEP 59. Time NOW: 2023-12-03 16:36:10.078749
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.078777
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.078894
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.101490
+[LOG] Interval of :Worker Excute model, 0 sec 22596 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.101517
+[LOG] Interval of :Engine Step, 0 sec 22740 us.
+[LOG]   Exit: RUNSTEP 59. Time NOW: 2023-12-03 16:36:10.101595
+[LOG] Interval of :RUNSTEP 59, 0 sec 22846 us.
+[LOG]   Enter: RUNSTEP 60. Time NOW: 2023-12-03 16:36:10.101618
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.101646
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.101768
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.124365
+[LOG] Interval of :Worker Excute model, 0 sec 22597 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.124391
+[LOG] Interval of :Engine Step, 0 sec 22745 us.
+[LOG]   Exit: RUNSTEP 60. Time NOW: 2023-12-03 16:36:10.124470
+[LOG] Interval of :RUNSTEP 60, 0 sec 22852 us.
+[LOG]   Enter: RUNSTEP 61. Time NOW: 2023-12-03 16:36:10.124493
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.124522
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.124638
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.147238
+[LOG] Interval of :Worker Excute model, 0 sec 22600 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.147265
+[LOG] Interval of :Engine Step, 0 sec 22743 us.
+[LOG]   Exit: RUNSTEP 61. Time NOW: 2023-12-03 16:36:10.147344
+[LOG] Interval of :RUNSTEP 61, 0 sec 22851 us.
+[LOG]   Enter: RUNSTEP 62. Time NOW: 2023-12-03 16:36:10.147367
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.147395
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.147511
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.170112
+[LOG] Interval of :Worker Excute model, 0 sec 22601 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.170138
+[LOG] Interval of :Engine Step, 0 sec 22743 us.
+[LOG]   Exit: RUNSTEP 62. Time NOW: 2023-12-03 16:36:10.170217
+[LOG] Interval of :RUNSTEP 62, 0 sec 22850 us.
+[LOG]   Enter: RUNSTEP 63. Time NOW: 2023-12-03 16:36:10.170240
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.170268
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.170386
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.193004
+[LOG] Interval of :Worker Excute model, 0 sec 22618 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.193031
+[LOG] Interval of :Engine Step, 0 sec 22763 us.
+[LOG]   Exit: RUNSTEP 63. Time NOW: 2023-12-03 16:36:10.193260
+[LOG] Interval of :RUNSTEP 63, 0 sec 23020 us.
+[LOG] Exit: 0 th request for batch size = 1. Time NOW: 2023-12-03 16:36:10.193405
+[LOG] Interval of :0 th request for batch size = 1, 1 sec 467253 us.
+max tokens: 64. Time cost for batch size = 1 : 1.4673 s
+
+Prompt: 'What are the risks of having high blood pressure?' 
+Generated text: '\n\nWhat are the risks of having high blood pressure?\n\nOctober 27, 2010\n\nQuestion:\n\nWhat are the risks of having high blood pressure?\n\nAnswer:\n\nThe risks of having high blood pressure are high blood pressure itself and complications of high blood pressure. High blood pressure is very'
+[LOG] Enter: 1 th request for batch size = 2. Time NOW: 2023-12-03 16:36:10.193439
+[LOG]   Enter: RUNSTEP 0. Time NOW: 2023-12-03 16:36:10.193910
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.193958
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.194074
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.223183
+[LOG] Interval of :Worker Excute model, 0 sec 29109 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.223219
+[LOG] Interval of :Engine Step, 0 sec 29261 us.
+[LOG]   Exit: RUNSTEP 0. Time NOW: 2023-12-03 16:36:10.223516
+[LOG] Interval of :RUNSTEP 0, 0 sec 29606 us.
+[LOG]   Enter: RUNSTEP 1. Time NOW: 2023-12-03 16:36:10.223541
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.223580
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.223709
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.246479
+[LOG] Interval of :Worker Excute model, 0 sec 22770 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.246507
+[LOG] Interval of :Engine Step, 0 sec 22927 us.
+[LOG]   Exit: RUNSTEP 1. Time NOW: 2023-12-03 16:36:10.246618
+[LOG] Interval of :RUNSTEP 1, 0 sec 23077 us.
+[LOG]   Enter: RUNSTEP 2. Time NOW: 2023-12-03 16:36:10.246641
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.246676
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.246796
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.269523
+[LOG] Interval of :Worker Excute model, 0 sec 22727 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.269550
+[LOG] Interval of :Engine Step, 0 sec 22874 us.
+[LOG]   Exit: RUNSTEP 2. Time NOW: 2023-12-03 16:36:10.269664
+[LOG] Interval of :RUNSTEP 2, 0 sec 23023 us.
+[LOG]   Enter: RUNSTEP 3. Time NOW: 2023-12-03 16:36:10.269688
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.269729
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.269850
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.292724
+[LOG] Interval of :Worker Excute model, 0 sec 22874 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.292751
+[LOG] Interval of :Engine Step, 0 sec 23022 us.
+[LOG]   Exit: RUNSTEP 3. Time NOW: 2023-12-03 16:36:10.292859
+[LOG] Interval of :RUNSTEP 3, 0 sec 23171 us.
+[LOG]   Enter: RUNSTEP 4. Time NOW: 2023-12-03 16:36:10.292883
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.292917
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.293036
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.315790
+[LOG] Interval of :Worker Excute model, 0 sec 22754 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.315817
+[LOG] Interval of :Engine Step, 0 sec 22900 us.
+[LOG]   Exit: RUNSTEP 4. Time NOW: 2023-12-03 16:36:10.315927
+[LOG] Interval of :RUNSTEP 4, 0 sec 23044 us.
+[LOG]   Enter: RUNSTEP 5. Time NOW: 2023-12-03 16:36:10.315951
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.315985
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.316106
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.338855
+[LOG] Interval of :Worker Excute model, 0 sec 22749 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.338881
+[LOG] Interval of :Engine Step, 0 sec 22896 us.
+[LOG]   Exit: RUNSTEP 5. Time NOW: 2023-12-03 16:36:10.338993
+[LOG] Interval of :RUNSTEP 5, 0 sec 23042 us.
+[LOG]   Enter: RUNSTEP 6. Time NOW: 2023-12-03 16:36:10.339015
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.339050
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.339170
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.361918
+[LOG] Interval of :Worker Excute model, 0 sec 22748 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.361944
+[LOG] Interval of :Engine Step, 0 sec 22894 us.
+[LOG]   Exit: RUNSTEP 6. Time NOW: 2023-12-03 16:36:10.362053
+[LOG] Interval of :RUNSTEP 6, 0 sec 23038 us.
+[LOG]   Enter: RUNSTEP 7. Time NOW: 2023-12-03 16:36:10.362075
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.362109
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.362230
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.385044
+[LOG] Interval of :Worker Excute model, 0 sec 22814 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.385070
+[LOG] Interval of :Engine Step, 0 sec 22961 us.
+[LOG]   Exit: RUNSTEP 7. Time NOW: 2023-12-03 16:36:10.385179
+[LOG] Interval of :RUNSTEP 7, 0 sec 23104 us.
+[LOG]   Enter: RUNSTEP 8. Time NOW: 2023-12-03 16:36:10.385214
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.385249
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.385371
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.408120
+[LOG] Interval of :Worker Excute model, 0 sec 22749 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.408147
+[LOG] Interval of :Engine Step, 0 sec 22898 us.
+[LOG]   Exit: RUNSTEP 8. Time NOW: 2023-12-03 16:36:10.408256
+[LOG] Interval of :RUNSTEP 8, 0 sec 23042 us.
+[LOG]   Enter: RUNSTEP 9. Time NOW: 2023-12-03 16:36:10.408279
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.408314
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.408434
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.431194
+[LOG] Interval of :Worker Excute model, 0 sec 22760 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.431220
+[LOG] Interval of :Engine Step, 0 sec 22906 us.
+[LOG]   Exit: RUNSTEP 9. Time NOW: 2023-12-03 16:36:10.431329
+[LOG] Interval of :RUNSTEP 9, 0 sec 23050 us.
+[LOG]   Enter: RUNSTEP 10. Time NOW: 2023-12-03 16:36:10.431352
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.431387
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.431506
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.454270
+[LOG] Interval of :Worker Excute model, 0 sec 22764 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.454297
+[LOG] Interval of :Engine Step, 0 sec 22910 us.
+[LOG]   Exit: RUNSTEP 10. Time NOW: 2023-12-03 16:36:10.454410
+[LOG] Interval of :RUNSTEP 10, 0 sec 23058 us.
+[LOG]   Enter: RUNSTEP 11. Time NOW: 2023-12-03 16:36:10.454434
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.454471
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.454595
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.477381
+[LOG] Interval of :Worker Excute model, 0 sec 22786 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.477409
+[LOG] Interval of :Engine Step, 0 sec 22938 us.
+[LOG]   Exit: RUNSTEP 11. Time NOW: 2023-12-03 16:36:10.477520
+[LOG] Interval of :RUNSTEP 11, 0 sec 23086 us.
+[LOG]   Enter: RUNSTEP 12. Time NOW: 2023-12-03 16:36:10.477544
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.477580
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.477702
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.500484
+[LOG] Interval of :Worker Excute model, 0 sec 22782 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.500510
+[LOG] Interval of :Engine Step, 0 sec 22930 us.
+[LOG]   Exit: RUNSTEP 12. Time NOW: 2023-12-03 16:36:10.500619
+[LOG] Interval of :RUNSTEP 12, 0 sec 23075 us.
+[LOG]   Enter: RUNSTEP 13. Time NOW: 2023-12-03 16:36:10.500642
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.500676
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.500794
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.523564
+[LOG] Interval of :Worker Excute model, 0 sec 22770 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.523592
+[LOG] Interval of :Engine Step, 0 sec 22916 us.
+[LOG]   Exit: RUNSTEP 13. Time NOW: 2023-12-03 16:36:10.523704
+[LOG] Interval of :RUNSTEP 13, 0 sec 23062 us.
+[LOG]   Enter: RUNSTEP 14. Time NOW: 2023-12-03 16:36:10.523728
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.523764
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.523886
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.546674
+[LOG] Interval of :Worker Excute model, 0 sec 22788 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.546739
+[LOG] Interval of :Engine Step, 0 sec 22975 us.
+[LOG]   Exit: RUNSTEP 14. Time NOW: 2023-12-03 16:36:10.546850
+[LOG] Interval of :RUNSTEP 14, 0 sec 23122 us.
+[LOG]   Enter: RUNSTEP 15. Time NOW: 2023-12-03 16:36:10.546873
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.546907
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.547028
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.569799
+[LOG] Interval of :Worker Excute model, 0 sec 22771 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.569827
+[LOG] Interval of :Engine Step, 0 sec 22920 us.
+[LOG]   Exit: RUNSTEP 15. Time NOW: 2023-12-03 16:36:10.569939
+[LOG] Interval of :RUNSTEP 15, 0 sec 23066 us.
+[LOG]   Enter: RUNSTEP 16. Time NOW: 2023-12-03 16:36:10.569963
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.569999
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.570122
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.592991
+[LOG] Interval of :Worker Excute model, 0 sec 22869 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.593017
+[LOG] Interval of :Engine Step, 0 sec 23018 us.
+[LOG]   Exit: RUNSTEP 16. Time NOW: 2023-12-03 16:36:10.593137
+[LOG] Interval of :RUNSTEP 16, 0 sec 23174 us.
+[LOG]   Enter: RUNSTEP 17. Time NOW: 2023-12-03 16:36:10.593160
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.593207
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.593332
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.616103
+[LOG] Interval of :Worker Excute model, 0 sec 22771 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.616130
+[LOG] Interval of :Engine Step, 0 sec 22923 us.
+[LOG]   Exit: RUNSTEP 17. Time NOW: 2023-12-03 16:36:10.616260
+[LOG] Interval of :RUNSTEP 17, 0 sec 23100 us.
+[LOG]   Enter: RUNSTEP 18. Time NOW: 2023-12-03 16:36:10.616283
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.616318
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.616438
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.639197
+[LOG] Interval of :Worker Excute model, 0 sec 22759 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.639223
+[LOG] Interval of :Engine Step, 0 sec 22905 us.
+[LOG]   Exit: RUNSTEP 18. Time NOW: 2023-12-03 16:36:10.639331
+[LOG] Interval of :RUNSTEP 18, 0 sec 23048 us.
+[LOG]   Enter: RUNSTEP 19. Time NOW: 2023-12-03 16:36:10.639354
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.639390
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.639509
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.662278
+[LOG] Interval of :Worker Excute model, 0 sec 22769 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.662305
+[LOG] Interval of :Engine Step, 0 sec 22915 us.
+[LOG]   Exit: RUNSTEP 19. Time NOW: 2023-12-03 16:36:10.662414
+[LOG] Interval of :RUNSTEP 19, 0 sec 23060 us.
+[LOG]   Enter: RUNSTEP 20. Time NOW: 2023-12-03 16:36:10.662437
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.662471
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.662590
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.685521
+[LOG] Interval of :Worker Excute model, 0 sec 22931 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.685548
+[LOG] Interval of :Engine Step, 0 sec 23077 us.
+[LOG]   Exit: RUNSTEP 20. Time NOW: 2023-12-03 16:36:10.685656
+[LOG] Interval of :RUNSTEP 20, 0 sec 23219 us.
+[LOG]   Enter: RUNSTEP 21. Time NOW: 2023-12-03 16:36:10.685680
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.685716
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.685836
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.708596
+[LOG] Interval of :Worker Excute model, 0 sec 22760 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.708623
+[LOG] Interval of :Engine Step, 0 sec 22907 us.
+[LOG]   Exit: RUNSTEP 21. Time NOW: 2023-12-03 16:36:10.708733
+[LOG] Interval of :RUNSTEP 21, 0 sec 23053 us.
+[LOG]   Enter: RUNSTEP 22. Time NOW: 2023-12-03 16:36:10.708756
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.708791
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.708910
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.731684
+[LOG] Interval of :Worker Excute model, 0 sec 22774 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.731711
+[LOG] Interval of :Engine Step, 0 sec 22920 us.
+[LOG]   Exit: RUNSTEP 22. Time NOW: 2023-12-03 16:36:10.731820
+[LOG] Interval of :RUNSTEP 22, 0 sec 23064 us.
+[LOG]   Enter: RUNSTEP 23. Time NOW: 2023-12-03 16:36:10.731843
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.731877
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.731998
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.754775
+[LOG] Interval of :Worker Excute model, 0 sec 22777 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.754801
+[LOG] Interval of :Engine Step, 0 sec 22924 us.
+[LOG]   Exit: RUNSTEP 23. Time NOW: 2023-12-03 16:36:10.754910
+[LOG] Interval of :RUNSTEP 23, 0 sec 23067 us.
+[LOG]   Enter: RUNSTEP 24. Time NOW: 2023-12-03 16:36:10.754934
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.754969
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.755088
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.777874
+[LOG] Interval of :Worker Excute model, 0 sec 22786 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.777902
+[LOG] Interval of :Engine Step, 0 sec 22933 us.
+[LOG]   Exit: RUNSTEP 24. Time NOW: 2023-12-03 16:36:10.778027
+[LOG] Interval of :RUNSTEP 24, 0 sec 23093 us.
+[LOG]   Enter: RUNSTEP 25. Time NOW: 2023-12-03 16:36:10.778051
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.778093
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.778216
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.801124
+[LOG] Interval of :Worker Excute model, 0 sec 22908 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.801152
+[LOG] Interval of :Engine Step, 0 sec 23059 us.
+[LOG]   Exit: RUNSTEP 25. Time NOW: 2023-12-03 16:36:10.801278
+[LOG] Interval of :RUNSTEP 25, 0 sec 23227 us.
+[LOG]   Enter: RUNSTEP 26. Time NOW: 2023-12-03 16:36:10.801303
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.801340
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.801475
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.824250
+[LOG] Interval of :Worker Excute model, 0 sec 22775 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.824277
+[LOG] Interval of :Engine Step, 0 sec 22937 us.
+[LOG]   Exit: RUNSTEP 26. Time NOW: 2023-12-03 16:36:10.824385
+[LOG] Interval of :RUNSTEP 26, 0 sec 23082 us.
+[LOG]   Enter: RUNSTEP 27. Time NOW: 2023-12-03 16:36:10.824408
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.824443
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.824563
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.847337
+[LOG] Interval of :Worker Excute model, 0 sec 22774 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.847364
+[LOG] Interval of :Engine Step, 0 sec 22921 us.
+[LOG]   Exit: RUNSTEP 27. Time NOW: 2023-12-03 16:36:10.847473
+[LOG] Interval of :RUNSTEP 27, 0 sec 23065 us.
+[LOG]   Enter: RUNSTEP 28. Time NOW: 2023-12-03 16:36:10.847496
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.847531
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.847650
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.870442
+[LOG] Interval of :Worker Excute model, 0 sec 22792 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.870471
+[LOG] Interval of :Engine Step, 0 sec 22940 us.
+[LOG]   Exit: RUNSTEP 28. Time NOW: 2023-12-03 16:36:10.870584
+[LOG] Interval of :RUNSTEP 28, 0 sec 23088 us.
+[LOG]   Enter: RUNSTEP 29. Time NOW: 2023-12-03 16:36:10.870608
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.870681
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.870805
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.893649
+[LOG] Interval of :Worker Excute model, 0 sec 22844 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.893677
+[LOG] Interval of :Engine Step, 0 sec 22996 us.
+[LOG]   Exit: RUNSTEP 29. Time NOW: 2023-12-03 16:36:10.893785
+[LOG] Interval of :RUNSTEP 29, 0 sec 23177 us.
+[LOG]   Enter: RUNSTEP 30. Time NOW: 2023-12-03 16:36:10.893809
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.893844
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.893964
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.916730
+[LOG] Interval of :Worker Excute model, 0 sec 22766 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.916757
+[LOG] Interval of :Engine Step, 0 sec 22913 us.
+[LOG]   Exit: RUNSTEP 30. Time NOW: 2023-12-03 16:36:10.916867
+[LOG] Interval of :RUNSTEP 30, 0 sec 23058 us.
+[LOG]   Enter: RUNSTEP 31. Time NOW: 2023-12-03 16:36:10.916890
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.916925
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.917045
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.939826
+[LOG] Interval of :Worker Excute model, 0 sec 22781 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.939852
+[LOG] Interval of :Engine Step, 0 sec 22927 us.
+[LOG]   Exit: RUNSTEP 31. Time NOW: 2023-12-03 16:36:10.939961
+[LOG] Interval of :RUNSTEP 31, 0 sec 23071 us.
+[LOG]   Enter: RUNSTEP 32. Time NOW: 2023-12-03 16:36:10.939984
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.940019
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.940140
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.962920
+[LOG] Interval of :Worker Excute model, 0 sec 22780 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.962947
+[LOG] Interval of :Engine Step, 0 sec 22928 us.
+[LOG]   Exit: RUNSTEP 32. Time NOW: 2023-12-03 16:36:10.963058
+[LOG] Interval of :RUNSTEP 32, 0 sec 23074 us.
+[LOG]   Enter: RUNSTEP 33. Time NOW: 2023-12-03 16:36:10.963082
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.963116
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.963236
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:10.986023
+[LOG] Interval of :Worker Excute model, 0 sec 22787 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:10.986051
+[LOG] Interval of :Engine Step, 0 sec 22935 us.
+[LOG]   Exit: RUNSTEP 33. Time NOW: 2023-12-03 16:36:10.986162
+[LOG] Interval of :RUNSTEP 33, 0 sec 23080 us.
+[LOG]   Enter: RUNSTEP 34. Time NOW: 2023-12-03 16:36:10.986185
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:10.986220
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:10.986340
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.009301
+[LOG] Interval of :Worker Excute model, 0 sec 22961 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.009327
+[LOG] Interval of :Engine Step, 0 sec 23107 us.
+[LOG]   Exit: RUNSTEP 34. Time NOW: 2023-12-03 16:36:11.009436
+[LOG] Interval of :RUNSTEP 34, 0 sec 23251 us.
+[LOG]   Enter: RUNSTEP 35. Time NOW: 2023-12-03 16:36:11.009459
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.009494
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.009615
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.032399
+[LOG] Interval of :Worker Excute model, 0 sec 22784 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.032426
+[LOG] Interval of :Engine Step, 0 sec 22932 us.
+[LOG]   Exit: RUNSTEP 35. Time NOW: 2023-12-03 16:36:11.032534
+[LOG] Interval of :RUNSTEP 35, 0 sec 23075 us.
+[LOG]   Enter: RUNSTEP 36. Time NOW: 2023-12-03 16:36:11.032557
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.032591
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.032712
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.055492
+[LOG] Interval of :Worker Excute model, 0 sec 22780 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.055519
+[LOG] Interval of :Engine Step, 0 sec 22928 us.
+[LOG]   Exit: RUNSTEP 36. Time NOW: 2023-12-03 16:36:11.055628
+[LOG] Interval of :RUNSTEP 36, 0 sec 23071 us.
+[LOG]   Enter: RUNSTEP 37. Time NOW: 2023-12-03 16:36:11.055651
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.055685
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.055804
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.078609
+[LOG] Interval of :Worker Excute model, 0 sec 22805 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.078636
+[LOG] Interval of :Engine Step, 0 sec 22951 us.
+[LOG]   Exit: RUNSTEP 37. Time NOW: 2023-12-03 16:36:11.078747
+[LOG] Interval of :RUNSTEP 37, 0 sec 23096 us.
+[LOG]   Enter: RUNSTEP 38. Time NOW: 2023-12-03 16:36:11.078770
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.078805
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.078925
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.101867
+[LOG] Interval of :Worker Excute model, 0 sec 22942 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.101893
+[LOG] Interval of :Engine Step, 0 sec 23088 us.
+[LOG]   Exit: RUNSTEP 38. Time NOW: 2023-12-03 16:36:11.102006
+[LOG] Interval of :RUNSTEP 38, 0 sec 23236 us.
+[LOG]   Enter: RUNSTEP 39. Time NOW: 2023-12-03 16:36:11.102029
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.102063
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.102183
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.124976
+[LOG] Interval of :Worker Excute model, 0 sec 22793 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.125003
+[LOG] Interval of :Engine Step, 0 sec 22940 us.
+[LOG]   Exit: RUNSTEP 39. Time NOW: 2023-12-03 16:36:11.125107
+[LOG] Interval of :RUNSTEP 39, 0 sec 23078 us.
+[LOG]   Enter: RUNSTEP 40. Time NOW: 2023-12-03 16:36:11.125130
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.125165
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.125297
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.148108
+[LOG] Interval of :Worker Excute model, 0 sec 22811 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.148134
+[LOG] Interval of :Engine Step, 0 sec 22969 us.
+[LOG]   Exit: RUNSTEP 40. Time NOW: 2023-12-03 16:36:11.148244
+[LOG] Interval of :RUNSTEP 40, 0 sec 23114 us.
+[LOG]   Enter: RUNSTEP 41. Time NOW: 2023-12-03 16:36:11.148268
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.148303
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.148423
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.171216
+[LOG] Interval of :Worker Excute model, 0 sec 22793 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.171243
+[LOG] Interval of :Engine Step, 0 sec 22940 us.
+[LOG]   Exit: RUNSTEP 41. Time NOW: 2023-12-03 16:36:11.171352
+[LOG] Interval of :RUNSTEP 41, 0 sec 23084 us.
+[LOG]   Enter: RUNSTEP 42. Time NOW: 2023-12-03 16:36:11.171376
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.171410
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.171529
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.194326
+[LOG] Interval of :Worker Excute model, 0 sec 22797 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.194353
+[LOG] Interval of :Engine Step, 0 sec 22943 us.
+[LOG]   Exit: RUNSTEP 42. Time NOW: 2023-12-03 16:36:11.194463
+[LOG] Interval of :RUNSTEP 42, 0 sec 23087 us.
+[LOG]   Enter: RUNSTEP 43. Time NOW: 2023-12-03 16:36:11.194487
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.194522
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.194642
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.217453
+[LOG] Interval of :Worker Excute model, 0 sec 22811 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.217512
+[LOG] Interval of :Engine Step, 0 sec 22990 us.
+[LOG]   Exit: RUNSTEP 43. Time NOW: 2023-12-03 16:36:11.217624
+[LOG] Interval of :RUNSTEP 43, 0 sec 23137 us.
+[LOG]   Enter: RUNSTEP 44. Time NOW: 2023-12-03 16:36:11.217648
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.217690
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.217811
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.240605
+[LOG] Interval of :Worker Excute model, 0 sec 22794 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.240631
+[LOG] Interval of :Engine Step, 0 sec 22941 us.
+[LOG]   Exit: RUNSTEP 44. Time NOW: 2023-12-03 16:36:11.240738
+[LOG] Interval of :RUNSTEP 44, 0 sec 23090 us.
+[LOG]   Enter: RUNSTEP 45. Time NOW: 2023-12-03 16:36:11.240761
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.240796
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.240917
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.263718
+[LOG] Interval of :Worker Excute model, 0 sec 22801 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.263745
+[LOG] Interval of :Engine Step, 0 sec 22949 us.
+[LOG]   Exit: RUNSTEP 45. Time NOW: 2023-12-03 16:36:11.263852
+[LOG] Interval of :RUNSTEP 45, 0 sec 23091 us.
+[LOG]   Enter: RUNSTEP 46. Time NOW: 2023-12-03 16:36:11.263876
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.263911
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.264029
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.286816
+[LOG] Interval of :Worker Excute model, 0 sec 22787 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.286843
+[LOG] Interval of :Engine Step, 0 sec 22932 us.
+[LOG]   Exit: RUNSTEP 46. Time NOW: 2023-12-03 16:36:11.286950
+[LOG] Interval of :RUNSTEP 46, 0 sec 23074 us.
+[LOG]   Enter: RUNSTEP 47. Time NOW: 2023-12-03 16:36:11.286974
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.287008
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.287126
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.309917
+[LOG] Interval of :Worker Excute model, 0 sec 22791 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.309943
+[LOG] Interval of :Engine Step, 0 sec 22935 us.
+[LOG]   Exit: RUNSTEP 47. Time NOW: 2023-12-03 16:36:11.310052
+[LOG] Interval of :RUNSTEP 47, 0 sec 23078 us.
+[LOG]   Enter: RUNSTEP 48. Time NOW: 2023-12-03 16:36:11.310074
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.310109
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.310228
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.333027
+[LOG] Interval of :Worker Excute model, 0 sec 22799 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.333054
+[LOG] Interval of :Engine Step, 0 sec 22945 us.
+[LOG]   Exit: RUNSTEP 48. Time NOW: 2023-12-03 16:36:11.333166
+[LOG] Interval of :RUNSTEP 48, 0 sec 23092 us.
+[LOG]   Enter: RUNSTEP 49. Time NOW: 2023-12-03 16:36:11.333189
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.333230
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.333353
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.356146
+[LOG] Interval of :Worker Excute model, 0 sec 22793 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.356173
+[LOG] Interval of :Engine Step, 0 sec 22943 us.
+[LOG]   Exit: RUNSTEP 49. Time NOW: 2023-12-03 16:36:11.356286
+[LOG] Interval of :RUNSTEP 49, 0 sec 23097 us.
+[LOG]   Enter: RUNSTEP 50. Time NOW: 2023-12-03 16:36:11.356309
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.356345
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.356464
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.379299
+[LOG] Interval of :Worker Excute model, 0 sec 22835 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.379326
+[LOG] Interval of :Engine Step, 0 sec 22981 us.
+[LOG]   Exit: RUNSTEP 50. Time NOW: 2023-12-03 16:36:11.379436
+[LOG] Interval of :RUNSTEP 50, 0 sec 23127 us.
+[LOG]   Enter: RUNSTEP 51. Time NOW: 2023-12-03 16:36:11.379459
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.379493
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.379613
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.402450
+[LOG] Interval of :Worker Excute model, 0 sec 22837 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.402476
+[LOG] Interval of :Engine Step, 0 sec 22983 us.
+[LOG]   Exit: RUNSTEP 51. Time NOW: 2023-12-03 16:36:11.402585
+[LOG] Interval of :RUNSTEP 51, 0 sec 23126 us.
+[LOG]   Enter: RUNSTEP 52. Time NOW: 2023-12-03 16:36:11.402608
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.402644
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.402763
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.425651
+[LOG] Interval of :Worker Excute model, 0 sec 22888 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.425677
+[LOG] Interval of :Engine Step, 0 sec 23033 us.
+[LOG]   Exit: RUNSTEP 52. Time NOW: 2023-12-03 16:36:11.425787
+[LOG] Interval of :RUNSTEP 52, 0 sec 23179 us.
+[LOG]   Enter: RUNSTEP 53. Time NOW: 2023-12-03 16:36:11.425810
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.425846
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.425966
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.448866
+[LOG] Interval of :Worker Excute model, 0 sec 22900 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.448908
+[LOG] Interval of :Engine Step, 0 sec 23062 us.
+[LOG]   Exit: RUNSTEP 53. Time NOW: 2023-12-03 16:36:11.449064
+[LOG] Interval of :RUNSTEP 53, 0 sec 23254 us.
+[LOG]   Enter: RUNSTEP 54. Time NOW: 2023-12-03 16:36:11.449091
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.449133
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.449272
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.472154
+[LOG] Interval of :Worker Excute model, 0 sec 22882 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.472181
+[LOG] Interval of :Engine Step, 0 sec 23048 us.
+[LOG]   Exit: RUNSTEP 54. Time NOW: 2023-12-03 16:36:11.472302
+[LOG] Interval of :RUNSTEP 54, 0 sec 23211 us.
+[LOG]   Enter: RUNSTEP 55. Time NOW: 2023-12-03 16:36:11.472327
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.472364
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.472489
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.495349
+[LOG] Interval of :Worker Excute model, 0 sec 22860 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.495377
+[LOG] Interval of :Engine Step, 0 sec 23013 us.
+[LOG]   Exit: RUNSTEP 55. Time NOW: 2023-12-03 16:36:11.495491
+[LOG] Interval of :RUNSTEP 55, 0 sec 23164 us.
+[LOG]   Enter: RUNSTEP 56. Time NOW: 2023-12-03 16:36:11.495515
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.495551
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.495674
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.518604
+[LOG] Interval of :Worker Excute model, 0 sec 22930 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.518632
+[LOG] Interval of :Engine Step, 0 sec 23081 us.
+[LOG]   Exit: RUNSTEP 56. Time NOW: 2023-12-03 16:36:11.518747
+[LOG] Interval of :RUNSTEP 56, 0 sec 23232 us.
+[LOG]   Enter: RUNSTEP 57. Time NOW: 2023-12-03 16:36:11.518771
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.518808
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.518932
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.541792
+[LOG] Interval of :Worker Excute model, 0 sec 22860 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.541820
+[LOG] Interval of :Engine Step, 0 sec 23012 us.
+[LOG]   Exit: RUNSTEP 57. Time NOW: 2023-12-03 16:36:11.541934
+[LOG] Interval of :RUNSTEP 57, 0 sec 23163 us.
+[LOG]   Enter: RUNSTEP 58. Time NOW: 2023-12-03 16:36:11.541959
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.542042
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.542179
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.565040
+[LOG] Interval of :Worker Excute model, 0 sec 22861 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.565067
+[LOG] Interval of :Engine Step, 0 sec 23025 us.
+[LOG]   Exit: RUNSTEP 58. Time NOW: 2023-12-03 16:36:11.565182
+[LOG] Interval of :RUNSTEP 58, 0 sec 23223 us.
+[LOG]   Enter: RUNSTEP 59. Time NOW: 2023-12-03 16:36:11.565212
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.565249
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.565379
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.588246
+[LOG] Interval of :Worker Excute model, 0 sec 22867 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.588275
+[LOG] Interval of :Engine Step, 0 sec 23026 us.
+[LOG]   Exit: RUNSTEP 59. Time NOW: 2023-12-03 16:36:11.588388
+[LOG] Interval of :RUNSTEP 59, 0 sec 23176 us.
+[LOG]   Enter: RUNSTEP 60. Time NOW: 2023-12-03 16:36:11.588412
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.588449
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.588576
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.611433
+[LOG] Interval of :Worker Excute model, 0 sec 22857 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.611462
+[LOG] Interval of :Engine Step, 0 sec 23013 us.
+[LOG]   Exit: RUNSTEP 60. Time NOW: 2023-12-03 16:36:11.611574
+[LOG] Interval of :RUNSTEP 60, 0 sec 23162 us.
+[LOG]   Enter: RUNSTEP 61. Time NOW: 2023-12-03 16:36:11.611599
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.611739
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.611863
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.634760
+[LOG] Interval of :Worker Excute model, 0 sec 22897 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.634792
+[LOG] Interval of :Engine Step, 0 sec 23053 us.
+[LOG]   Exit: RUNSTEP 61. Time NOW: 2023-12-03 16:36:11.634920
+[LOG] Interval of :RUNSTEP 61, 0 sec 23321 us.
+[LOG]   Enter: RUNSTEP 62. Time NOW: 2023-12-03 16:36:11.634945
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.634984
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.635111
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.657969
+[LOG] Interval of :Worker Excute model, 0 sec 22858 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.657997
+[LOG] Interval of :Engine Step, 0 sec 23013 us.
+[LOG]   Exit: RUNSTEP 62. Time NOW: 2023-12-03 16:36:11.658112
+[LOG] Interval of :RUNSTEP 62, 0 sec 23167 us.
+[LOG]   Enter: RUNSTEP 63. Time NOW: 2023-12-03 16:36:11.658136
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.658172
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.658298
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.681145
+[LOG] Interval of :Worker Excute model, 0 sec 22847 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.681173
+[LOG] Interval of :Engine Step, 0 sec 23001 us.
+[LOG]   Exit: RUNSTEP 63. Time NOW: 2023-12-03 16:36:11.681491
+[LOG] Interval of :RUNSTEP 63, 0 sec 23355 us.
+[LOG] Exit: 1 th request for batch size = 2. Time NOW: 2023-12-03 16:36:11.681652
+[LOG] Interval of :1 th request for batch size = 2, 1 sec 488213 us.
+max tokens: 64. Time cost for batch size = 2 : 1.4882 s
+
+Prompt: 'What are the risks of having high blood pressure?' 
+Generated text: '\n\nThe greatest risk for most people with high blood pressure is that it will progress to heart disease. The best way to avoid heart disease is to keep your blood pressure under control.\n\nIf your blood pressure is very high, you may be at higher risk for stroke. High blood pressure can also be a risk'
+
+Prompt: 'What is bronchiolitis and who is most susceptible to it?' 
+Generated text: '\nIt is a viral infection of the lungs, usually caused by bacteria. Children aged five to 14 years are most at risk of developing the infection.\nIn the UK, it affects about 2,000 children every year.\nSome of the symptoms include a cough which gets worse at night and is often worse in the'
+[LOG] Enter: 2 th request for batch size = 4. Time NOW: 2023-12-03 16:36:11.681692
+[LOG]   Enter: RUNSTEP 0. Time NOW: 2023-12-03 16:36:11.682342
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.682399
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.682530
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.708028
+[LOG] Interval of :Worker Excute model, 0 sec 25498 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.708058
+[LOG] Interval of :Engine Step, 0 sec 25659 us.
+[LOG]   Exit: RUNSTEP 0. Time NOW: 2023-12-03 16:36:11.708543
+[LOG] Interval of :RUNSTEP 0, 0 sec 26201 us.
+[LOG]   Enter: RUNSTEP 1. Time NOW: 2023-12-03 16:36:11.708569
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.708616
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.708746
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.731616
+[LOG] Interval of :Worker Excute model, 0 sec 22870 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.731644
+[LOG] Interval of :Engine Step, 0 sec 23028 us.
+[LOG]   Exit: RUNSTEP 1. Time NOW: 2023-12-03 16:36:11.731823
+[LOG] Interval of :RUNSTEP 1, 0 sec 23254 us.
+[LOG]   Enter: RUNSTEP 2. Time NOW: 2023-12-03 16:36:11.731848
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.731895
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.732023
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.754893
+[LOG] Interval of :Worker Excute model, 0 sec 22870 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.754921
+[LOG] Interval of :Engine Step, 0 sec 23026 us.
+[LOG]   Exit: RUNSTEP 2. Time NOW: 2023-12-03 16:36:11.755083
+[LOG] Interval of :RUNSTEP 2, 0 sec 23235 us.
+[LOG]   Enter: RUNSTEP 3. Time NOW: 2023-12-03 16:36:11.755107
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.755153
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.755281
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.778145
+[LOG] Interval of :Worker Excute model, 0 sec 22864 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.778173
+[LOG] Interval of :Engine Step, 0 sec 23020 us.
+[LOG]   Exit: RUNSTEP 3. Time NOW: 2023-12-03 16:36:11.778341
+[LOG] Interval of :RUNSTEP 3, 0 sec 23234 us.
+[LOG]   Enter: RUNSTEP 4. Time NOW: 2023-12-03 16:36:11.778365
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.778410
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.778538
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.801421
+[LOG] Interval of :Worker Excute model, 0 sec 22883 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.801448
+[LOG] Interval of :Engine Step, 0 sec 23038 us.
+[LOG]   Exit: RUNSTEP 4. Time NOW: 2023-12-03 16:36:11.801612
+[LOG] Interval of :RUNSTEP 4, 0 sec 23247 us.
+[LOG]   Enter: RUNSTEP 5. Time NOW: 2023-12-03 16:36:11.801636
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.801683
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.801811
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.824668
+[LOG] Interval of :Worker Excute model, 0 sec 22857 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.824696
+[LOG] Interval of :Engine Step, 0 sec 23013 us.
+[LOG]   Exit: RUNSTEP 5. Time NOW: 2023-12-03 16:36:11.824858
+[LOG] Interval of :RUNSTEP 5, 0 sec 23222 us.
+[LOG]   Enter: RUNSTEP 6. Time NOW: 2023-12-03 16:36:11.824881
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.824927
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.825050
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.848054
+[LOG] Interval of :Worker Excute model, 0 sec 23004 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.848081
+[LOG] Interval of :Engine Step, 0 sec 23154 us.
+[LOG]   Exit: RUNSTEP 6. Time NOW: 2023-12-03 16:36:11.848240
+[LOG] Interval of :RUNSTEP 6, 0 sec 23359 us.
+[LOG]   Enter: RUNSTEP 7. Time NOW: 2023-12-03 16:36:11.848264
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.848308
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.848433
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.871295
+[LOG] Interval of :Worker Excute model, 0 sec 22862 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.871322
+[LOG] Interval of :Engine Step, 0 sec 23014 us.
+[LOG]   Exit: RUNSTEP 7. Time NOW: 2023-12-03 16:36:11.871481
+[LOG] Interval of :RUNSTEP 7, 0 sec 23217 us.
+[LOG]   Enter: RUNSTEP 8. Time NOW: 2023-12-03 16:36:11.871504
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.871549
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.871673
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.894549
+[LOG] Interval of :Worker Excute model, 0 sec 22876 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.894576
+[LOG] Interval of :Engine Step, 0 sec 23027 us.
+[LOG]   Exit: RUNSTEP 8. Time NOW: 2023-12-03 16:36:11.894732
+[LOG] Interval of :RUNSTEP 8, 0 sec 23228 us.
+[LOG]   Enter: RUNSTEP 9. Time NOW: 2023-12-03 16:36:11.894755
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.894800
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.894924
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.917784
+[LOG] Interval of :Worker Excute model, 0 sec 22860 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.917811
+[LOG] Interval of :Engine Step, 0 sec 23011 us.
+[LOG]   Exit: RUNSTEP 9. Time NOW: 2023-12-03 16:36:11.918106
+[LOG] Interval of :RUNSTEP 9, 0 sec 23351 us.
+[LOG]   Enter: RUNSTEP 10. Time NOW: 2023-12-03 16:36:11.918133
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.918177
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.918303
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.941120
+[LOG] Interval of :Worker Excute model, 0 sec 22817 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.941147
+[LOG] Interval of :Engine Step, 0 sec 22970 us.
+[LOG]   Exit: RUNSTEP 10. Time NOW: 2023-12-03 16:36:11.941306
+[LOG] Interval of :RUNSTEP 10, 0 sec 23173 us.
+[LOG]   Enter: RUNSTEP 11. Time NOW: 2023-12-03 16:36:11.941335
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.941376
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.941507
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.964317
+[LOG] Interval of :Worker Excute model, 0 sec 22810 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.964344
+[LOG] Interval of :Engine Step, 0 sec 22968 us.
+[LOG]   Exit: RUNSTEP 11. Time NOW: 2023-12-03 16:36:11.964477
+[LOG] Interval of :RUNSTEP 11, 0 sec 23142 us.
+[LOG]   Enter: RUNSTEP 12. Time NOW: 2023-12-03 16:36:11.964500
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.964540
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.964662
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:11.987480
+[LOG] Interval of :Worker Excute model, 0 sec 22818 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:11.987508
+[LOG] Interval of :Engine Step, 0 sec 22968 us.
+[LOG]   Exit: RUNSTEP 12. Time NOW: 2023-12-03 16:36:11.987642
+[LOG] Interval of :RUNSTEP 12, 0 sec 23142 us.
+[LOG]   Enter: RUNSTEP 13. Time NOW: 2023-12-03 16:36:11.987666
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:11.987706
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:11.987826
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.010650
+[LOG] Interval of :Worker Excute model, 0 sec 22824 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.010677
+[LOG] Interval of :Engine Step, 0 sec 22971 us.
+[LOG]   Exit: RUNSTEP 13. Time NOW: 2023-12-03 16:36:12.010812
+[LOG] Interval of :RUNSTEP 13, 0 sec 23146 us.
+[LOG]   Enter: RUNSTEP 14. Time NOW: 2023-12-03 16:36:12.010836
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.010876
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.011000
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.033820
+[LOG] Interval of :Worker Excute model, 0 sec 22820 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.033879
+[LOG] Interval of :Engine Step, 0 sec 23003 us.
+[LOG]   Exit: RUNSTEP 14. Time NOW: 2023-12-03 16:36:12.034034
+[LOG] Interval of :RUNSTEP 14, 0 sec 23198 us.
+[LOG]   Enter: RUNSTEP 15. Time NOW: 2023-12-03 16:36:12.034059
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.034101
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.034230
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.057220
+[LOG] Interval of :Worker Excute model, 0 sec 22990 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.057248
+[LOG] Interval of :Engine Step, 0 sec 23147 us.
+[LOG]   Exit: RUNSTEP 15. Time NOW: 2023-12-03 16:36:12.057384
+[LOG] Interval of :RUNSTEP 15, 0 sec 23325 us.
+[LOG]   Enter: RUNSTEP 16. Time NOW: 2023-12-03 16:36:12.057407
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.057453
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.057576
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.080383
+[LOG] Interval of :Worker Excute model, 0 sec 22807 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.080410
+[LOG] Interval of :Engine Step, 0 sec 22957 us.
+[LOG]   Exit: RUNSTEP 16. Time NOW: 2023-12-03 16:36:12.080546
+[LOG] Interval of :RUNSTEP 16, 0 sec 23139 us.
+[LOG]   Enter: RUNSTEP 17. Time NOW: 2023-12-03 16:36:12.080568
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.080609
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.080731
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.103555
+[LOG] Interval of :Worker Excute model, 0 sec 22824 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.103583
+[LOG] Interval of :Engine Step, 0 sec 22974 us.
+[LOG]   Exit: RUNSTEP 17. Time NOW: 2023-12-03 16:36:12.103722
+[LOG] Interval of :RUNSTEP 17, 0 sec 23154 us.
+[LOG]   Enter: RUNSTEP 18. Time NOW: 2023-12-03 16:36:12.103746
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.103787
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.103908
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.126736
+[LOG] Interval of :Worker Excute model, 0 sec 22828 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.126763
+[LOG] Interval of :Engine Step, 0 sec 22976 us.
+[LOG]   Exit: RUNSTEP 18. Time NOW: 2023-12-03 16:36:12.126899
+[LOG] Interval of :RUNSTEP 18, 0 sec 23153 us.
+[LOG]   Enter: RUNSTEP 19. Time NOW: 2023-12-03 16:36:12.126922
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.126962
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.127085
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.150029
+[LOG] Interval of :Worker Excute model, 0 sec 22944 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.150056
+[LOG] Interval of :Engine Step, 0 sec 23094 us.
+[LOG]   Exit: RUNSTEP 19. Time NOW: 2023-12-03 16:36:12.150189
+[LOG] Interval of :RUNSTEP 19, 0 sec 23267 us.
+[LOG]   Enter: RUNSTEP 20. Time NOW: 2023-12-03 16:36:12.150213
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.150252
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.150374
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.173228
+[LOG] Interval of :Worker Excute model, 0 sec 22854 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.173261
+[LOG] Interval of :Engine Step, 0 sec 23009 us.
+[LOG]   Exit: RUNSTEP 20. Time NOW: 2023-12-03 16:36:12.173406
+[LOG] Interval of :RUNSTEP 20, 0 sec 23193 us.
+[LOG]   Enter: RUNSTEP 21. Time NOW: 2023-12-03 16:36:12.173431
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.173474
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.173602
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.196542
+[LOG] Interval of :Worker Excute model, 0 sec 22940 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.196588
+[LOG] Interval of :Engine Step, 0 sec 23114 us.
+[LOG]   Exit: RUNSTEP 21. Time NOW: 2023-12-03 16:36:12.196780
+[LOG] Interval of :RUNSTEP 21, 0 sec 23349 us.
+[LOG]   Enter: RUNSTEP 22. Time NOW: 2023-12-03 16:36:12.196806
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.196855
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.196992
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.219932
+[LOG] Interval of :Worker Excute model, 0 sec 22940 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.219965
+[LOG] Interval of :Engine Step, 0 sec 23110 us.
+[LOG]   Exit: RUNSTEP 22. Time NOW: 2023-12-03 16:36:12.220123
+[LOG] Interval of :RUNSTEP 22, 0 sec 23317 us.
+[LOG]   Enter: RUNSTEP 23. Time NOW: 2023-12-03 16:36:12.220148
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.220194
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.220326
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.243275
+[LOG] Interval of :Worker Excute model, 0 sec 22949 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.243326
+[LOG] Interval of :Engine Step, 0 sec 23132 us.
+[LOG]   Exit: RUNSTEP 23. Time NOW: 2023-12-03 16:36:12.243508
+[LOG] Interval of :RUNSTEP 23, 0 sec 23360 us.
+[LOG]   Enter: RUNSTEP 24. Time NOW: 2023-12-03 16:36:12.243535
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.243584
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.243722
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.266710
+[LOG] Interval of :Worker Excute model, 0 sec 22988 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.266758
+[LOG] Interval of :Engine Step, 0 sec 23174 us.
+[LOG]   Exit: RUNSTEP 24. Time NOW: 2023-12-03 16:36:12.266947
+[LOG] Interval of :RUNSTEP 24, 0 sec 23412 us.
+[LOG]   Enter: RUNSTEP 25. Time NOW: 2023-12-03 16:36:12.266974
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.267024
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.267162
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.290119
+[LOG] Interval of :Worker Excute model, 0 sec 22957 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.290157
+[LOG] Interval of :Engine Step, 0 sec 23133 us.
+[LOG]   Exit: RUNSTEP 25. Time NOW: 2023-12-03 16:36:12.290329
+[LOG] Interval of :RUNSTEP 25, 0 sec 23355 us.
+[LOG]   Enter: RUNSTEP 26. Time NOW: 2023-12-03 16:36:12.290354
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.290401
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.290534
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.313422
+[LOG] Interval of :Worker Excute model, 0 sec 22888 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.313450
+[LOG] Interval of :Engine Step, 0 sec 23049 us.
+[LOG]   Exit: RUNSTEP 26. Time NOW: 2023-12-03 16:36:12.313589
+[LOG] Interval of :RUNSTEP 26, 0 sec 23235 us.
+[LOG]   Enter: RUNSTEP 27. Time NOW: 2023-12-03 16:36:12.313613
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.313656
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.313783
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.336633
+[LOG] Interval of :Worker Excute model, 0 sec 22850 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.336661
+[LOG] Interval of :Engine Step, 0 sec 23005 us.
+[LOG]   Exit: RUNSTEP 27. Time NOW: 2023-12-03 16:36:12.336797
+[LOG] Interval of :RUNSTEP 27, 0 sec 23184 us.
+[LOG]   Enter: RUNSTEP 28. Time NOW: 2023-12-03 16:36:12.336821
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.336862
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.336987
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.359844
+[LOG] Interval of :Worker Excute model, 0 sec 22857 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.359872
+[LOG] Interval of :Engine Step, 0 sec 23010 us.
+[LOG]   Exit: RUNSTEP 28. Time NOW: 2023-12-03 16:36:12.360008
+[LOG] Interval of :RUNSTEP 28, 0 sec 23187 us.
+[LOG]   Enter: RUNSTEP 29. Time NOW: 2023-12-03 16:36:12.360031
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.360122
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.360261
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.383116
+[LOG] Interval of :Worker Excute model, 0 sec 22855 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.383143
+[LOG] Interval of :Engine Step, 0 sec 23021 us.
+[LOG]   Exit: RUNSTEP 29. Time NOW: 2023-12-03 16:36:12.383281
+[LOG] Interval of :RUNSTEP 29, 0 sec 23250 us.
+[LOG]   Enter: RUNSTEP 30. Time NOW: 2023-12-03 16:36:12.383305
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.383346
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.383471
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.406345
+[LOG] Interval of :Worker Excute model, 0 sec 22874 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.406374
+[LOG] Interval of :Engine Step, 0 sec 23028 us.
+[LOG]   Exit: RUNSTEP 30. Time NOW: 2023-12-03 16:36:12.406516
+[LOG] Interval of :RUNSTEP 30, 0 sec 23211 us.
+[LOG]   Enter: RUNSTEP 31. Time NOW: 2023-12-03 16:36:12.406540
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.406583
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.406708
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.429570
+[LOG] Interval of :Worker Excute model, 0 sec 22862 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.429599
+[LOG] Interval of :Engine Step, 0 sec 23016 us.
+[LOG]   Exit: RUNSTEP 31. Time NOW: 2023-12-03 16:36:12.429740
+[LOG] Interval of :RUNSTEP 31, 0 sec 23200 us.
+[LOG]   Enter: RUNSTEP 32. Time NOW: 2023-12-03 16:36:12.429764
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.429806
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.429931
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.452785
+[LOG] Interval of :Worker Excute model, 0 sec 22854 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.452813
+[LOG] Interval of :Engine Step, 0 sec 23007 us.
+[LOG]   Exit: RUNSTEP 32. Time NOW: 2023-12-03 16:36:12.452957
+[LOG] Interval of :RUNSTEP 32, 0 sec 23193 us.
+[LOG]   Enter: RUNSTEP 33. Time NOW: 2023-12-03 16:36:12.452981
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.453023
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.453151
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.476020
+[LOG] Interval of :Worker Excute model, 0 sec 22869 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.476048
+[LOG] Interval of :Engine Step, 0 sec 23025 us.
+[LOG]   Exit: RUNSTEP 33. Time NOW: 2023-12-03 16:36:12.476185
+[LOG] Interval of :RUNSTEP 33, 0 sec 23204 us.
+[LOG]   Enter: RUNSTEP 34. Time NOW: 2023-12-03 16:36:12.476209
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.476250
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.476373
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.499234
+[LOG] Interval of :Worker Excute model, 0 sec 22861 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.499262
+[LOG] Interval of :Engine Step, 0 sec 23012 us.
+[LOG]   Exit: RUNSTEP 34. Time NOW: 2023-12-03 16:36:12.499403
+[LOG] Interval of :RUNSTEP 34, 0 sec 23194 us.
+[LOG]   Enter: RUNSTEP 35. Time NOW: 2023-12-03 16:36:12.499427
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.499470
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.499596
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.522477
+[LOG] Interval of :Worker Excute model, 0 sec 22881 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.522505
+[LOG] Interval of :Engine Step, 0 sec 23035 us.
+[LOG]   Exit: RUNSTEP 35. Time NOW: 2023-12-03 16:36:12.522647
+[LOG] Interval of :RUNSTEP 35, 0 sec 23220 us.
+[LOG]   Enter: RUNSTEP 36. Time NOW: 2023-12-03 16:36:12.522672
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.522715
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.522842
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.545715
+[LOG] Interval of :Worker Excute model, 0 sec 22873 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.545743
+[LOG] Interval of :Engine Step, 0 sec 23028 us.
+[LOG]   Exit: RUNSTEP 36. Time NOW: 2023-12-03 16:36:12.545885
+[LOG] Interval of :RUNSTEP 36, 0 sec 23213 us.
+[LOG]   Enter: RUNSTEP 37. Time NOW: 2023-12-03 16:36:12.545909
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.545952
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.546078
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.568953
+[LOG] Interval of :Worker Excute model, 0 sec 22875 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.568981
+[LOG] Interval of :Engine Step, 0 sec 23029 us.
+[LOG]   Exit: RUNSTEP 37. Time NOW: 2023-12-03 16:36:12.569127
+[LOG] Interval of :RUNSTEP 37, 0 sec 23218 us.
+[LOG]   Enter: RUNSTEP 38. Time NOW: 2023-12-03 16:36:12.569151
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.569206
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.569335
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.592230
+[LOG] Interval of :Worker Excute model, 0 sec 22895 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.592259
+[LOG] Interval of :Engine Step, 0 sec 23053 us.
+[LOG]   Exit: RUNSTEP 38. Time NOW: 2023-12-03 16:36:12.592410
+[LOG] Interval of :RUNSTEP 38, 0 sec 23259 us.
+[LOG]   Enter: RUNSTEP 39. Time NOW: 2023-12-03 16:36:12.592436
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.592478
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.592607
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.615528
+[LOG] Interval of :Worker Excute model, 0 sec 22921 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.615556
+[LOG] Interval of :Engine Step, 0 sec 23078 us.
+[LOG]   Exit: RUNSTEP 39. Time NOW: 2023-12-03 16:36:12.615700
+[LOG] Interval of :RUNSTEP 39, 0 sec 23264 us.
+[LOG]   Enter: RUNSTEP 40. Time NOW: 2023-12-03 16:36:12.615724
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.615767
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.615896
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.638795
+[LOG] Interval of :Worker Excute model, 0 sec 22899 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.638824
+[LOG] Interval of :Engine Step, 0 sec 23057 us.
+[LOG]   Exit: RUNSTEP 40. Time NOW: 2023-12-03 16:36:12.638965
+[LOG] Interval of :RUNSTEP 40, 0 sec 23241 us.
+[LOG]   Enter: RUNSTEP 41. Time NOW: 2023-12-03 16:36:12.638989
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.639031
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.639158
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.662062
+[LOG] Interval of :Worker Excute model, 0 sec 22904 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.662090
+[LOG] Interval of :Engine Step, 0 sec 23059 us.
+[LOG]   Exit: RUNSTEP 41. Time NOW: 2023-12-03 16:36:12.662233
+[LOG] Interval of :RUNSTEP 41, 0 sec 23244 us.
+[LOG]   Enter: RUNSTEP 42. Time NOW: 2023-12-03 16:36:12.662258
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.662301
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.662428
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.685329
+[LOG] Interval of :Worker Excute model, 0 sec 22901 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.685357
+[LOG] Interval of :Engine Step, 0 sec 23056 us.
+[LOG]   Exit: RUNSTEP 42. Time NOW: 2023-12-03 16:36:12.685502
+[LOG] Interval of :RUNSTEP 42, 0 sec 23244 us.
+[LOG]   Enter: RUNSTEP 43. Time NOW: 2023-12-03 16:36:12.685527
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.685570
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.685696
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.708582
+[LOG] Interval of :Worker Excute model, 0 sec 22886 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.708649
+[LOG] Interval of :Engine Step, 0 sec 23079 us.
+[LOG]   Exit: RUNSTEP 43. Time NOW: 2023-12-03 16:36:12.708804
+[LOG] Interval of :RUNSTEP 43, 0 sec 23277 us.
+[LOG]   Enter: RUNSTEP 44. Time NOW: 2023-12-03 16:36:12.708829
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.708871
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.708999
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.731898
+[LOG] Interval of :Worker Excute model, 0 sec 22899 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.731926
+[LOG] Interval of :Engine Step, 0 sec 23055 us.
+[LOG]   Exit: RUNSTEP 44. Time NOW: 2023-12-03 16:36:12.732069
+[LOG] Interval of :RUNSTEP 44, 0 sec 23240 us.
+[LOG]   Enter: RUNSTEP 45. Time NOW: 2023-12-03 16:36:12.732094
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.732137
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.732264
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.755155
+[LOG] Interval of :Worker Excute model, 0 sec 22891 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.755184
+[LOG] Interval of :Engine Step, 0 sec 23047 us.
+[LOG]   Exit: RUNSTEP 45. Time NOW: 2023-12-03 16:36:12.755328
+[LOG] Interval of :RUNSTEP 45, 0 sec 23234 us.
+[LOG]   Enter: RUNSTEP 46. Time NOW: 2023-12-03 16:36:12.755353
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.755395
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.755523
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.778413
+[LOG] Interval of :Worker Excute model, 0 sec 22890 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.778442
+[LOG] Interval of :Engine Step, 0 sec 23047 us.
+[LOG]   Exit: RUNSTEP 46. Time NOW: 2023-12-03 16:36:12.778585
+[LOG] Interval of :RUNSTEP 46, 0 sec 23232 us.
+[LOG]   Enter: RUNSTEP 47. Time NOW: 2023-12-03 16:36:12.778611
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.778654
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.778782
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.801677
+[LOG] Interval of :Worker Excute model, 0 sec 22895 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.801705
+[LOG] Interval of :Engine Step, 0 sec 23051 us.
+[LOG]   Exit: RUNSTEP 47. Time NOW: 2023-12-03 16:36:12.801850
+[LOG] Interval of :RUNSTEP 47, 0 sec 23239 us.
+[LOG]   Enter: RUNSTEP 48. Time NOW: 2023-12-03 16:36:12.801874
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.801916
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.802043
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.824946
+[LOG] Interval of :Worker Excute model, 0 sec 22903 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.824974
+[LOG] Interval of :Engine Step, 0 sec 23058 us.
+[LOG]   Exit: RUNSTEP 48. Time NOW: 2023-12-03 16:36:12.825113
+[LOG] Interval of :RUNSTEP 48, 0 sec 23239 us.
+[LOG]   Enter: RUNSTEP 49. Time NOW: 2023-12-03 16:36:12.825138
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.825181
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.825312
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.848200
+[LOG] Interval of :Worker Excute model, 0 sec 22888 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.848228
+[LOG] Interval of :Engine Step, 0 sec 23047 us.
+[LOG]   Exit: RUNSTEP 49. Time NOW: 2023-12-03 16:36:12.848373
+[LOG] Interval of :RUNSTEP 49, 0 sec 23235 us.
+[LOG]   Enter: RUNSTEP 50. Time NOW: 2023-12-03 16:36:12.848398
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.848441
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.848568
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.871492
+[LOG] Interval of :Worker Excute model, 0 sec 22924 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.871521
+[LOG] Interval of :Engine Step, 0 sec 23080 us.
+[LOG]   Exit: RUNSTEP 50. Time NOW: 2023-12-03 16:36:12.871662
+[LOG] Interval of :RUNSTEP 50, 0 sec 23264 us.
+[LOG]   Enter: RUNSTEP 51. Time NOW: 2023-12-03 16:36:12.871687
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.871730
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.871858
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.894779
+[LOG] Interval of :Worker Excute model, 0 sec 22921 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.894808
+[LOG] Interval of :Engine Step, 0 sec 23078 us.
+[LOG]   Exit: RUNSTEP 51. Time NOW: 2023-12-03 16:36:12.894951
+[LOG] Interval of :RUNSTEP 51, 0 sec 23264 us.
+[LOG]   Enter: RUNSTEP 52. Time NOW: 2023-12-03 16:36:12.894976
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.895020
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.895147
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.918076
+[LOG] Interval of :Worker Excute model, 0 sec 22929 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.918104
+[LOG] Interval of :Engine Step, 0 sec 23084 us.
+[LOG]   Exit: RUNSTEP 52. Time NOW: 2023-12-03 16:36:12.918246
+[LOG] Interval of :RUNSTEP 52, 0 sec 23270 us.
+[LOG]   Enter: RUNSTEP 53. Time NOW: 2023-12-03 16:36:12.918271
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.918314
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.918441
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.941376
+[LOG] Interval of :Worker Excute model, 0 sec 22935 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.941405
+[LOG] Interval of :Engine Step, 0 sec 23091 us.
+[LOG]   Exit: RUNSTEP 53. Time NOW: 2023-12-03 16:36:12.941550
+[LOG] Interval of :RUNSTEP 53, 0 sec 23279 us.
+[LOG]   Enter: RUNSTEP 54. Time NOW: 2023-12-03 16:36:12.941575
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.941618
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.941745
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.964688
+[LOG] Interval of :Worker Excute model, 0 sec 22943 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.964716
+[LOG] Interval of :Engine Step, 0 sec 23098 us.
+[LOG]   Exit: RUNSTEP 54. Time NOW: 2023-12-03 16:36:12.964857
+[LOG] Interval of :RUNSTEP 54, 0 sec 23282 us.
+[LOG]   Enter: RUNSTEP 55. Time NOW: 2023-12-03 16:36:12.964881
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.964925
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.965053
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:12.988014
+[LOG] Interval of :Worker Excute model, 0 sec 22961 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:12.988041
+[LOG] Interval of :Engine Step, 0 sec 23116 us.
+[LOG]   Exit: RUNSTEP 55. Time NOW: 2023-12-03 16:36:12.988182
+[LOG] Interval of :RUNSTEP 55, 0 sec 23301 us.
+[LOG]   Enter: RUNSTEP 56. Time NOW: 2023-12-03 16:36:12.988207
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:12.988249
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:12.988376
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.011325
+[LOG] Interval of :Worker Excute model, 0 sec 22949 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.011354
+[LOG] Interval of :Engine Step, 0 sec 23105 us.
+[LOG]   Exit: RUNSTEP 56. Time NOW: 2023-12-03 16:36:13.011494
+[LOG] Interval of :RUNSTEP 56, 0 sec 23287 us.
+[LOG]   Enter: RUNSTEP 57. Time NOW: 2023-12-03 16:36:13.011519
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.011561
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.011690
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.034638
+[LOG] Interval of :Worker Excute model, 0 sec 22948 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.034666
+[LOG] Interval of :Engine Step, 0 sec 23105 us.
+[LOG]   Exit: RUNSTEP 57. Time NOW: 2023-12-03 16:36:13.034808
+[LOG] Interval of :RUNSTEP 57, 0 sec 23289 us.
+[LOG]   Enter: RUNSTEP 58. Time NOW: 2023-12-03 16:36:13.034833
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.034915
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.035056
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.058001
+[LOG] Interval of :Worker Excute model, 0 sec 22945 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.058030
+[LOG] Interval of :Engine Step, 0 sec 23115 us.
+[LOG]   Exit: RUNSTEP 58. Time NOW: 2023-12-03 16:36:13.058172
+[LOG] Interval of :RUNSTEP 58, 0 sec 23339 us.
+[LOG]   Enter: RUNSTEP 59. Time NOW: 2023-12-03 16:36:13.058198
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.058241
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.058368
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.081328
+[LOG] Interval of :Worker Excute model, 0 sec 22960 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.081357
+[LOG] Interval of :Engine Step, 0 sec 23116 us.
+[LOG]   Exit: RUNSTEP 59. Time NOW: 2023-12-03 16:36:13.081500
+[LOG] Interval of :RUNSTEP 59, 0 sec 23302 us.
+[LOG]   Enter: RUNSTEP 60. Time NOW: 2023-12-03 16:36:13.081526
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.081568
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.081697
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.104640
+[LOG] Interval of :Worker Excute model, 0 sec 22943 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.104668
+[LOG] Interval of :Engine Step, 0 sec 23100 us.
+[LOG]   Exit: RUNSTEP 60. Time NOW: 2023-12-03 16:36:13.104811
+[LOG] Interval of :RUNSTEP 60, 0 sec 23285 us.
+[LOG]   Enter: RUNSTEP 61. Time NOW: 2023-12-03 16:36:13.104836
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.104878
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.105005
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.127946
+[LOG] Interval of :Worker Excute model, 0 sec 22941 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.127974
+[LOG] Interval of :Engine Step, 0 sec 23096 us.
+[LOG]   Exit: RUNSTEP 61. Time NOW: 2023-12-03 16:36:13.128117
+[LOG] Interval of :RUNSTEP 61, 0 sec 23281 us.
+[LOG]   Enter: RUNSTEP 62. Time NOW: 2023-12-03 16:36:13.128143
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.128186
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.128313
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.151284
+[LOG] Interval of :Worker Excute model, 0 sec 22971 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.151313
+[LOG] Interval of :Engine Step, 0 sec 23127 us.
+[LOG]   Exit: RUNSTEP 62. Time NOW: 2023-12-03 16:36:13.151458
+[LOG] Interval of :RUNSTEP 62, 0 sec 23315 us.
+[LOG]   Enter: RUNSTEP 63. Time NOW: 2023-12-03 16:36:13.151483
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.151526
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.151654
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.174606
+[LOG] Interval of :Worker Excute model, 0 sec 22952 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.174634
+[LOG] Interval of :Engine Step, 0 sec 23108 us.
+[LOG]   Exit: RUNSTEP 63. Time NOW: 2023-12-03 16:36:13.174950
+[LOG] Interval of :RUNSTEP 63, 0 sec 23467 us.
+[LOG] Exit: 2 th request for batch size = 4. Time NOW: 2023-12-03 16:36:13.175099
+[LOG] Interval of :2 th request for batch size = 4, 1 sec 493407 us.
+max tokens: 64. Time cost for batch size = 4 : 1.4934 s
+
+Prompt: 'What are the risks of having high blood pressure?' 
+Generated text: '\ncaption Having high blood pressure could increase your risk of heart attack and stroke. source Getty\nHigh blood pressure, or hypertension, is a serious medical condition that affects tens of millions of Americans.\nHaving hypertension puts you at an increased risk of heart attack and stroke, according to the Centers for Disease Control and Prevention'
+
+Prompt: 'What is bronchiolitis and who is most susceptible to it?' 
+Generated text: '\nDURHAM, N.C. -- Air pollution is associated with an increased risk of acute respiratory infections, including bronchiolitis, a common respiratory condition affecting young children, according to a study published today in the Journal of Allergy and Clinical Immunology: In Practice, a journal of the American College of'
+
+Prompt: 'What treatments are available for bronchiolitis?' 
+Generated text: '\n\nThere are a number of treatments available for bronchiolitis. The two most common are:\n\nBronchodilators\n\nBronchodilators are medicines that cause your airways to widen, allowing more oxygen to get to your lungs. They are usually taken as a tablet, capsule,'
+
+Prompt: 'What is the difference between bronchiolitis and bronchitis?' 
+Generated text: "\nI believe they're the same thing."
+[LOG] Enter: 3 th request for batch size = 8. Time NOW: 2023-12-03 16:36:13.175143
+[LOG]   Enter: RUNSTEP 0. Time NOW: 2023-12-03 16:36:13.176029
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.176111
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.176258
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.204324
+[LOG] Interval of :Worker Excute model, 0 sec 28066 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.204354
+[LOG] Interval of :Engine Step, 0 sec 28243 us.
+[LOG]   Exit: RUNSTEP 0. Time NOW: 2023-12-03 16:36:13.205177
+[LOG] Interval of :RUNSTEP 0, 0 sec 29148 us.
+[LOG]   Enter: RUNSTEP 1. Time NOW: 2023-12-03 16:36:13.205215
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.205284
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.205422
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.228596
+[LOG] Interval of :Worker Excute model, 0 sec 23174 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.228625
+[LOG] Interval of :Engine Step, 0 sec 23341 us.
+[LOG]   Exit: RUNSTEP 1. Time NOW: 2023-12-03 16:36:13.228884
+[LOG] Interval of :RUNSTEP 1, 0 sec 23669 us.
+[LOG]   Enter: RUNSTEP 2. Time NOW: 2023-12-03 16:36:13.228909
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.228977
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.229114
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.252298
+[LOG] Interval of :Worker Excute model, 0 sec 23184 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.252328
+[LOG] Interval of :Engine Step, 0 sec 23351 us.
+[LOG]   Exit: RUNSTEP 2. Time NOW: 2023-12-03 16:36:13.252576
+[LOG] Interval of :RUNSTEP 2, 0 sec 23667 us.
+[LOG]   Enter: RUNSTEP 3. Time NOW: 2023-12-03 16:36:13.252601
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.252667
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.252802
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.275981
+[LOG] Interval of :Worker Excute model, 0 sec 23179 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.276010
+[LOG] Interval of :Engine Step, 0 sec 23343 us.
+[LOG]   Exit: RUNSTEP 3. Time NOW: 2023-12-03 16:36:13.276260
+[LOG] Interval of :RUNSTEP 3, 0 sec 23659 us.
+[LOG]   Enter: RUNSTEP 4. Time NOW: 2023-12-03 16:36:13.276284
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.276351
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.276486
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.299670
+[LOG] Interval of :Worker Excute model, 0 sec 23184 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.299699
+[LOG] Interval of :Engine Step, 0 sec 23348 us.
+[LOG]   Exit: RUNSTEP 4. Time NOW: 2023-12-03 16:36:13.299952
+[LOG] Interval of :RUNSTEP 4, 0 sec 23668 us.
+[LOG]   Enter: RUNSTEP 5. Time NOW: 2023-12-03 16:36:13.299977
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.300043
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.300179
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.323365
+[LOG] Interval of :Worker Excute model, 0 sec 23186 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.323393
+[LOG] Interval of :Engine Step, 0 sec 23350 us.
+[LOG]   Exit: RUNSTEP 5. Time NOW: 2023-12-03 16:36:13.323653
+[LOG] Interval of :RUNSTEP 5, 0 sec 23676 us.
+[LOG]   Enter: RUNSTEP 6. Time NOW: 2023-12-03 16:36:13.323677
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.323744
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.323881
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.347098
+[LOG] Interval of :Worker Excute model, 0 sec 23217 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.347127
+[LOG] Interval of :Engine Step, 0 sec 23383 us.
+[LOG]   Exit: RUNSTEP 6. Time NOW: 2023-12-03 16:36:13.347386
+[LOG] Interval of :RUNSTEP 6, 0 sec 23709 us.
+[LOG]   Enter: RUNSTEP 7. Time NOW: 2023-12-03 16:36:13.347411
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.347479
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.347617
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.370840
+[LOG] Interval of :Worker Excute model, 0 sec 23223 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.370868
+[LOG] Interval of :Engine Step, 0 sec 23389 us.
+[LOG]   Exit: RUNSTEP 7. Time NOW: 2023-12-03 16:36:13.371126
+[LOG] Interval of :RUNSTEP 7, 0 sec 23715 us.
+[LOG]   Enter: RUNSTEP 8. Time NOW: 2023-12-03 16:36:13.371152
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.371217
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.371354
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.394585
+[LOG] Interval of :Worker Excute model, 0 sec 23231 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.394615
+[LOG] Interval of :Engine Step, 0 sec 23398 us.
+[LOG]   Exit: RUNSTEP 8. Time NOW: 2023-12-03 16:36:13.394872
+[LOG] Interval of :RUNSTEP 8, 0 sec 23720 us.
+[LOG]   Enter: RUNSTEP 9. Time NOW: 2023-12-03 16:36:13.394896
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.394963
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.395100
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.418351
+[LOG] Interval of :Worker Excute model, 0 sec 23251 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.418380
+[LOG] Interval of :Engine Step, 0 sec 23417 us.
+[LOG]   Exit: RUNSTEP 9. Time NOW: 2023-12-03 16:36:13.418639
+[LOG] Interval of :RUNSTEP 9, 0 sec 23743 us.
+[LOG]   Enter: RUNSTEP 10. Time NOW: 2023-12-03 16:36:13.418664
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.418731
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.418865
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.442094
+[LOG] Interval of :Worker Excute model, 0 sec 23229 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.442123
+[LOG] Interval of :Engine Step, 0 sec 23392 us.
+[LOG]   Exit: RUNSTEP 10. Time NOW: 2023-12-03 16:36:13.442378
+[LOG] Interval of :RUNSTEP 10, 0 sec 23714 us.
+[LOG]   Enter: RUNSTEP 11. Time NOW: 2023-12-03 16:36:13.442403
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.442470
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.442607
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.465854
+[LOG] Interval of :Worker Excute model, 0 sec 23247 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.465883
+[LOG] Interval of :Engine Step, 0 sec 23413 us.
+[LOG]   Exit: RUNSTEP 11. Time NOW: 2023-12-03 16:36:13.466143
+[LOG] Interval of :RUNSTEP 11, 0 sec 23740 us.
+[LOG]   Enter: RUNSTEP 12. Time NOW: 2023-12-03 16:36:13.466169
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.466236
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.466373
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.489599
+[LOG] Interval of :Worker Excute model, 0 sec 23226 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.489628
+[LOG] Interval of :Engine Step, 0 sec 23392 us.
+[LOG]   Exit: RUNSTEP 12. Time NOW: 2023-12-03 16:36:13.489884
+[LOG] Interval of :RUNSTEP 12, 0 sec 23715 us.
+[LOG]   Enter: RUNSTEP 13. Time NOW: 2023-12-03 16:36:13.489910
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.489977
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.490115
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.513366
+[LOG] Interval of :Worker Excute model, 0 sec 23251 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.513395
+[LOG] Interval of :Engine Step, 0 sec 23418 us.
+[LOG]   Exit: RUNSTEP 13. Time NOW: 2023-12-03 16:36:13.513654
+[LOG] Interval of :RUNSTEP 13, 0 sec 23744 us.
+[LOG]   Enter: RUNSTEP 14. Time NOW: 2023-12-03 16:36:13.513679
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.513748
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.513884
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.537119
+[LOG] Interval of :Worker Excute model, 0 sec 23235 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.537176
+[LOG] Interval of :Engine Step, 0 sec 23428 us.
+[LOG]   Exit: RUNSTEP 14. Time NOW: 2023-12-03 16:36:13.537455
+[LOG] Interval of :RUNSTEP 14, 0 sec 23776 us.
+[LOG]   Enter: RUNSTEP 15. Time NOW: 2023-12-03 16:36:13.537481
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.537549
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.537688
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.560925
+[LOG] Interval of :Worker Excute model, 0 sec 23237 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.560954
+[LOG] Interval of :Engine Step, 0 sec 23405 us.
+[LOG]   Exit: RUNSTEP 15. Time NOW: 2023-12-03 16:36:13.561222
+[LOG] Interval of :RUNSTEP 15, 0 sec 23741 us.
+[LOG]   Enter: RUNSTEP 16. Time NOW: 2023-12-03 16:36:13.561249
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.561319
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.561457
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.584693
+[LOG] Interval of :Worker Excute model, 0 sec 23236 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.584722
+[LOG] Interval of :Engine Step, 0 sec 23403 us.
+[LOG]   Exit: RUNSTEP 16. Time NOW: 2023-12-03 16:36:13.585030
+[LOG] Interval of :RUNSTEP 16, 0 sec 23781 us.
+[LOG]   Enter: RUNSTEP 17. Time NOW: 2023-12-03 16:36:13.585056
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.585124
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.585279
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.608543
+[LOG] Interval of :Worker Excute model, 0 sec 23264 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.608572
+[LOG] Interval of :Engine Step, 0 sec 23448 us.
+[LOG]   Exit: RUNSTEP 17. Time NOW: 2023-12-03 16:36:13.608834
+[LOG] Interval of :RUNSTEP 17, 0 sec 23778 us.
+[LOG]   Enter: RUNSTEP 18. Time NOW: 2023-12-03 16:36:13.608860
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.608928
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.609066
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.632337
+[LOG] Interval of :Worker Excute model, 0 sec 23271 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.632367
+[LOG] Interval of :Engine Step, 0 sec 23439 us.
+[LOG]   Exit: RUNSTEP 18. Time NOW: 2023-12-03 16:36:13.632630
+[LOG] Interval of :RUNSTEP 18, 0 sec 23770 us.
+[LOG]   Enter: RUNSTEP 19. Time NOW: 2023-12-03 16:36:13.632655
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.632724
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.632864
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.656121
+[LOG] Interval of :Worker Excute model, 0 sec 23257 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.656150
+[LOG] Interval of :Engine Step, 0 sec 23426 us.
+[LOG]   Exit: RUNSTEP 19. Time NOW: 2023-12-03 16:36:13.656413
+[LOG] Interval of :RUNSTEP 19, 0 sec 23758 us.
+[LOG]   Enter: RUNSTEP 20. Time NOW: 2023-12-03 16:36:13.656439
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.656507
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.656646
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.679909
+[LOG] Interval of :Worker Excute model, 0 sec 23263 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.679938
+[LOG] Interval of :Engine Step, 0 sec 23431 us.
+[LOG]   Exit: RUNSTEP 20. Time NOW: 2023-12-03 16:36:13.680198
+[LOG] Interval of :RUNSTEP 20, 0 sec 23759 us.
+[LOG]   Enter: RUNSTEP 21. Time NOW: 2023-12-03 16:36:13.680223
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.680291
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.680428
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.703685
+[LOG] Interval of :Worker Excute model, 0 sec 23257 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.703713
+[LOG] Interval of :Engine Step, 0 sec 23422 us.
+[LOG]   Exit: RUNSTEP 21. Time NOW: 2023-12-03 16:36:13.703981
+[LOG] Interval of :RUNSTEP 21, 0 sec 23758 us.
+[LOG]   Enter: RUNSTEP 22. Time NOW: 2023-12-03 16:36:13.704006
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.704074
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.704212
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.727521
+[LOG] Interval of :Worker Excute model, 0 sec 23309 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.727551
+[LOG] Interval of :Engine Step, 0 sec 23477 us.
+[LOG]   Exit: RUNSTEP 22. Time NOW: 2023-12-03 16:36:13.727815
+[LOG] Interval of :RUNSTEP 22, 0 sec 23809 us.
+[LOG]   Enter: RUNSTEP 23. Time NOW: 2023-12-03 16:36:13.727840
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.727908
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.728047
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.751366
+[LOG] Interval of :Worker Excute model, 0 sec 23319 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.751395
+[LOG] Interval of :Engine Step, 0 sec 23487 us.
+[LOG]   Exit: RUNSTEP 23. Time NOW: 2023-12-03 16:36:13.751652
+[LOG] Interval of :RUNSTEP 23, 0 sec 23812 us.
+[LOG]   Enter: RUNSTEP 24. Time NOW: 2023-12-03 16:36:13.751677
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.751744
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.751881
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.775186
+[LOG] Interval of :Worker Excute model, 0 sec 23305 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.775215
+[LOG] Interval of :Engine Step, 0 sec 23471 us.
+[LOG]   Exit: RUNSTEP 24. Time NOW: 2023-12-03 16:36:13.775490
+[LOG] Interval of :RUNSTEP 24, 0 sec 23813 us.
+[LOG]   Enter: RUNSTEP 25. Time NOW: 2023-12-03 16:36:13.775516
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.775584
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.775723
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.799051
+[LOG] Interval of :Worker Excute model, 0 sec 23328 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.799081
+[LOG] Interval of :Engine Step, 0 sec 23497 us.
+[LOG]   Exit: RUNSTEP 25. Time NOW: 2023-12-03 16:36:13.799344
+[LOG] Interval of :RUNSTEP 25, 0 sec 23828 us.
+[LOG]   Enter: RUNSTEP 26. Time NOW: 2023-12-03 16:36:13.799370
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.799437
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.799575
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.822883
+[LOG] Interval of :Worker Excute model, 0 sec 23308 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.822912
+[LOG] Interval of :Engine Step, 0 sec 23475 us.
+[LOG]   Exit: RUNSTEP 26. Time NOW: 2023-12-03 16:36:13.823181
+[LOG] Interval of :RUNSTEP 26, 0 sec 23811 us.
+[LOG]   Enter: RUNSTEP 27. Time NOW: 2023-12-03 16:36:13.823207
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.823276
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.823415
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.846738
+[LOG] Interval of :Worker Excute model, 0 sec 23323 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.846768
+[LOG] Interval of :Engine Step, 0 sec 23492 us.
+[LOG]   Exit: RUNSTEP 27. Time NOW: 2023-12-03 16:36:13.847029
+[LOG] Interval of :RUNSTEP 27, 0 sec 23822 us.
+[LOG]   Enter: RUNSTEP 28. Time NOW: 2023-12-03 16:36:13.847054
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.847123
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.847260
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.870577
+[LOG] Interval of :Worker Excute model, 0 sec 23317 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.870606
+[LOG] Interval of :Engine Step, 0 sec 23483 us.
+[LOG]   Exit: RUNSTEP 28. Time NOW: 2023-12-03 16:36:13.870869
+[LOG] Interval of :RUNSTEP 28, 0 sec 23815 us.
+[LOG]   Enter: RUNSTEP 29. Time NOW: 2023-12-03 16:36:13.870894
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.870993
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.871145
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.894462
+[LOG] Interval of :Worker Excute model, 0 sec 23317 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.894491
+[LOG] Interval of :Engine Step, 0 sec 23498 us.
+[LOG]   Exit: RUNSTEP 29. Time NOW: 2023-12-03 16:36:13.894749
+[LOG] Interval of :RUNSTEP 29, 0 sec 23855 us.
+[LOG]   Enter: RUNSTEP 30. Time NOW: 2023-12-03 16:36:13.894775
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.894844
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.894981
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.918328
+[LOG] Interval of :Worker Excute model, 0 sec 23347 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.918357
+[LOG] Interval of :Engine Step, 0 sec 23513 us.
+[LOG]   Exit: RUNSTEP 30. Time NOW: 2023-12-03 16:36:13.918626
+[LOG] Interval of :RUNSTEP 30, 0 sec 23851 us.
+[LOG]   Enter: RUNSTEP 31. Time NOW: 2023-12-03 16:36:13.918652
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.918721
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.918860
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.942181
+[LOG] Interval of :Worker Excute model, 0 sec 23321 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.942210
+[LOG] Interval of :Engine Step, 0 sec 23489 us.
+[LOG]   Exit: RUNSTEP 31. Time NOW: 2023-12-03 16:36:13.942470
+[LOG] Interval of :RUNSTEP 31, 0 sec 23818 us.
+[LOG]   Enter: RUNSTEP 32. Time NOW: 2023-12-03 16:36:13.942496
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.942565
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.942704
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.966023
+[LOG] Interval of :Worker Excute model, 0 sec 23319 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.966052
+[LOG] Interval of :Engine Step, 0 sec 23487 us.
+[LOG]   Exit: RUNSTEP 32. Time NOW: 2023-12-03 16:36:13.966329
+[LOG] Interval of :RUNSTEP 32, 0 sec 23833 us.
+[LOG]   Enter: RUNSTEP 33. Time NOW: 2023-12-03 16:36:13.966355
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.966425
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.966564
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:13.989895
+[LOG] Interval of :Worker Excute model, 0 sec 23331 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:13.989925
+[LOG] Interval of :Engine Step, 0 sec 23500 us.
+[LOG]   Exit: RUNSTEP 33. Time NOW: 2023-12-03 16:36:13.990195
+[LOG] Interval of :RUNSTEP 33, 0 sec 23840 us.
+[LOG]   Enter: RUNSTEP 34. Time NOW: 2023-12-03 16:36:13.990220
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:13.990290
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:13.990430
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.013786
+[LOG] Interval of :Worker Excute model, 0 sec 23356 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.013815
+[LOG] Interval of :Engine Step, 0 sec 23525 us.
+[LOG]   Exit: RUNSTEP 34. Time NOW: 2023-12-03 16:36:14.014075
+[LOG] Interval of :RUNSTEP 34, 0 sec 23855 us.
+[LOG]   Enter: RUNSTEP 35. Time NOW: 2023-12-03 16:36:14.014100
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.014169
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.014308
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.037660
+[LOG] Interval of :Worker Excute model, 0 sec 23352 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.037689
+[LOG] Interval of :Engine Step, 0 sec 23520 us.
+[LOG]   Exit: RUNSTEP 35. Time NOW: 2023-12-03 16:36:14.037958
+[LOG] Interval of :RUNSTEP 35, 0 sec 23858 us.
+[LOG]   Enter: RUNSTEP 36. Time NOW: 2023-12-03 16:36:14.037984
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.038053
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.038194
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.061569
+[LOG] Interval of :Worker Excute model, 0 sec 23375 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.061599
+[LOG] Interval of :Engine Step, 0 sec 23546 us.
+[LOG]   Exit: RUNSTEP 36. Time NOW: 2023-12-03 16:36:14.061866
+[LOG] Interval of :RUNSTEP 36, 0 sec 23882 us.
+[LOG]   Enter: RUNSTEP 37. Time NOW: 2023-12-03 16:36:14.061891
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.061959
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.062098
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.085473
+[LOG] Interval of :Worker Excute model, 0 sec 23375 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.085502
+[LOG] Interval of :Engine Step, 0 sec 23543 us.
+[LOG]   Exit: RUNSTEP 37. Time NOW: 2023-12-03 16:36:14.085775
+[LOG] Interval of :RUNSTEP 37, 0 sec 23884 us.
+[LOG]   Enter: RUNSTEP 38. Time NOW: 2023-12-03 16:36:14.085801
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.085874
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.086013
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.109435
+[LOG] Interval of :Worker Excute model, 0 sec 23422 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.109463
+[LOG] Interval of :Engine Step, 0 sec 23589 us.
+[LOG]   Exit: RUNSTEP 38. Time NOW: 2023-12-03 16:36:14.109727
+[LOG] Interval of :RUNSTEP 38, 0 sec 23926 us.
+[LOG]   Enter: RUNSTEP 39. Time NOW: 2023-12-03 16:36:14.109752
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.109822
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.109963
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.133404
+[LOG] Interval of :Worker Excute model, 0 sec 23441 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.133433
+[LOG] Interval of :Engine Step, 0 sec 23611 us.
+[LOG]   Exit: RUNSTEP 39. Time NOW: 2023-12-03 16:36:14.133691
+[LOG] Interval of :RUNSTEP 39, 0 sec 23939 us.
+[LOG]   Enter: RUNSTEP 40. Time NOW: 2023-12-03 16:36:14.133716
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.133786
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.133925
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.157381
+[LOG] Interval of :Worker Excute model, 0 sec 23456 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.157411
+[LOG] Interval of :Engine Step, 0 sec 23625 us.
+[LOG]   Exit: RUNSTEP 40. Time NOW: 2023-12-03 16:36:14.157681
+[LOG] Interval of :RUNSTEP 40, 0 sec 23965 us.
+[LOG]   Enter: RUNSTEP 41. Time NOW: 2023-12-03 16:36:14.157707
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.157776
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.157917
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.181354
+[LOG] Interval of :Worker Excute model, 0 sec 23437 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.181383
+[LOG] Interval of :Engine Step, 0 sec 23607 us.
+[LOG]   Exit: RUNSTEP 41. Time NOW: 2023-12-03 16:36:14.181644
+[LOG] Interval of :RUNSTEP 41, 0 sec 23937 us.
+[LOG]   Enter: RUNSTEP 42. Time NOW: 2023-12-03 16:36:14.181671
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.181741
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.181882
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.205336
+[LOG] Interval of :Worker Excute model, 0 sec 23454 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.205365
+[LOG] Interval of :Engine Step, 0 sec 23624 us.
+[LOG]   Exit: RUNSTEP 42. Time NOW: 2023-12-03 16:36:14.205632
+[LOG] Interval of :RUNSTEP 42, 0 sec 23961 us.
+[LOG]   Enter: RUNSTEP 43. Time NOW: 2023-12-03 16:36:14.205658
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.205728
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.205868
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.229319
+[LOG] Interval of :Worker Excute model, 0 sec 23451 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.229378
+[LOG] Interval of :Engine Step, 0 sec 23650 us.
+[LOG]   Exit: RUNSTEP 43. Time NOW: 2023-12-03 16:36:14.229649
+[LOG] Interval of :RUNSTEP 43, 0 sec 23991 us.
+[LOG]   Enter: RUNSTEP 44. Time NOW: 2023-12-03 16:36:14.229674
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.229745
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.229887
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.253334
+[LOG] Interval of :Worker Excute model, 0 sec 23447 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.253363
+[LOG] Interval of :Engine Step, 0 sec 23618 us.
+[LOG]   Exit: RUNSTEP 44. Time NOW: 2023-12-03 16:36:14.253623
+[LOG] Interval of :RUNSTEP 44, 0 sec 23949 us.
+[LOG]   Enter: RUNSTEP 45. Time NOW: 2023-12-03 16:36:14.253649
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.253719
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.253860
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.277293
+[LOG] Interval of :Worker Excute model, 0 sec 23433 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.277322
+[LOG] Interval of :Engine Step, 0 sec 23603 us.
+[LOG]   Exit: RUNSTEP 45. Time NOW: 2023-12-03 16:36:14.277581
+[LOG] Interval of :RUNSTEP 45, 0 sec 23932 us.
+[LOG]   Enter: RUNSTEP 46. Time NOW: 2023-12-03 16:36:14.277607
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.277678
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.277819
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.301254
+[LOG] Interval of :Worker Excute model, 0 sec 23435 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.301283
+[LOG] Interval of :Engine Step, 0 sec 23605 us.
+[LOG]   Exit: RUNSTEP 46. Time NOW: 2023-12-03 16:36:14.301548
+[LOG] Interval of :RUNSTEP 46, 0 sec 23941 us.
+[LOG]   Enter: RUNSTEP 47. Time NOW: 2023-12-03 16:36:14.301574
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.301645
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.301787
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.325228
+[LOG] Interval of :Worker Excute model, 0 sec 23441 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.325257
+[LOG] Interval of :Engine Step, 0 sec 23612 us.
+[LOG]   Exit: RUNSTEP 47. Time NOW: 2023-12-03 16:36:14.325533
+[LOG] Interval of :RUNSTEP 47, 0 sec 23959 us.
+[LOG]   Enter: RUNSTEP 48. Time NOW: 2023-12-03 16:36:14.325558
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.325627
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.325767
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.349188
+[LOG] Interval of :Worker Excute model, 0 sec 23421 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.349229
+[LOG] Interval of :Engine Step, 0 sec 23602 us.
+[LOG]   Exit: RUNSTEP 48. Time NOW: 2023-12-03 16:36:14.349502
+[LOG] Interval of :RUNSTEP 48, 0 sec 23944 us.
+[LOG]   Enter: RUNSTEP 49. Time NOW: 2023-12-03 16:36:14.349529
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.349600
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.349741
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.373191
+[LOG] Interval of :Worker Excute model, 0 sec 23450 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.373232
+[LOG] Interval of :Engine Step, 0 sec 23632 us.
+[LOG]   Exit: RUNSTEP 49. Time NOW: 2023-12-03 16:36:14.373512
+[LOG] Interval of :RUNSTEP 49, 0 sec 23983 us.
+[LOG]   Enter: RUNSTEP 50. Time NOW: 2023-12-03 16:36:14.373539
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.373608
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.373751
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.397285
+[LOG] Interval of :Worker Excute model, 0 sec 23534 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.397330
+[LOG] Interval of :Engine Step, 0 sec 23722 us.
+[LOG]   Exit: RUNSTEP 50. Time NOW: 2023-12-03 16:36:14.397640
+[LOG] Interval of :RUNSTEP 50, 0 sec 24101 us.
+[LOG]   Enter: RUNSTEP 51. Time NOW: 2023-12-03 16:36:14.397667
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.397744
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.397895
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.421385
+[LOG] Interval of :Worker Excute model, 0 sec 23490 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.421414
+[LOG] Interval of :Engine Step, 0 sec 23670 us.
+[LOG]   Exit: RUNSTEP 51. Time NOW: 2023-12-03 16:36:14.421690
+[LOG] Interval of :RUNSTEP 51, 0 sec 24023 us.
+[LOG]   Enter: RUNSTEP 52. Time NOW: 2023-12-03 16:36:14.421717
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.421787
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.421952
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.445437
+[LOG] Interval of :Worker Excute model, 0 sec 23485 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.445466
+[LOG] Interval of :Engine Step, 0 sec 23679 us.
+[LOG]   Exit: RUNSTEP 52. Time NOW: 2023-12-03 16:36:14.445743
+[LOG] Interval of :RUNSTEP 52, 0 sec 24026 us.
+[LOG]   Enter: RUNSTEP 53. Time NOW: 2023-12-03 16:36:14.445769
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.445840
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.445982
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.469488
+[LOG] Interval of :Worker Excute model, 0 sec 23506 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.469517
+[LOG] Interval of :Engine Step, 0 sec 23677 us.
+[LOG]   Exit: RUNSTEP 53. Time NOW: 2023-12-03 16:36:14.469788
+[LOG] Interval of :RUNSTEP 53, 0 sec 24019 us.
+[LOG]   Enter: RUNSTEP 54. Time NOW: 2023-12-03 16:36:14.469814
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.469884
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.470023
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.493545
+[LOG] Interval of :Worker Excute model, 0 sec 23522 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.493574
+[LOG] Interval of :Engine Step, 0 sec 23690 us.
+[LOG]   Exit: RUNSTEP 54. Time NOW: 2023-12-03 16:36:14.493841
+[LOG] Interval of :RUNSTEP 54, 0 sec 24027 us.
+[LOG]   Enter: RUNSTEP 55. Time NOW: 2023-12-03 16:36:14.493867
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.493937
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.494078
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.517608
+[LOG] Interval of :Worker Excute model, 0 sec 23530 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.517637
+[LOG] Interval of :Engine Step, 0 sec 23700 us.
+[LOG]   Exit: RUNSTEP 55. Time NOW: 2023-12-03 16:36:14.517905
+[LOG] Interval of :RUNSTEP 55, 0 sec 24038 us.
+[LOG]   Enter: RUNSTEP 56. Time NOW: 2023-12-03 16:36:14.517931
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.518003
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.518143
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.541682
+[LOG] Interval of :Worker Excute model, 0 sec 23539 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.541714
+[LOG] Interval of :Engine Step, 0 sec 23711 us.
+[LOG]   Exit: RUNSTEP 56. Time NOW: 2023-12-03 16:36:14.541981
+[LOG] Interval of :RUNSTEP 56, 0 sec 24050 us.
+[LOG]   Enter: RUNSTEP 57. Time NOW: 2023-12-03 16:36:14.542007
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.542077
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.542218
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.565748
+[LOG] Interval of :Worker Excute model, 0 sec 23530 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.565777
+[LOG] Interval of :Engine Step, 0 sec 23700 us.
+[LOG]   Exit: RUNSTEP 57. Time NOW: 2023-12-03 16:36:14.566045
+[LOG] Interval of :RUNSTEP 57, 0 sec 24038 us.
+[LOG]   Enter: RUNSTEP 58. Time NOW: 2023-12-03 16:36:14.566071
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.566183
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.566337
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.589884
+[LOG] Interval of :Worker Excute model, 0 sec 23547 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.589914
+[LOG] Interval of :Engine Step, 0 sec 23731 us.
+[LOG]   Exit: RUNSTEP 58. Time NOW: 2023-12-03 16:36:14.590180
+[LOG] Interval of :RUNSTEP 58, 0 sec 24109 us.
+[LOG]   Enter: RUNSTEP 59. Time NOW: 2023-12-03 16:36:14.590206
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.590276
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.590418
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.613958
+[LOG] Interval of :Worker Excute model, 0 sec 23540 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.613989
+[LOG] Interval of :Engine Step, 0 sec 23713 us.
+[LOG]   Exit: RUNSTEP 59. Time NOW: 2023-12-03 16:36:14.614263
+[LOG] Interval of :RUNSTEP 59, 0 sec 24057 us.
+[LOG]   Enter: RUNSTEP 60. Time NOW: 2023-12-03 16:36:14.614289
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.614359
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.614507
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.638063
+[LOG] Interval of :Worker Excute model, 0 sec 23556 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.638092
+[LOG] Interval of :Engine Step, 0 sec 23733 us.
+[LOG]   Exit: RUNSTEP 60. Time NOW: 2023-12-03 16:36:14.638362
+[LOG] Interval of :RUNSTEP 60, 0 sec 24073 us.
+[LOG]   Enter: RUNSTEP 61. Time NOW: 2023-12-03 16:36:14.638388
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.638459
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.638601
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.662136
+[LOG] Interval of :Worker Excute model, 0 sec 23535 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.662165
+[LOG] Interval of :Engine Step, 0 sec 23706 us.
+[LOG]   Exit: RUNSTEP 61. Time NOW: 2023-12-03 16:36:14.662438
+[LOG] Interval of :RUNSTEP 61, 0 sec 24050 us.
+[LOG]   Enter: RUNSTEP 62. Time NOW: 2023-12-03 16:36:14.662464
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.662533
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.662675
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.686210
+[LOG] Interval of :Worker Excute model, 0 sec 23535 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.686240
+[LOG] Interval of :Engine Step, 0 sec 23707 us.
+[LOG]   Exit: RUNSTEP 62. Time NOW: 2023-12-03 16:36:14.686509
+[LOG] Interval of :RUNSTEP 62, 0 sec 24045 us.
+[LOG]   Enter: RUNSTEP 63. Time NOW: 2023-12-03 16:36:14.686534
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-03 16:36:14.686605
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-03 16:36:14.686746
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-03 16:36:14.710296
+[LOG] Interval of :Worker Excute model, 0 sec 23550 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-03 16:36:14.710325
+[LOG] Interval of :Engine Step, 0 sec 23720 us.
+[LOG]   Exit: RUNSTEP 63. Time NOW: 2023-12-03 16:36:14.710852
+[LOG] Interval of :RUNSTEP 63, 0 sec 24318 us.
+[LOG] Exit: 3 th request for batch size = 8. Time NOW: 2023-12-03 16:36:14.711006
+[LOG] Interval of :3 th request for batch size = 8, 1 sec 535863 us.
+max tokens: 64. Time cost for batch size = 8 : 1.5359 s
+
+Prompt: 'What are the risks of having high blood pressure?' 
+Generated text: '\n\nWhat are the risks of having high blood pressure?\n\nHigh blood pressure is a very serious condition. It puts extra pressure on the walls of your arteries and can result in strokes, heart attacks, heart failure and other serious health complications.\n\nBut high blood pressure is not always easy to spot. This'
+
+Prompt: 'What is bronchiolitis and who is most susceptible to it?' 
+Generated text: '\nBronchiolitis is an inflammation of the tiny airways in the lungs that are responsible for the exchange of oxygen in the body.\nIt is most common in young children under the age of five years and in infants.\nAged people are also at risk and it can be more serious in people who have'
+
+Prompt: 'What treatments are available for bronchiolitis?' 
+Generated text: '\n\nBronchiolitis may be treated with oxygen or oxygen therapy. Oxygen therapy involves delivering oxygen to your body through a tube inserted into your nose.\n\nOxygen therapy\n\nOxygen therapy may help if your breathing is difficult and you have a high fever or you have been infected with an'
+
+Prompt: 'What is the difference between bronchiolitis and bronchitis?' 
+Generated text: '\n\nA:\n\nQuick Answer\n\nBronchiolitis and bronchitis are two common lung diseases that are characterized by inflammation and narrowing of the bronchial tubes in the lungs. Bronchiolitis is caused by bacterial infections while bronchitis is caused by viruses, according to the Cleveland Clinic.'
+
+Prompt: 'What are the symptoms of Creutzfeldt-Jakob disease?' 
+Generated text: '\nCreutzfeldt-Jakob disease (CJD) is a fatal brain disease. It mainly affects people who are over 50 years of age and has a high fatality rate.\nMost people with CJD die within one year of being diagnosed.\nThere are no early warning signs of the disease.'
+
+Prompt: 'What is the Variant CJD compensation scheme?' 
+Generated text: '\nThe CJD Variant Compensation Scheme is part of the revised CJD Variant Compensation Scheme published by the CJD Variant Compensation Scheme Committee in 2018. The committee was established in 2016 by the CJD Variant Compensation Scheme Committee Act 2016.\nThe Committee receives information from individuals about their CJD diagnosis and claims for CJD Variant'
+
+Prompt: 'How is HIV transmitted from one person to another?' 
+Generated text: '\n\nHIV is spread by contact with infected blood and body fluids. It is transmitted through contact with infected body fluids, including blood and semen. Although HIV cannot be spread through casual contact such as kissing or sharing cups, some people may become infected through these activities.\n\nIt is not known how HIV is transmitted'
+
+Prompt: 'What are some of the ways to diagnose HIV?' 
+Generated text: '\n\nA:\n\nQuick Answer\n\nThe diagnostic tests for HIV include testing for the presence of HIV RNA in blood samples, viral load, the antibodies to HIV in the blood, CD4 count and the presence of antibodies to the HIV in the blood. Testing for antibodies to HIV can also include ELISA testing'
+Memory footprint:42.10 GB
