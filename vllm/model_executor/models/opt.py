@@ -34,11 +34,13 @@ from vllm.model_executor.layers.sampler import Sampler
 from vllm.model_executor.weight_utils import (hf_model_weights_iterator,
                                               load_tensor_parallel_weights)
 from vllm.model_executor.parallel_utils.parallel_state import (
-    get_tensor_model_parallel_rank, get_tensor_model_parallel_world_size)
+    get_tensor_model_parallel_rank, get_tensor_model_parallel_world_size, get_pipeline_model_parallel_first_rank, get_pipeline_model_parallel_last_rank, get_pipeline_model_parallel_world_size, get_pipeline_model_parallel_rank, get_pipeline_model_parallel_next_rank, get_pipeline_model_parallel_prev_rank,
+    is_first_pipeline_stage, is_last_pipeline_stage)
 from vllm.model_executor.parallel_utils.layers import (VocabParallelEmbedding,
                                                        ColumnParallelLinear,
                                                        RowParallelLinear)
 from vllm.sequence import SamplerOutput
+from vllm.model_executor.parallel_utils.utils import send_metadata, send_tensor_and_shape, recv_metadata, recv_tensor
 
 KVCache = Tuple[torch.Tensor, torch.Tensor]
 
@@ -184,13 +186,17 @@ class OPTDecoder(nn.Module):
         self.max_target_positions = config.max_position_embeddings
         self.vocab_size = config.vocab_size
 
-        self.embed_tokens = VocabParallelEmbedding(
-            config.vocab_size,
-            config.word_embed_proj_dim,
-        )
-        # Positional embeddings are replicated (not sharded).
-        self.embed_positions = OPTLearnedPositionalEmbedding(
-            config.max_position_embeddings, config.hidden_size)
+        if is_first_pipeline_stage() or is_last_pipeline_stage():
+            self.embed_tokens = VocabParallelEmbedding(
+                config.vocab_size,
+                config.word_embed_proj_dim,
+            )
+            # Positional embeddings are replicated (not sharded).
+            self.embed_positions = OPTLearnedPositionalEmbedding(
+                config.max_position_embeddings, config.hidden_size)
+        else:
+            self.embed_tokens = None
+            self.embed_positions = None
 
         # Project out & in will be replicated if they exist.
         if config.word_embed_proj_dim != config.hidden_size:
@@ -218,8 +224,9 @@ class OPTDecoder(nn.Module):
         else:
             self.final_layer_norm = None
 
+        assert config.num_hidden_layers % get_pipeline_model_parallel_world_size() == 0
         self.layers = nn.ModuleList(
-            [OPTDecoderLayer(config) for _ in range(config.num_hidden_layers)])
+            [OPTDecoderLayer(config) for _ in range(config.num_hidden_layers // get_pipeline_model_parallel_world_size())])
 
     def forward(
         self,
@@ -229,14 +236,20 @@ class OPTDecoder(nn.Module):
         input_metadata: InputMetadata,
         cache_events: Optional[List[torch.cuda.Event]],
     ) -> torch.Tensor:
-        inputs_embeds = self.embed_tokens(input_ids)
-        pos_embeds = self.embed_positions(positions)
-        if self.project_in is not None:
-            inputs_embeds = self.project_in(inputs_embeds)
-        hidden_states = inputs_embeds + pos_embeds
+        use_pipeline = get_pipeline_model_parallel_world_size() > 1
+        if is_first_pipeline_stage():
+            # this is the first in pipeline, or No pipeline.
+            inputs_embeds = self.embed_tokens(input_ids)
+            pos_embeds = self.embed_positions(positions)
+            if self.project_in is not None:
+                inputs_embeds = self.project_in(inputs_embeds)
+            hidden_states = inputs_embeds + pos_embeds
+        elif use_pipeline:
+            # Use pipeline, but not the first
+            input_metadata = recv_metadata()
+            hidden_states = recv_tensor(torch.cuda.current_device(), src=get_pipeline_model_parallel_prev_rank())
 
         #  TODO: wyq add
-        torch.cuda.synchronize()
         # from vllm.utils import ctx_get_inteval_datetime
         # with ctx_get_inteval_datetime("Transformer blocks"):
         for i in range(len(self.layers)):
@@ -247,11 +260,19 @@ class OPTDecoder(nn.Module):
             layer = self.layers[i]
             hidden_states = layer(hidden_states, kv_caches[i], input_metadata,
                                 cache_event)
+            if use_pipeline and is_first_pipeline_stage() and i == 0:
+                send_metadata(input_metadata=input_metadata)
 
-        if self.final_layer_norm is not None:
-            hidden_states = self.final_layer_norm(hidden_states)
-        if self.project_out is not None:
-            hidden_states = self.project_out(hidden_states)
+        
+        # print(f"shape of hidden_states: {hidden_states.shape}")
+        if is_last_pipeline_stage():
+            # this is the last rank in pipeline, or No pipeline
+            if self.final_layer_norm is not None:
+                hidden_states = self.final_layer_norm(hidden_states)
+            if self.project_out is not None:
+                hidden_states = self.project_out(hidden_states)
+        else:
+            send_tensor_and_shape(hidden_states, get_pipeline_model_parallel_next_rank())
         return hidden_states
 
 
@@ -281,7 +302,10 @@ class OPTForCausalLM(nn.Module):
         self.model = OPTModel(config)
         # TODO(zhuohan): create a new weight after implementing pipeline
         #                parallelism
-        self.lm_head_weight = self.model.decoder.embed_tokens.weight
+        if is_last_pipeline_stage():
+            self.lm_head_weight = self.model.decoder.embed_tokens.weight
+        else:
+            self.lm_head_weight = None
         self.sampler = Sampler(config.vocab_size)
 
     def forward(
@@ -297,8 +321,10 @@ class OPTForCausalLM(nn.Module):
         # with ctx_get_inteval_datetime("Original OPTForCausalLM"):
         hidden_states = self.model(input_ids, positions, kv_caches,
                                    input_metadata, cache_events)
-        next_tokens = self.sampler(self.lm_head_weight, hidden_states,
-                                   input_metadata)
+        next_tokens = None
+        if is_last_pipeline_stage():
+            next_tokens = self.sampler(self.lm_head_weight, hidden_states,
+                                    input_metadata)
         return next_tokens
 
     _column_parallel_weights = [
@@ -312,8 +338,13 @@ class OPTForCausalLM(nn.Module):
                      load_format: str = "auto",
                      revision: Optional[str] = None):
         tensor_model_parallel_rank = get_tensor_model_parallel_rank()
+        pipeline_model_parallel_rank = get_pipeline_model_parallel_rank()
         state_dict = self.state_dict()
-
+        num_layer_per_stage = self.config.num_hidden_layers // get_pipeline_model_parallel_world_size()
+        
+        def is_layer_in_this_stage(layer_id: int):
+            return num_layer_per_stage * pipeline_model_parallel_rank <= layer_id < num_layer_per_stage * (pipeline_model_parallel_rank + 1)
+        
         for name, loaded_weight in hf_model_weights_iterator(
                 model_name_or_path, cache_dir, load_format, revision):
             if "lm_head.weight" in name:
@@ -322,12 +353,34 @@ class OPTForCausalLM(nn.Module):
             if name.startswith("decoder."):
                 name = "model." + name
 
+            layer_id = -1
+            str_layer, str_id = name.split(".")[2:4]
+            if str_layer == "layers":
+                layer_id = int(str_id)
+            else:
+                # 这条分支的权重是：
+                # model.decoder.embed_tokens.weight
+                # model.decoder.embed_positions.weight
+                # model.decoder.final_layer_norm.weight
+                # model.decoder.final_layer_norm.bias
+                if not(is_first_pipeline_stage() or is_last_pipeline_stage()):
+                    continue
+                param = state_dict[name]
+                load_tensor_parallel_weights(param, loaded_weight, name,
+                                            self._column_parallel_weights,
+                                            self._row_parallel_weights,
+                                            tensor_model_parallel_rank)
+                
+            if not is_layer_in_this_stage(layer_id):
+                continue
+            local_layer_id: int = layer_id % num_layer_per_stage
+                
             is_attention_weight = False
             for stride_id, att_weight_name in enumerate(
                 ["q_proj", "k_proj", "v_proj"]):
                 if att_weight_name not in name:
                     continue
-                param = state_dict[name.replace(att_weight_name, "qkv_proj")]
+                param = state_dict[name.replace(att_weight_name, "qkv_proj").replace(str_id, str(local_layer_id))]
                 shard_size = param.shape[0] // 3
                 loaded_weight = loaded_weight[
                     shard_size * tensor_model_parallel_rank:shard_size *
@@ -341,7 +394,7 @@ class OPTForCausalLM(nn.Module):
             if is_attention_weight:
                 continue
 
-            param = state_dict[name]
+            param = state_dict[name.replace(str_id, str(local_layer_id))]
             load_tensor_parallel_weights(param, loaded_weight, name,
                                          self._column_parallel_weights,
                                          self._row_parallel_weights,

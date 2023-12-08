@@ -1,0 +1,1428 @@
+注意metadatasize的变化
+首先在迭代最开始初始化阶段，第一次运行attention后会增加。这是因为往里面初始化了atten bias。
+但是后面是否会一直保持这个趋势，目前未知，待探索。
+一次迭代内，metadata不会变化。
+
+INFO 12-05 20:34:57 llm_engine.py:72] Initializing an LLM engine with config: model='facebook/opt-6.7b', tokenizer='facebook/opt-6.7b', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, quantization=None, seed=0)
+INFO 12-05 20:34:57 llm_engine.py:87] [WYQ] LLM Engine pipeline_parallel_size=1
+RANK0: AllReduce done.
+RANK0: initialize_model_parallel() done.
+At first: input metadata size = 28319(bytes).
+layer 0: input metadata size = 30574(bytes).
+layer 1: input metadata size = 30574(bytes).
+layer 2: input metadata size = 30574(bytes).
+layer 3: input metadata size = 30574(bytes).
+layer 4: input metadata size = 30574(bytes).
+layer 5: input metadata size = 30574(bytes).
+layer 6: input metadata size = 30574(bytes).
+layer 7: input metadata size = 30574(bytes).
+layer 8: input metadata size = 30574(bytes).
+layer 9: input metadata size = 30574(bytes).
+layer 10: input metadata size = 30574(bytes).
+layer 11: input metadata size = 30574(bytes).
+layer 12: input metadata size = 30574(bytes).
+layer 13: input metadata size = 30574(bytes).
+layer 14: input metadata size = 30574(bytes).
+layer 15: input metadata size = 30574(bytes).
+layer 16: input metadata size = 30574(bytes).
+layer 17: input metadata size = 30574(bytes).
+layer 18: input metadata size = 30574(bytes).
+layer 19: input metadata size = 30574(bytes).
+layer 20: input metadata size = 30574(bytes).
+layer 21: input metadata size = 30574(bytes).
+layer 22: input metadata size = 30574(bytes).
+layer 23: input metadata size = 30574(bytes).
+layer 24: input metadata size = 30574(bytes).
+layer 25: input metadata size = 30574(bytes).
+layer 26: input metadata size = 30574(bytes).
+layer 27: input metadata size = 30574(bytes).
+layer 28: input metadata size = 30574(bytes).
+layer 29: input metadata size = 30574(bytes).
+layer 30: input metadata size = 30574(bytes).
+layer 31: input metadata size = 30574(bytes).
+shape of hidden_states: torch.Size([2048, 4096])
+INFO 12-05 20:35:05 llm_engine.py:210] # GPU blocks: 3796, # CPU blocks: 512
+[LOG] Enter: 0 th request for batch size = 1. Time NOW: 2023-12-05 20:35:06.631989
+[LOG]   Enter: RUNSTEP 0. Time NOW: 2023-12-05 20:35:06.636295
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:06.636364
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:06.643212
+At first: input metadata size = 1798(bytes).
+layer 0: input metadata size = 2278(bytes).
+layer 1: input metadata size = 2278(bytes).
+layer 2: input metadata size = 2278(bytes).
+layer 3: input metadata size = 2278(bytes).
+layer 4: input metadata size = 2278(bytes).
+layer 5: input metadata size = 2278(bytes).
+layer 6: input metadata size = 2278(bytes).
+layer 7: input metadata size = 2278(bytes).
+layer 8: input metadata size = 2278(bytes).
+layer 9: input metadata size = 2278(bytes).
+layer 10: input metadata size = 2278(bytes).
+layer 11: input metadata size = 2278(bytes).
+layer 12: input metadata size = 2278(bytes).
+layer 13: input metadata size = 2278(bytes).
+layer 14: input metadata size = 2278(bytes).
+layer 15: input metadata size = 2278(bytes).
+layer 16: input metadata size = 2278(bytes).
+layer 17: input metadata size = 2278(bytes).
+layer 18: input metadata size = 2278(bytes).
+layer 19: input metadata size = 2278(bytes).
+layer 20: input metadata size = 2278(bytes).
+layer 21: input metadata size = 2278(bytes).
+layer 22: input metadata size = 2278(bytes).
+layer 23: input metadata size = 2278(bytes).
+layer 24: input metadata size = 2278(bytes).
+layer 25: input metadata size = 2278(bytes).
+layer 26: input metadata size = 2278(bytes).
+layer 27: input metadata size = 2278(bytes).
+layer 28: input metadata size = 2278(bytes).
+layer 29: input metadata size = 2278(bytes).
+layer 30: input metadata size = 2278(bytes).
+layer 31: input metadata size = 2278(bytes).
+shape of hidden_states: torch.Size([16, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:06.740611
+[LOG] Interval of :Worker Excute model, 0 sec 97399 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:06.740658
+[LOG] Interval of :Engine Step, 0 sec 104294 us.
+[LOG]   Exit: RUNSTEP 0. Time NOW: 2023-12-05 20:35:06.740949
+[LOG] Interval of :RUNSTEP 0, 0 sec 104654 us.
+[LOG]   Enter: RUNSTEP 1. Time NOW: 2023-12-05 20:35:06.740983
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:06.741034
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:06.741173
+At first: input metadata size = 1809(bytes).
+layer 0: input metadata size = 1809(bytes).
+layer 1: input metadata size = 1809(bytes).
+layer 2: input metadata size = 1809(bytes).
+layer 3: input metadata size = 1809(bytes).
+layer 4: input metadata size = 1809(bytes).
+layer 5: input metadata size = 1809(bytes).
+layer 6: input metadata size = 1809(bytes).
+layer 7: input metadata size = 1809(bytes).
+layer 8: input metadata size = 1809(bytes).
+layer 9: input metadata size = 1809(bytes).
+layer 10: input metadata size = 1809(bytes).
+layer 11: input metadata size = 1809(bytes).
+layer 12: input metadata size = 1809(bytes).
+layer 13: input metadata size = 1809(bytes).
+layer 14: input metadata size = 1809(bytes).
+layer 15: input metadata size = 1809(bytes).
+layer 16: input metadata size = 1809(bytes).
+layer 17: input metadata size = 1809(bytes).
+layer 18: input metadata size = 1809(bytes).
+layer 19: input metadata size = 1809(bytes).
+layer 20: input metadata size = 1809(bytes).
+layer 21: input metadata size = 1809(bytes).
+layer 22: input metadata size = 1809(bytes).
+layer 23: input metadata size = 1809(bytes).
+layer 24: input metadata size = 1809(bytes).
+layer 25: input metadata size = 1809(bytes).
+layer 26: input metadata size = 1809(bytes).
+layer 27: input metadata size = 1809(bytes).
+layer 28: input metadata size = 1809(bytes).
+layer 29: input metadata size = 1809(bytes).
+layer 30: input metadata size = 1809(bytes).
+layer 31: input metadata size = 1809(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:06.772437
+[LOG] Interval of :Worker Excute model, 0 sec 31264 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:06.772468
+[LOG] Interval of :Engine Step, 0 sec 31434 us.
+[LOG]   Exit: RUNSTEP 1. Time NOW: 2023-12-05 20:35:06.772607
+[LOG] Interval of :RUNSTEP 1, 0 sec 31624 us.
+[LOG]   Enter: RUNSTEP 2. Time NOW: 2023-12-05 20:35:06.772636
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:06.772681
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:06.772812
+At first: input metadata size = 1813(bytes).
+layer 0: input metadata size = 1813(bytes).
+layer 1: input metadata size = 1813(bytes).
+layer 2: input metadata size = 1813(bytes).
+layer 3: input metadata size = 1813(bytes).
+layer 4: input metadata size = 1813(bytes).
+layer 5: input metadata size = 1813(bytes).
+layer 6: input metadata size = 1813(bytes).
+layer 7: input metadata size = 1813(bytes).
+layer 8: input metadata size = 1813(bytes).
+layer 9: input metadata size = 1813(bytes).
+layer 10: input metadata size = 1813(bytes).
+layer 11: input metadata size = 1813(bytes).
+layer 12: input metadata size = 1813(bytes).
+layer 13: input metadata size = 1813(bytes).
+layer 14: input metadata size = 1813(bytes).
+layer 15: input metadata size = 1813(bytes).
+layer 16: input metadata size = 1813(bytes).
+layer 17: input metadata size = 1813(bytes).
+layer 18: input metadata size = 1813(bytes).
+layer 19: input metadata size = 1813(bytes).
+layer 20: input metadata size = 1813(bytes).
+layer 21: input metadata size = 1813(bytes).
+layer 22: input metadata size = 1813(bytes).
+layer 23: input metadata size = 1813(bytes).
+layer 24: input metadata size = 1813(bytes).
+layer 25: input metadata size = 1813(bytes).
+layer 26: input metadata size = 1813(bytes).
+layer 27: input metadata size = 1813(bytes).
+layer 28: input metadata size = 1813(bytes).
+layer 29: input metadata size = 1813(bytes).
+layer 30: input metadata size = 1813(bytes).
+layer 31: input metadata size = 1813(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:06.802885
+[LOG] Interval of :Worker Excute model, 0 sec 30073 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:06.802914
+[LOG] Interval of :Engine Step, 0 sec 30233 us.
+[LOG]   Exit: RUNSTEP 2. Time NOW: 2023-12-05 20:35:06.803040
+[LOG] Interval of :RUNSTEP 2, 0 sec 30404 us.
+[LOG]   Enter: RUNSTEP 3. Time NOW: 2023-12-05 20:35:06.803067
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:06.803110
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:06.803240
+At first: input metadata size = 1815(bytes).
+layer 0: input metadata size = 1815(bytes).
+layer 1: input metadata size = 1815(bytes).
+layer 2: input metadata size = 1815(bytes).
+layer 3: input metadata size = 1815(bytes).
+layer 4: input metadata size = 1815(bytes).
+layer 5: input metadata size = 1815(bytes).
+layer 6: input metadata size = 1815(bytes).
+layer 7: input metadata size = 1815(bytes).
+layer 8: input metadata size = 1815(bytes).
+layer 9: input metadata size = 1815(bytes).
+layer 10: input metadata size = 1815(bytes).
+layer 11: input metadata size = 1815(bytes).
+layer 12: input metadata size = 1815(bytes).
+layer 13: input metadata size = 1815(bytes).
+layer 14: input metadata size = 1815(bytes).
+layer 15: input metadata size = 1815(bytes).
+layer 16: input metadata size = 1815(bytes).
+layer 17: input metadata size = 1815(bytes).
+layer 18: input metadata size = 1815(bytes).
+layer 19: input metadata size = 1815(bytes).
+layer 20: input metadata size = 1815(bytes).
+layer 21: input metadata size = 1815(bytes).
+layer 22: input metadata size = 1815(bytes).
+layer 23: input metadata size = 1815(bytes).
+layer 24: input metadata size = 1815(bytes).
+layer 25: input metadata size = 1815(bytes).
+layer 26: input metadata size = 1815(bytes).
+layer 27: input metadata size = 1815(bytes).
+layer 28: input metadata size = 1815(bytes).
+layer 29: input metadata size = 1815(bytes).
+layer 30: input metadata size = 1815(bytes).
+layer 31: input metadata size = 1815(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:06.865042
+[LOG] Interval of :Worker Excute model, 0 sec 61802 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:06.865072
+[LOG] Interval of :Engine Step, 0 sec 61962 us.
+[LOG]   Exit: RUNSTEP 3. Time NOW: 2023-12-05 20:35:06.865261
+[LOG] Interval of :RUNSTEP 3, 0 sec 62194 us.
+[LOG]   Enter: RUNSTEP 4. Time NOW: 2023-12-05 20:35:06.865290
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:06.865335
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:06.876675
+At first: input metadata size = 1817(bytes).
+layer 0: input metadata size = 1817(bytes).
+layer 1: input metadata size = 1817(bytes).
+layer 2: input metadata size = 1817(bytes).
+layer 3: input metadata size = 1817(bytes).
+layer 4: input metadata size = 1817(bytes).
+layer 5: input metadata size = 1817(bytes).
+layer 6: input metadata size = 1817(bytes).
+layer 7: input metadata size = 1817(bytes).
+layer 8: input metadata size = 1817(bytes).
+layer 9: input metadata size = 1817(bytes).
+layer 10: input metadata size = 1817(bytes).
+layer 11: input metadata size = 1817(bytes).
+layer 12: input metadata size = 1817(bytes).
+layer 13: input metadata size = 1817(bytes).
+layer 14: input metadata size = 1817(bytes).
+layer 15: input metadata size = 1817(bytes).
+layer 16: input metadata size = 1817(bytes).
+layer 17: input metadata size = 1817(bytes).
+layer 18: input metadata size = 1817(bytes).
+layer 19: input metadata size = 1817(bytes).
+layer 20: input metadata size = 1817(bytes).
+layer 21: input metadata size = 1817(bytes).
+layer 22: input metadata size = 1817(bytes).
+layer 23: input metadata size = 1817(bytes).
+layer 24: input metadata size = 1817(bytes).
+layer 25: input metadata size = 1817(bytes).
+layer 26: input metadata size = 1817(bytes).
+layer 27: input metadata size = 1817(bytes).
+layer 28: input metadata size = 1817(bytes).
+layer 29: input metadata size = 1817(bytes).
+layer 30: input metadata size = 1817(bytes).
+layer 31: input metadata size = 1817(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:06.974792
+[LOG] Interval of :Worker Excute model, 0 sec 98117 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:06.974826
+[LOG] Interval of :Engine Step, 0 sec 109491 us.
+[LOG]   Exit: RUNSTEP 4. Time NOW: 2023-12-05 20:35:06.974966
+[LOG] Interval of :RUNSTEP 4, 0 sec 109676 us.
+[LOG]   Enter: RUNSTEP 5. Time NOW: 2023-12-05 20:35:06.974993
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:06.975035
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:06.975166
+At first: input metadata size = 1820(bytes).
+layer 0: input metadata size = 1820(bytes).
+layer 1: input metadata size = 1820(bytes).
+layer 2: input metadata size = 1820(bytes).
+layer 3: input metadata size = 1820(bytes).
+layer 4: input metadata size = 1820(bytes).
+layer 5: input metadata size = 1820(bytes).
+layer 6: input metadata size = 1820(bytes).
+layer 7: input metadata size = 1820(bytes).
+layer 8: input metadata size = 1820(bytes).
+layer 9: input metadata size = 1820(bytes).
+layer 10: input metadata size = 1820(bytes).
+layer 11: input metadata size = 1820(bytes).
+layer 12: input metadata size = 1820(bytes).
+layer 13: input metadata size = 1820(bytes).
+layer 14: input metadata size = 1820(bytes).
+layer 15: input metadata size = 1820(bytes).
+layer 16: input metadata size = 1820(bytes).
+layer 17: input metadata size = 1820(bytes).
+layer 18: input metadata size = 1820(bytes).
+layer 19: input metadata size = 1820(bytes).
+layer 20: input metadata size = 1820(bytes).
+layer 21: input metadata size = 1820(bytes).
+layer 22: input metadata size = 1820(bytes).
+layer 23: input metadata size = 1820(bytes).
+layer 24: input metadata size = 1820(bytes).
+layer 25: input metadata size = 1820(bytes).
+layer 26: input metadata size = 1820(bytes).
+layer 27: input metadata size = 1820(bytes).
+layer 28: input metadata size = 1820(bytes).
+layer 29: input metadata size = 1820(bytes).
+layer 30: input metadata size = 1820(bytes).
+layer 31: input metadata size = 1820(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.005387
+[LOG] Interval of :Worker Excute model, 0 sec 30221 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.005415
+[LOG] Interval of :Engine Step, 0 sec 30380 us.
+[LOG]   Exit: RUNSTEP 5. Time NOW: 2023-12-05 20:35:07.005523
+[LOG] Interval of :RUNSTEP 5, 0 sec 30530 us.
+[LOG]   Enter: RUNSTEP 6. Time NOW: 2023-12-05 20:35:07.005549
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.005585
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.005713
+At first: input metadata size = 1826(bytes).
+layer 0: input metadata size = 1826(bytes).
+layer 1: input metadata size = 1826(bytes).
+layer 2: input metadata size = 1826(bytes).
+layer 3: input metadata size = 1826(bytes).
+layer 4: input metadata size = 1826(bytes).
+layer 5: input metadata size = 1826(bytes).
+layer 6: input metadata size = 1826(bytes).
+layer 7: input metadata size = 1826(bytes).
+layer 8: input metadata size = 1826(bytes).
+layer 9: input metadata size = 1826(bytes).
+layer 10: input metadata size = 1826(bytes).
+layer 11: input metadata size = 1826(bytes).
+layer 12: input metadata size = 1826(bytes).
+layer 13: input metadata size = 1826(bytes).
+layer 14: input metadata size = 1826(bytes).
+layer 15: input metadata size = 1826(bytes).
+layer 16: input metadata size = 1826(bytes).
+layer 17: input metadata size = 1826(bytes).
+layer 18: input metadata size = 1826(bytes).
+layer 19: input metadata size = 1826(bytes).
+layer 20: input metadata size = 1826(bytes).
+layer 21: input metadata size = 1826(bytes).
+layer 22: input metadata size = 1826(bytes).
+layer 23: input metadata size = 1826(bytes).
+layer 24: input metadata size = 1826(bytes).
+layer 25: input metadata size = 1826(bytes).
+layer 26: input metadata size = 1826(bytes).
+layer 27: input metadata size = 1826(bytes).
+layer 28: input metadata size = 1826(bytes).
+layer 29: input metadata size = 1826(bytes).
+layer 30: input metadata size = 1826(bytes).
+layer 31: input metadata size = 1826(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.035717
+[LOG] Interval of :Worker Excute model, 0 sec 30004 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.035745
+[LOG] Interval of :Engine Step, 0 sec 30160 us.
+[LOG]   Exit: RUNSTEP 6. Time NOW: 2023-12-05 20:35:07.035839
+[LOG] Interval of :RUNSTEP 6, 0 sec 30290 us.
+[LOG]   Enter: RUNSTEP 7. Time NOW: 2023-12-05 20:35:07.035866
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.035905
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.036026
+At first: input metadata size = 1828(bytes).
+layer 0: input metadata size = 1828(bytes).
+layer 1: input metadata size = 1828(bytes).
+layer 2: input metadata size = 1828(bytes).
+layer 3: input metadata size = 1828(bytes).
+layer 4: input metadata size = 1828(bytes).
+layer 5: input metadata size = 1828(bytes).
+layer 6: input metadata size = 1828(bytes).
+layer 7: input metadata size = 1828(bytes).
+layer 8: input metadata size = 1828(bytes).
+layer 9: input metadata size = 1828(bytes).
+layer 10: input metadata size = 1828(bytes).
+layer 11: input metadata size = 1828(bytes).
+layer 12: input metadata size = 1828(bytes).
+layer 13: input metadata size = 1828(bytes).
+layer 14: input metadata size = 1828(bytes).
+layer 15: input metadata size = 1828(bytes).
+layer 16: input metadata size = 1828(bytes).
+layer 17: input metadata size = 1828(bytes).
+layer 18: input metadata size = 1828(bytes).
+layer 19: input metadata size = 1828(bytes).
+layer 20: input metadata size = 1828(bytes).
+layer 21: input metadata size = 1828(bytes).
+layer 22: input metadata size = 1828(bytes).
+layer 23: input metadata size = 1828(bytes).
+layer 24: input metadata size = 1828(bytes).
+layer 25: input metadata size = 1828(bytes).
+layer 26: input metadata size = 1828(bytes).
+layer 27: input metadata size = 1828(bytes).
+layer 28: input metadata size = 1828(bytes).
+layer 29: input metadata size = 1828(bytes).
+layer 30: input metadata size = 1828(bytes).
+layer 31: input metadata size = 1828(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.066072
+[LOG] Interval of :Worker Excute model, 0 sec 30046 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.066139
+[LOG] Interval of :Engine Step, 0 sec 30234 us.
+[LOG]   Exit: RUNSTEP 7. Time NOW: 2023-12-05 20:35:07.066242
+[LOG] Interval of :RUNSTEP 7, 0 sec 30376 us.
+[LOG]   Enter: RUNSTEP 8. Time NOW: 2023-12-05 20:35:07.066268
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.066301
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.066424
+At first: input metadata size = 1830(bytes).
+layer 0: input metadata size = 1830(bytes).
+layer 1: input metadata size = 1830(bytes).
+layer 2: input metadata size = 1830(bytes).
+layer 3: input metadata size = 1830(bytes).
+layer 4: input metadata size = 1830(bytes).
+layer 5: input metadata size = 1830(bytes).
+layer 6: input metadata size = 1830(bytes).
+layer 7: input metadata size = 1830(bytes).
+layer 8: input metadata size = 1830(bytes).
+layer 9: input metadata size = 1830(bytes).
+layer 10: input metadata size = 1830(bytes).
+layer 11: input metadata size = 1830(bytes).
+layer 12: input metadata size = 1830(bytes).
+layer 13: input metadata size = 1830(bytes).
+layer 14: input metadata size = 1830(bytes).
+layer 15: input metadata size = 1830(bytes).
+layer 16: input metadata size = 1830(bytes).
+layer 17: input metadata size = 1830(bytes).
+layer 18: input metadata size = 1830(bytes).
+layer 19: input metadata size = 1830(bytes).
+layer 20: input metadata size = 1830(bytes).
+layer 21: input metadata size = 1830(bytes).
+layer 22: input metadata size = 1830(bytes).
+layer 23: input metadata size = 1830(bytes).
+layer 24: input metadata size = 1830(bytes).
+layer 25: input metadata size = 1830(bytes).
+layer 26: input metadata size = 1830(bytes).
+layer 27: input metadata size = 1830(bytes).
+layer 28: input metadata size = 1830(bytes).
+layer 29: input metadata size = 1830(bytes).
+layer 30: input metadata size = 1830(bytes).
+layer 31: input metadata size = 1830(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.157661
+[LOG] Interval of :Worker Excute model, 0 sec 91237 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.157689
+[LOG] Interval of :Engine Step, 0 sec 91388 us.
+[LOG]   Exit: RUNSTEP 8. Time NOW: 2023-12-05 20:35:07.157777
+[LOG] Interval of :RUNSTEP 8, 0 sec 91509 us.
+[LOG]   Enter: RUNSTEP 9. Time NOW: 2023-12-05 20:35:07.157801
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.157831
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.169291
+At first: input metadata size = 1832(bytes).
+layer 0: input metadata size = 1832(bytes).
+layer 1: input metadata size = 1832(bytes).
+layer 2: input metadata size = 1832(bytes).
+layer 3: input metadata size = 1832(bytes).
+layer 4: input metadata size = 1832(bytes).
+layer 5: input metadata size = 1832(bytes).
+layer 6: input metadata size = 1832(bytes).
+layer 7: input metadata size = 1832(bytes).
+layer 8: input metadata size = 1832(bytes).
+layer 9: input metadata size = 1832(bytes).
+layer 10: input metadata size = 1832(bytes).
+layer 11: input metadata size = 1832(bytes).
+layer 12: input metadata size = 1832(bytes).
+layer 13: input metadata size = 1832(bytes).
+layer 14: input metadata size = 1832(bytes).
+layer 15: input metadata size = 1832(bytes).
+layer 16: input metadata size = 1832(bytes).
+layer 17: input metadata size = 1832(bytes).
+layer 18: input metadata size = 1832(bytes).
+layer 19: input metadata size = 1832(bytes).
+layer 20: input metadata size = 1832(bytes).
+layer 21: input metadata size = 1832(bytes).
+layer 22: input metadata size = 1832(bytes).
+layer 23: input metadata size = 1832(bytes).
+layer 24: input metadata size = 1832(bytes).
+layer 25: input metadata size = 1832(bytes).
+layer 26: input metadata size = 1832(bytes).
+layer 27: input metadata size = 1832(bytes).
+layer 28: input metadata size = 1832(bytes).
+layer 29: input metadata size = 1832(bytes).
+layer 30: input metadata size = 1832(bytes).
+layer 31: input metadata size = 1832(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.292831
+[LOG] Interval of :Worker Excute model, 0 sec 123540 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.292859
+[LOG] Interval of :Engine Step, 0 sec 135028 us.
+[LOG]   Exit: RUNSTEP 9. Time NOW: 2023-12-05 20:35:07.292944
+[LOG] Interval of :RUNSTEP 9, 0 sec 135143 us.
+[LOG]   Enter: RUNSTEP 10. Time NOW: 2023-12-05 20:35:07.292968
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.292997
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.304380
+At first: input metadata size = 1835(bytes).
+layer 0: input metadata size = 1835(bytes).
+layer 1: input metadata size = 1835(bytes).
+layer 2: input metadata size = 1835(bytes).
+layer 3: input metadata size = 1835(bytes).
+layer 4: input metadata size = 1835(bytes).
+layer 5: input metadata size = 1835(bytes).
+layer 6: input metadata size = 1835(bytes).
+layer 7: input metadata size = 1835(bytes).
+layer 8: input metadata size = 1835(bytes).
+layer 9: input metadata size = 1835(bytes).
+layer 10: input metadata size = 1835(bytes).
+layer 11: input metadata size = 1835(bytes).
+layer 12: input metadata size = 1835(bytes).
+layer 13: input metadata size = 1835(bytes).
+layer 14: input metadata size = 1835(bytes).
+layer 15: input metadata size = 1835(bytes).
+layer 16: input metadata size = 1835(bytes).
+layer 17: input metadata size = 1835(bytes).
+layer 18: input metadata size = 1835(bytes).
+layer 19: input metadata size = 1835(bytes).
+layer 20: input metadata size = 1835(bytes).
+layer 21: input metadata size = 1835(bytes).
+layer 22: input metadata size = 1835(bytes).
+layer 23: input metadata size = 1835(bytes).
+layer 24: input metadata size = 1835(bytes).
+layer 25: input metadata size = 1835(bytes).
+layer 26: input metadata size = 1835(bytes).
+layer 27: input metadata size = 1835(bytes).
+layer 28: input metadata size = 1835(bytes).
+layer 29: input metadata size = 1835(bytes).
+layer 30: input metadata size = 1835(bytes).
+layer 31: input metadata size = 1835(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.376793
+[LOG] Interval of :Worker Excute model, 0 sec 72413 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.376820
+[LOG] Interval of :Engine Step, 0 sec 83823 us.
+[LOG]   Exit: RUNSTEP 10. Time NOW: 2023-12-05 20:35:07.376904
+[LOG] Interval of :RUNSTEP 10, 0 sec 83936 us.
+[LOG]   Enter: RUNSTEP 11. Time NOW: 2023-12-05 20:35:07.376930
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.376959
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.377076
+At first: input metadata size = 1838(bytes).
+layer 0: input metadata size = 1838(bytes).
+layer 1: input metadata size = 1838(bytes).
+layer 2: input metadata size = 1838(bytes).
+layer 3: input metadata size = 1838(bytes).
+layer 4: input metadata size = 1838(bytes).
+layer 5: input metadata size = 1838(bytes).
+layer 6: input metadata size = 1838(bytes).
+layer 7: input metadata size = 1838(bytes).
+layer 8: input metadata size = 1838(bytes).
+layer 9: input metadata size = 1838(bytes).
+layer 10: input metadata size = 1838(bytes).
+layer 11: input metadata size = 1838(bytes).
+layer 12: input metadata size = 1838(bytes).
+layer 13: input metadata size = 1838(bytes).
+layer 14: input metadata size = 1838(bytes).
+layer 15: input metadata size = 1838(bytes).
+layer 16: input metadata size = 1838(bytes).
+layer 17: input metadata size = 1838(bytes).
+layer 18: input metadata size = 1838(bytes).
+layer 19: input metadata size = 1838(bytes).
+layer 20: input metadata size = 1838(bytes).
+layer 21: input metadata size = 1838(bytes).
+layer 22: input metadata size = 1838(bytes).
+layer 23: input metadata size = 1838(bytes).
+layer 24: input metadata size = 1838(bytes).
+layer 25: input metadata size = 1838(bytes).
+layer 26: input metadata size = 1838(bytes).
+layer 27: input metadata size = 1838(bytes).
+layer 28: input metadata size = 1838(bytes).
+layer 29: input metadata size = 1838(bytes).
+layer 30: input metadata size = 1838(bytes).
+layer 31: input metadata size = 1838(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.407117
+[LOG] Interval of :Worker Excute model, 0 sec 30041 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.407145
+[LOG] Interval of :Engine Step, 0 sec 30186 us.
+[LOG]   Exit: RUNSTEP 11. Time NOW: 2023-12-05 20:35:07.407228
+[LOG] Interval of :RUNSTEP 11, 0 sec 30298 us.
+[LOG]   Enter: RUNSTEP 12. Time NOW: 2023-12-05 20:35:07.407252
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.407280
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.407398
+At first: input metadata size = 1840(bytes).
+layer 0: input metadata size = 1840(bytes).
+layer 1: input metadata size = 1840(bytes).
+layer 2: input metadata size = 1840(bytes).
+layer 3: input metadata size = 1840(bytes).
+layer 4: input metadata size = 1840(bytes).
+layer 5: input metadata size = 1840(bytes).
+layer 6: input metadata size = 1840(bytes).
+layer 7: input metadata size = 1840(bytes).
+layer 8: input metadata size = 1840(bytes).
+layer 9: input metadata size = 1840(bytes).
+layer 10: input metadata size = 1840(bytes).
+layer 11: input metadata size = 1840(bytes).
+layer 12: input metadata size = 1840(bytes).
+layer 13: input metadata size = 1840(bytes).
+layer 14: input metadata size = 1840(bytes).
+layer 15: input metadata size = 1840(bytes).
+layer 16: input metadata size = 1840(bytes).
+layer 17: input metadata size = 1840(bytes).
+layer 18: input metadata size = 1840(bytes).
+layer 19: input metadata size = 1840(bytes).
+layer 20: input metadata size = 1840(bytes).
+layer 21: input metadata size = 1840(bytes).
+layer 22: input metadata size = 1840(bytes).
+layer 23: input metadata size = 1840(bytes).
+layer 24: input metadata size = 1840(bytes).
+layer 25: input metadata size = 1840(bytes).
+layer 26: input metadata size = 1840(bytes).
+layer 27: input metadata size = 1840(bytes).
+layer 28: input metadata size = 1840(bytes).
+layer 29: input metadata size = 1840(bytes).
+layer 30: input metadata size = 1840(bytes).
+layer 31: input metadata size = 1840(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.437416
+[LOG] Interval of :Worker Excute model, 0 sec 30018 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.437443
+[LOG] Interval of :Engine Step, 0 sec 30163 us.
+[LOG]   Exit: RUNSTEP 12. Time NOW: 2023-12-05 20:35:07.437531
+[LOG] Interval of :RUNSTEP 12, 0 sec 30279 us.
+[LOG]   Enter: RUNSTEP 13. Time NOW: 2023-12-05 20:35:07.437555
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.437585
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.437707
+At first: input metadata size = 1842(bytes).
+layer 0: input metadata size = 1842(bytes).
+layer 1: input metadata size = 1842(bytes).
+layer 2: input metadata size = 1842(bytes).
+layer 3: input metadata size = 1842(bytes).
+layer 4: input metadata size = 1842(bytes).
+layer 5: input metadata size = 1842(bytes).
+layer 6: input metadata size = 1842(bytes).
+layer 7: input metadata size = 1842(bytes).
+layer 8: input metadata size = 1842(bytes).
+layer 9: input metadata size = 1842(bytes).
+layer 10: input metadata size = 1842(bytes).
+layer 11: input metadata size = 1842(bytes).
+layer 12: input metadata size = 1842(bytes).
+layer 13: input metadata size = 1842(bytes).
+layer 14: input metadata size = 1842(bytes).
+layer 15: input metadata size = 1842(bytes).
+layer 16: input metadata size = 1842(bytes).
+layer 17: input metadata size = 1842(bytes).
+layer 18: input metadata size = 1842(bytes).
+layer 19: input metadata size = 1842(bytes).
+layer 20: input metadata size = 1842(bytes).
+layer 21: input metadata size = 1842(bytes).
+layer 22: input metadata size = 1842(bytes).
+layer 23: input metadata size = 1842(bytes).
+layer 24: input metadata size = 1842(bytes).
+layer 25: input metadata size = 1842(bytes).
+layer 26: input metadata size = 1842(bytes).
+layer 27: input metadata size = 1842(bytes).
+layer 28: input metadata size = 1842(bytes).
+layer 29: input metadata size = 1842(bytes).
+layer 30: input metadata size = 1842(bytes).
+layer 31: input metadata size = 1842(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.467755
+[LOG] Interval of :Worker Excute model, 0 sec 30048 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.467782
+[LOG] Interval of :Engine Step, 0 sec 30197 us.
+[LOG]   Exit: RUNSTEP 13. Time NOW: 2023-12-05 20:35:07.467865
+[LOG] Interval of :RUNSTEP 13, 0 sec 30310 us.
+[LOG]   Enter: RUNSTEP 14. Time NOW: 2023-12-05 20:35:07.467890
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.467919
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.468036
+At first: input metadata size = 1845(bytes).
+layer 0: input metadata size = 1845(bytes).
+layer 1: input metadata size = 1845(bytes).
+layer 2: input metadata size = 1845(bytes).
+layer 3: input metadata size = 1845(bytes).
+layer 4: input metadata size = 1845(bytes).
+layer 5: input metadata size = 1845(bytes).
+layer 6: input metadata size = 1845(bytes).
+layer 7: input metadata size = 1845(bytes).
+layer 8: input metadata size = 1845(bytes).
+layer 9: input metadata size = 1845(bytes).
+layer 10: input metadata size = 1845(bytes).
+layer 11: input metadata size = 1845(bytes).
+layer 12: input metadata size = 1845(bytes).
+layer 13: input metadata size = 1845(bytes).
+layer 14: input metadata size = 1845(bytes).
+layer 15: input metadata size = 1845(bytes).
+layer 16: input metadata size = 1845(bytes).
+layer 17: input metadata size = 1845(bytes).
+layer 18: input metadata size = 1845(bytes).
+layer 19: input metadata size = 1845(bytes).
+layer 20: input metadata size = 1845(bytes).
+layer 21: input metadata size = 1845(bytes).
+layer 22: input metadata size = 1845(bytes).
+layer 23: input metadata size = 1845(bytes).
+layer 24: input metadata size = 1845(bytes).
+layer 25: input metadata size = 1845(bytes).
+layer 26: input metadata size = 1845(bytes).
+layer 27: input metadata size = 1845(bytes).
+layer 28: input metadata size = 1845(bytes).
+layer 29: input metadata size = 1845(bytes).
+layer 30: input metadata size = 1845(bytes).
+layer 31: input metadata size = 1845(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.570510
+[LOG] Interval of :Worker Excute model, 0 sec 102474 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.570539
+[LOG] Interval of :Engine Step, 0 sec 102620 us.
+[LOG]   Exit: RUNSTEP 14. Time NOW: 2023-12-05 20:35:07.570627
+[LOG] Interval of :RUNSTEP 14, 0 sec 102737 us.
+[LOG]   Enter: RUNSTEP 15. Time NOW: 2023-12-05 20:35:07.570652
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.570681
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.582140
+At first: input metadata size = 1848(bytes).
+layer 0: input metadata size = 1848(bytes).
+layer 1: input metadata size = 1848(bytes).
+layer 2: input metadata size = 1848(bytes).
+layer 3: input metadata size = 1848(bytes).
+layer 4: input metadata size = 1848(bytes).
+layer 5: input metadata size = 1848(bytes).
+layer 6: input metadata size = 1848(bytes).
+layer 7: input metadata size = 1848(bytes).
+layer 8: input metadata size = 1848(bytes).
+layer 9: input metadata size = 1848(bytes).
+layer 10: input metadata size = 1848(bytes).
+layer 11: input metadata size = 1848(bytes).
+layer 12: input metadata size = 1848(bytes).
+layer 13: input metadata size = 1848(bytes).
+layer 14: input metadata size = 1848(bytes).
+layer 15: input metadata size = 1848(bytes).
+layer 16: input metadata size = 1848(bytes).
+layer 17: input metadata size = 1848(bytes).
+layer 18: input metadata size = 1848(bytes).
+layer 19: input metadata size = 1848(bytes).
+layer 20: input metadata size = 1848(bytes).
+layer 21: input metadata size = 1848(bytes).
+layer 22: input metadata size = 1848(bytes).
+layer 23: input metadata size = 1848(bytes).
+layer 24: input metadata size = 1848(bytes).
+layer 25: input metadata size = 1848(bytes).
+layer 26: input metadata size = 1848(bytes).
+layer 27: input metadata size = 1848(bytes).
+layer 28: input metadata size = 1848(bytes).
+layer 29: input metadata size = 1848(bytes).
+layer 30: input metadata size = 1848(bytes).
+layer 31: input metadata size = 1848(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.706656
+[LOG] Interval of :Worker Excute model, 0 sec 124516 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.706691
+[LOG] Interval of :Engine Step, 0 sec 136010 us.
+[LOG]   Exit: RUNSTEP 15. Time NOW: 2023-12-05 20:35:07.706803
+[LOG] Interval of :RUNSTEP 15, 0 sec 136151 us.
+[LOG]   Enter: RUNSTEP 16. Time NOW: 2023-12-05 20:35:07.706830
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.706863
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.718282
+At first: input metadata size = 1850(bytes).
+layer 0: input metadata size = 1850(bytes).
+layer 1: input metadata size = 1850(bytes).
+layer 2: input metadata size = 1850(bytes).
+layer 3: input metadata size = 1850(bytes).
+layer 4: input metadata size = 1850(bytes).
+layer 5: input metadata size = 1850(bytes).
+layer 6: input metadata size = 1850(bytes).
+layer 7: input metadata size = 1850(bytes).
+layer 8: input metadata size = 1850(bytes).
+layer 9: input metadata size = 1850(bytes).
+layer 10: input metadata size = 1850(bytes).
+layer 11: input metadata size = 1850(bytes).
+layer 12: input metadata size = 1850(bytes).
+layer 13: input metadata size = 1850(bytes).
+layer 14: input metadata size = 1850(bytes).
+layer 15: input metadata size = 1850(bytes).
+layer 16: input metadata size = 1850(bytes).
+layer 17: input metadata size = 1850(bytes).
+layer 18: input metadata size = 1850(bytes).
+layer 19: input metadata size = 1850(bytes).
+layer 20: input metadata size = 1850(bytes).
+layer 21: input metadata size = 1850(bytes).
+layer 22: input metadata size = 1850(bytes).
+layer 23: input metadata size = 1850(bytes).
+layer 24: input metadata size = 1850(bytes).
+layer 25: input metadata size = 1850(bytes).
+layer 26: input metadata size = 1850(bytes).
+layer 27: input metadata size = 1850(bytes).
+layer 28: input metadata size = 1850(bytes).
+layer 29: input metadata size = 1850(bytes).
+layer 30: input metadata size = 1850(bytes).
+layer 31: input metadata size = 1850(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.774144
+[LOG] Interval of :Worker Excute model, 0 sec 55862 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.774172
+[LOG] Interval of :Engine Step, 0 sec 67309 us.
+[LOG]   Exit: RUNSTEP 16. Time NOW: 2023-12-05 20:35:07.774269
+[LOG] Interval of :RUNSTEP 16, 0 sec 67439 us.
+[LOG]   Enter: RUNSTEP 17. Time NOW: 2023-12-05 20:35:07.774294
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.774326
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.774449
+At first: input metadata size = 1853(bytes).
+layer 0: input metadata size = 1853(bytes).
+layer 1: input metadata size = 1853(bytes).
+layer 2: input metadata size = 1853(bytes).
+layer 3: input metadata size = 1853(bytes).
+layer 4: input metadata size = 1853(bytes).
+layer 5: input metadata size = 1853(bytes).
+layer 6: input metadata size = 1853(bytes).
+layer 7: input metadata size = 1853(bytes).
+layer 8: input metadata size = 1853(bytes).
+layer 9: input metadata size = 1853(bytes).
+layer 10: input metadata size = 1853(bytes).
+layer 11: input metadata size = 1853(bytes).
+layer 12: input metadata size = 1853(bytes).
+layer 13: input metadata size = 1853(bytes).
+layer 14: input metadata size = 1853(bytes).
+layer 15: input metadata size = 1853(bytes).
+layer 16: input metadata size = 1853(bytes).
+layer 17: input metadata size = 1853(bytes).
+layer 18: input metadata size = 1853(bytes).
+layer 19: input metadata size = 1853(bytes).
+layer 20: input metadata size = 1853(bytes).
+layer 21: input metadata size = 1853(bytes).
+layer 22: input metadata size = 1853(bytes).
+layer 23: input metadata size = 1853(bytes).
+layer 24: input metadata size = 1853(bytes).
+layer 25: input metadata size = 1853(bytes).
+layer 26: input metadata size = 1853(bytes).
+layer 27: input metadata size = 1853(bytes).
+layer 28: input metadata size = 1853(bytes).
+layer 29: input metadata size = 1853(bytes).
+layer 30: input metadata size = 1853(bytes).
+layer 31: input metadata size = 1853(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.804519
+[LOG] Interval of :Worker Excute model, 0 sec 30070 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.804547
+[LOG] Interval of :Engine Step, 0 sec 30221 us.
+[LOG]   Exit: RUNSTEP 17. Time NOW: 2023-12-05 20:35:07.804633
+[LOG] Interval of :RUNSTEP 17, 0 sec 30339 us.
+[LOG]   Enter: RUNSTEP 18. Time NOW: 2023-12-05 20:35:07.804658
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.804687
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.804806
+At first: input metadata size = 1855(bytes).
+layer 0: input metadata size = 1855(bytes).
+layer 1: input metadata size = 1855(bytes).
+layer 2: input metadata size = 1855(bytes).
+layer 3: input metadata size = 1855(bytes).
+layer 4: input metadata size = 1855(bytes).
+layer 5: input metadata size = 1855(bytes).
+layer 6: input metadata size = 1855(bytes).
+layer 7: input metadata size = 1855(bytes).
+layer 8: input metadata size = 1855(bytes).
+layer 9: input metadata size = 1855(bytes).
+layer 10: input metadata size = 1855(bytes).
+layer 11: input metadata size = 1855(bytes).
+layer 12: input metadata size = 1855(bytes).
+layer 13: input metadata size = 1855(bytes).
+layer 14: input metadata size = 1855(bytes).
+layer 15: input metadata size = 1855(bytes).
+layer 16: input metadata size = 1855(bytes).
+layer 17: input metadata size = 1855(bytes).
+layer 18: input metadata size = 1855(bytes).
+layer 19: input metadata size = 1855(bytes).
+layer 20: input metadata size = 1855(bytes).
+layer 21: input metadata size = 1855(bytes).
+layer 22: input metadata size = 1855(bytes).
+layer 23: input metadata size = 1855(bytes).
+layer 24: input metadata size = 1855(bytes).
+layer 25: input metadata size = 1855(bytes).
+layer 26: input metadata size = 1855(bytes).
+layer 27: input metadata size = 1855(bytes).
+layer 28: input metadata size = 1855(bytes).
+layer 29: input metadata size = 1855(bytes).
+layer 30: input metadata size = 1855(bytes).
+layer 31: input metadata size = 1855(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.834803
+[LOG] Interval of :Worker Excute model, 0 sec 29997 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.834831
+[LOG] Interval of :Engine Step, 0 sec 30144 us.
+[LOG]   Exit: RUNSTEP 18. Time NOW: 2023-12-05 20:35:07.834921
+[LOG] Interval of :RUNSTEP 18, 0 sec 30263 us.
+[LOG]   Enter: RUNSTEP 19. Time NOW: 2023-12-05 20:35:07.834946
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.834975
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.835092
+At first: input metadata size = 1857(bytes).
+layer 0: input metadata size = 1857(bytes).
+layer 1: input metadata size = 1857(bytes).
+layer 2: input metadata size = 1857(bytes).
+layer 3: input metadata size = 1857(bytes).
+layer 4: input metadata size = 1857(bytes).
+layer 5: input metadata size = 1857(bytes).
+layer 6: input metadata size = 1857(bytes).
+layer 7: input metadata size = 1857(bytes).
+layer 8: input metadata size = 1857(bytes).
+layer 9: input metadata size = 1857(bytes).
+layer 10: input metadata size = 1857(bytes).
+layer 11: input metadata size = 1857(bytes).
+layer 12: input metadata size = 1857(bytes).
+layer 13: input metadata size = 1857(bytes).
+layer 14: input metadata size = 1857(bytes).
+layer 15: input metadata size = 1857(bytes).
+layer 16: input metadata size = 1857(bytes).
+layer 17: input metadata size = 1857(bytes).
+layer 18: input metadata size = 1857(bytes).
+layer 19: input metadata size = 1857(bytes).
+layer 20: input metadata size = 1857(bytes).
+layer 21: input metadata size = 1857(bytes).
+layer 22: input metadata size = 1857(bytes).
+layer 23: input metadata size = 1857(bytes).
+layer 24: input metadata size = 1857(bytes).
+layer 25: input metadata size = 1857(bytes).
+layer 26: input metadata size = 1857(bytes).
+layer 27: input metadata size = 1857(bytes).
+layer 28: input metadata size = 1857(bytes).
+layer 29: input metadata size = 1857(bytes).
+layer 30: input metadata size = 1857(bytes).
+layer 31: input metadata size = 1857(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:07.899733
+[LOG] Interval of :Worker Excute model, 0 sec 64641 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:07.899760
+[LOG] Interval of :Engine Step, 0 sec 64785 us.
+[LOG]   Exit: RUNSTEP 19. Time NOW: 2023-12-05 20:35:07.899847
+[LOG] Interval of :RUNSTEP 19, 0 sec 64901 us.
+[LOG]   Enter: RUNSTEP 20. Time NOW: 2023-12-05 20:35:07.899872
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:07.899901
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:07.909783
+At first: input metadata size = 1860(bytes).
+layer 0: input metadata size = 1860(bytes).
+layer 1: input metadata size = 1860(bytes).
+layer 2: input metadata size = 1860(bytes).
+layer 3: input metadata size = 1860(bytes).
+layer 4: input metadata size = 1860(bytes).
+layer 5: input metadata size = 1860(bytes).
+layer 6: input metadata size = 1860(bytes).
+layer 7: input metadata size = 1860(bytes).
+layer 8: input metadata size = 1860(bytes).
+layer 9: input metadata size = 1860(bytes).
+layer 10: input metadata size = 1860(bytes).
+layer 11: input metadata size = 1860(bytes).
+layer 12: input metadata size = 1860(bytes).
+layer 13: input metadata size = 1860(bytes).
+layer 14: input metadata size = 1860(bytes).
+layer 15: input metadata size = 1860(bytes).
+layer 16: input metadata size = 1860(bytes).
+layer 17: input metadata size = 1860(bytes).
+layer 18: input metadata size = 1860(bytes).
+layer 19: input metadata size = 1860(bytes).
+layer 20: input metadata size = 1860(bytes).
+layer 21: input metadata size = 1860(bytes).
+layer 22: input metadata size = 1860(bytes).
+layer 23: input metadata size = 1860(bytes).
+layer 24: input metadata size = 1860(bytes).
+layer 25: input metadata size = 1860(bytes).
+layer 26: input metadata size = 1860(bytes).
+layer 27: input metadata size = 1860(bytes).
+layer 28: input metadata size = 1860(bytes).
+layer 29: input metadata size = 1860(bytes).
+layer 30: input metadata size = 1860(bytes).
+layer 31: input metadata size = 1860(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.014294
+[LOG] Interval of :Worker Excute model, 0 sec 104511 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.014322
+[LOG] Interval of :Engine Step, 0 sec 114421 us.
+[LOG]   Exit: RUNSTEP 20. Time NOW: 2023-12-05 20:35:08.014407
+[LOG] Interval of :RUNSTEP 20, 0 sec 114535 us.
+[LOG]   Enter: RUNSTEP 21. Time NOW: 2023-12-05 20:35:08.014431
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.014460
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.014579
+At first: input metadata size = 1863(bytes).
+layer 0: input metadata size = 1863(bytes).
+layer 1: input metadata size = 1863(bytes).
+layer 2: input metadata size = 1863(bytes).
+layer 3: input metadata size = 1863(bytes).
+layer 4: input metadata size = 1863(bytes).
+layer 5: input metadata size = 1863(bytes).
+layer 6: input metadata size = 1863(bytes).
+layer 7: input metadata size = 1863(bytes).
+layer 8: input metadata size = 1863(bytes).
+layer 9: input metadata size = 1863(bytes).
+layer 10: input metadata size = 1863(bytes).
+layer 11: input metadata size = 1863(bytes).
+layer 12: input metadata size = 1863(bytes).
+layer 13: input metadata size = 1863(bytes).
+layer 14: input metadata size = 1863(bytes).
+layer 15: input metadata size = 1863(bytes).
+layer 16: input metadata size = 1863(bytes).
+layer 17: input metadata size = 1863(bytes).
+layer 18: input metadata size = 1863(bytes).
+layer 19: input metadata size = 1863(bytes).
+layer 20: input metadata size = 1863(bytes).
+layer 21: input metadata size = 1863(bytes).
+layer 22: input metadata size = 1863(bytes).
+layer 23: input metadata size = 1863(bytes).
+layer 24: input metadata size = 1863(bytes).
+layer 25: input metadata size = 1863(bytes).
+layer 26: input metadata size = 1863(bytes).
+layer 27: input metadata size = 1863(bytes).
+layer 28: input metadata size = 1863(bytes).
+layer 29: input metadata size = 1863(bytes).
+layer 30: input metadata size = 1863(bytes).
+layer 31: input metadata size = 1863(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.044622
+[LOG] Interval of :Worker Excute model, 0 sec 30043 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.044649
+[LOG] Interval of :Engine Step, 0 sec 30189 us.
+[LOG]   Exit: RUNSTEP 21. Time NOW: 2023-12-05 20:35:08.044737
+[LOG] Interval of :RUNSTEP 21, 0 sec 30306 us.
+[LOG]   Enter: RUNSTEP 22. Time NOW: 2023-12-05 20:35:08.044762
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.044794
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.044911
+At first: input metadata size = 1870(bytes).
+layer 0: input metadata size = 1870(bytes).
+layer 1: input metadata size = 1870(bytes).
+layer 2: input metadata size = 1870(bytes).
+layer 3: input metadata size = 1870(bytes).
+layer 4: input metadata size = 1870(bytes).
+layer 5: input metadata size = 1870(bytes).
+layer 6: input metadata size = 1870(bytes).
+layer 7: input metadata size = 1870(bytes).
+layer 8: input metadata size = 1870(bytes).
+layer 9: input metadata size = 1870(bytes).
+layer 10: input metadata size = 1870(bytes).
+layer 11: input metadata size = 1870(bytes).
+layer 12: input metadata size = 1870(bytes).
+layer 13: input metadata size = 1870(bytes).
+layer 14: input metadata size = 1870(bytes).
+layer 15: input metadata size = 1870(bytes).
+layer 16: input metadata size = 1870(bytes).
+layer 17: input metadata size = 1870(bytes).
+layer 18: input metadata size = 1870(bytes).
+layer 19: input metadata size = 1870(bytes).
+layer 20: input metadata size = 1870(bytes).
+layer 21: input metadata size = 1870(bytes).
+layer 22: input metadata size = 1870(bytes).
+layer 23: input metadata size = 1870(bytes).
+layer 24: input metadata size = 1870(bytes).
+layer 25: input metadata size = 1870(bytes).
+layer 26: input metadata size = 1870(bytes).
+layer 27: input metadata size = 1870(bytes).
+layer 28: input metadata size = 1870(bytes).
+layer 29: input metadata size = 1870(bytes).
+layer 30: input metadata size = 1870(bytes).
+layer 31: input metadata size = 1870(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.074979
+[LOG] Interval of :Worker Excute model, 0 sec 30068 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.075006
+[LOG] Interval of :Engine Step, 0 sec 30212 us.
+[LOG]   Exit: RUNSTEP 22. Time NOW: 2023-12-05 20:35:08.075089
+[LOG] Interval of :RUNSTEP 22, 0 sec 30327 us.
+[LOG]   Enter: RUNSTEP 23. Time NOW: 2023-12-05 20:35:08.075113
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.075143
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.075263
+At first: input metadata size = 1872(bytes).
+layer 0: input metadata size = 1872(bytes).
+layer 1: input metadata size = 1872(bytes).
+layer 2: input metadata size = 1872(bytes).
+layer 3: input metadata size = 1872(bytes).
+layer 4: input metadata size = 1872(bytes).
+layer 5: input metadata size = 1872(bytes).
+layer 6: input metadata size = 1872(bytes).
+layer 7: input metadata size = 1872(bytes).
+layer 8: input metadata size = 1872(bytes).
+layer 9: input metadata size = 1872(bytes).
+layer 10: input metadata size = 1872(bytes).
+layer 11: input metadata size = 1872(bytes).
+layer 12: input metadata size = 1872(bytes).
+layer 13: input metadata size = 1872(bytes).
+layer 14: input metadata size = 1872(bytes).
+layer 15: input metadata size = 1872(bytes).
+layer 16: input metadata size = 1872(bytes).
+layer 17: input metadata size = 1872(bytes).
+layer 18: input metadata size = 1872(bytes).
+layer 19: input metadata size = 1872(bytes).
+layer 20: input metadata size = 1872(bytes).
+layer 21: input metadata size = 1872(bytes).
+layer 22: input metadata size = 1872(bytes).
+layer 23: input metadata size = 1872(bytes).
+layer 24: input metadata size = 1872(bytes).
+layer 25: input metadata size = 1872(bytes).
+layer 26: input metadata size = 1872(bytes).
+layer 27: input metadata size = 1872(bytes).
+layer 28: input metadata size = 1872(bytes).
+layer 29: input metadata size = 1872(bytes).
+layer 30: input metadata size = 1872(bytes).
+layer 31: input metadata size = 1872(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.105341
+[LOG] Interval of :Worker Excute model, 0 sec 30078 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.105369
+[LOG] Interval of :Engine Step, 0 sec 30226 us.
+[LOG]   Exit: RUNSTEP 23. Time NOW: 2023-12-05 20:35:08.105450
+[LOG] Interval of :RUNSTEP 23, 0 sec 30337 us.
+[LOG]   Enter: RUNSTEP 24. Time NOW: 2023-12-05 20:35:08.105473
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.105502
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.105619
+At first: input metadata size = 1875(bytes).
+layer 0: input metadata size = 1875(bytes).
+layer 1: input metadata size = 1875(bytes).
+layer 2: input metadata size = 1875(bytes).
+layer 3: input metadata size = 1875(bytes).
+layer 4: input metadata size = 1875(bytes).
+layer 5: input metadata size = 1875(bytes).
+layer 6: input metadata size = 1875(bytes).
+layer 7: input metadata size = 1875(bytes).
+layer 8: input metadata size = 1875(bytes).
+layer 9: input metadata size = 1875(bytes).
+layer 10: input metadata size = 1875(bytes).
+layer 11: input metadata size = 1875(bytes).
+layer 12: input metadata size = 1875(bytes).
+layer 13: input metadata size = 1875(bytes).
+layer 14: input metadata size = 1875(bytes).
+layer 15: input metadata size = 1875(bytes).
+layer 16: input metadata size = 1875(bytes).
+layer 17: input metadata size = 1875(bytes).
+layer 18: input metadata size = 1875(bytes).
+layer 19: input metadata size = 1875(bytes).
+layer 20: input metadata size = 1875(bytes).
+layer 21: input metadata size = 1875(bytes).
+layer 22: input metadata size = 1875(bytes).
+layer 23: input metadata size = 1875(bytes).
+layer 24: input metadata size = 1875(bytes).
+layer 25: input metadata size = 1875(bytes).
+layer 26: input metadata size = 1875(bytes).
+layer 27: input metadata size = 1875(bytes).
+layer 28: input metadata size = 1875(bytes).
+layer 29: input metadata size = 1875(bytes).
+layer 30: input metadata size = 1875(bytes).
+layer 31: input metadata size = 1875(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.161546
+[LOG] Interval of :Worker Excute model, 0 sec 55927 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.161573
+[LOG] Interval of :Engine Step, 0 sec 56071 us.
+[LOG]   Exit: RUNSTEP 24. Time NOW: 2023-12-05 20:35:08.161654
+[LOG] Interval of :RUNSTEP 24, 0 sec 56181 us.
+[LOG]   Enter: RUNSTEP 25. Time NOW: 2023-12-05 20:35:08.161679
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.161708
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.172110
+At first: input metadata size = 1877(bytes).
+layer 0: input metadata size = 1877(bytes).
+layer 1: input metadata size = 1877(bytes).
+layer 2: input metadata size = 1877(bytes).
+layer 3: input metadata size = 1877(bytes).
+layer 4: input metadata size = 1877(bytes).
+layer 5: input metadata size = 1877(bytes).
+layer 6: input metadata size = 1877(bytes).
+layer 7: input metadata size = 1877(bytes).
+layer 8: input metadata size = 1877(bytes).
+layer 9: input metadata size = 1877(bytes).
+layer 10: input metadata size = 1877(bytes).
+layer 11: input metadata size = 1877(bytes).
+layer 12: input metadata size = 1877(bytes).
+layer 13: input metadata size = 1877(bytes).
+layer 14: input metadata size = 1877(bytes).
+layer 15: input metadata size = 1877(bytes).
+layer 16: input metadata size = 1877(bytes).
+layer 17: input metadata size = 1877(bytes).
+layer 18: input metadata size = 1877(bytes).
+layer 19: input metadata size = 1877(bytes).
+layer 20: input metadata size = 1877(bytes).
+layer 21: input metadata size = 1877(bytes).
+layer 22: input metadata size = 1877(bytes).
+layer 23: input metadata size = 1877(bytes).
+layer 24: input metadata size = 1877(bytes).
+layer 25: input metadata size = 1877(bytes).
+layer 26: input metadata size = 1877(bytes).
+layer 27: input metadata size = 1877(bytes).
+layer 28: input metadata size = 1877(bytes).
+layer 29: input metadata size = 1877(bytes).
+layer 30: input metadata size = 1877(bytes).
+layer 31: input metadata size = 1877(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.281766
+[LOG] Interval of :Worker Excute model, 0 sec 109656 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.281793
+[LOG] Interval of :Engine Step, 0 sec 120085 us.
+[LOG]   Exit: RUNSTEP 25. Time NOW: 2023-12-05 20:35:08.281877
+[LOG] Interval of :RUNSTEP 25, 0 sec 120198 us.
+[LOG]   Enter: RUNSTEP 26. Time NOW: 2023-12-05 20:35:08.281901
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.281929
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.282048
+At first: input metadata size = 1880(bytes).
+layer 0: input metadata size = 1880(bytes).
+layer 1: input metadata size = 1880(bytes).
+layer 2: input metadata size = 1880(bytes).
+layer 3: input metadata size = 1880(bytes).
+layer 4: input metadata size = 1880(bytes).
+layer 5: input metadata size = 1880(bytes).
+layer 6: input metadata size = 1880(bytes).
+layer 7: input metadata size = 1880(bytes).
+layer 8: input metadata size = 1880(bytes).
+layer 9: input metadata size = 1880(bytes).
+layer 10: input metadata size = 1880(bytes).
+layer 11: input metadata size = 1880(bytes).
+layer 12: input metadata size = 1880(bytes).
+layer 13: input metadata size = 1880(bytes).
+layer 14: input metadata size = 1880(bytes).
+layer 15: input metadata size = 1880(bytes).
+layer 16: input metadata size = 1880(bytes).
+layer 17: input metadata size = 1880(bytes).
+layer 18: input metadata size = 1880(bytes).
+layer 19: input metadata size = 1880(bytes).
+layer 20: input metadata size = 1880(bytes).
+layer 21: input metadata size = 1880(bytes).
+layer 22: input metadata size = 1880(bytes).
+layer 23: input metadata size = 1880(bytes).
+layer 24: input metadata size = 1880(bytes).
+layer 25: input metadata size = 1880(bytes).
+layer 26: input metadata size = 1880(bytes).
+layer 27: input metadata size = 1880(bytes).
+layer 28: input metadata size = 1880(bytes).
+layer 29: input metadata size = 1880(bytes).
+layer 30: input metadata size = 1880(bytes).
+layer 31: input metadata size = 1880(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.312049
+[LOG] Interval of :Worker Excute model, 0 sec 30001 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.312075
+[LOG] Interval of :Engine Step, 0 sec 30146 us.
+[LOG]   Exit: RUNSTEP 26. Time NOW: 2023-12-05 20:35:08.312158
+[LOG] Interval of :RUNSTEP 26, 0 sec 30257 us.
+[LOG]   Enter: RUNSTEP 27. Time NOW: 2023-12-05 20:35:08.312183
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.312212
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.312330
+At first: input metadata size = 1882(bytes).
+layer 0: input metadata size = 1882(bytes).
+layer 1: input metadata size = 1882(bytes).
+layer 2: input metadata size = 1882(bytes).
+layer 3: input metadata size = 1882(bytes).
+layer 4: input metadata size = 1882(bytes).
+layer 5: input metadata size = 1882(bytes).
+layer 6: input metadata size = 1882(bytes).
+layer 7: input metadata size = 1882(bytes).
+layer 8: input metadata size = 1882(bytes).
+layer 9: input metadata size = 1882(bytes).
+layer 10: input metadata size = 1882(bytes).
+layer 11: input metadata size = 1882(bytes).
+layer 12: input metadata size = 1882(bytes).
+layer 13: input metadata size = 1882(bytes).
+layer 14: input metadata size = 1882(bytes).
+layer 15: input metadata size = 1882(bytes).
+layer 16: input metadata size = 1882(bytes).
+layer 17: input metadata size = 1882(bytes).
+layer 18: input metadata size = 1882(bytes).
+layer 19: input metadata size = 1882(bytes).
+layer 20: input metadata size = 1882(bytes).
+layer 21: input metadata size = 1882(bytes).
+layer 22: input metadata size = 1882(bytes).
+layer 23: input metadata size = 1882(bytes).
+layer 24: input metadata size = 1882(bytes).
+layer 25: input metadata size = 1882(bytes).
+layer 26: input metadata size = 1882(bytes).
+layer 27: input metadata size = 1882(bytes).
+layer 28: input metadata size = 1882(bytes).
+layer 29: input metadata size = 1882(bytes).
+layer 30: input metadata size = 1882(bytes).
+layer 31: input metadata size = 1882(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.342384
+[LOG] Interval of :Worker Excute model, 0 sec 30054 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.342412
+[LOG] Interval of :Engine Step, 0 sec 30200 us.
+[LOG]   Exit: RUNSTEP 27. Time NOW: 2023-12-05 20:35:08.342499
+[LOG] Interval of :RUNSTEP 27, 0 sec 30316 us.
+[LOG]   Enter: RUNSTEP 28. Time NOW: 2023-12-05 20:35:08.342524
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.342554
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.342674
+At first: input metadata size = 1884(bytes).
+layer 0: input metadata size = 1884(bytes).
+layer 1: input metadata size = 1884(bytes).
+layer 2: input metadata size = 1884(bytes).
+layer 3: input metadata size = 1884(bytes).
+layer 4: input metadata size = 1884(bytes).
+layer 5: input metadata size = 1884(bytes).
+layer 6: input metadata size = 1884(bytes).
+layer 7: input metadata size = 1884(bytes).
+layer 8: input metadata size = 1884(bytes).
+layer 9: input metadata size = 1884(bytes).
+layer 10: input metadata size = 1884(bytes).
+layer 11: input metadata size = 1884(bytes).
+layer 12: input metadata size = 1884(bytes).
+layer 13: input metadata size = 1884(bytes).
+layer 14: input metadata size = 1884(bytes).
+layer 15: input metadata size = 1884(bytes).
+layer 16: input metadata size = 1884(bytes).
+layer 17: input metadata size = 1884(bytes).
+layer 18: input metadata size = 1884(bytes).
+layer 19: input metadata size = 1884(bytes).
+layer 20: input metadata size = 1884(bytes).
+layer 21: input metadata size = 1884(bytes).
+layer 22: input metadata size = 1884(bytes).
+layer 23: input metadata size = 1884(bytes).
+layer 24: input metadata size = 1884(bytes).
+layer 25: input metadata size = 1884(bytes).
+layer 26: input metadata size = 1884(bytes).
+layer 27: input metadata size = 1884(bytes).
+layer 28: input metadata size = 1884(bytes).
+layer 29: input metadata size = 1884(bytes).
+layer 30: input metadata size = 1884(bytes).
+layer 31: input metadata size = 1884(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.372711
+[LOG] Interval of :Worker Excute model, 0 sec 30037 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.372738
+[LOG] Interval of :Engine Step, 0 sec 30184 us.
+[LOG]   Exit: RUNSTEP 28. Time NOW: 2023-12-05 20:35:08.372822
+[LOG] Interval of :RUNSTEP 28, 0 sec 30298 us.
+[LOG]   Enter: RUNSTEP 29. Time NOW: 2023-12-05 20:35:08.372847
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.372875
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.372993
+At first: input metadata size = 1886(bytes).
+layer 0: input metadata size = 1886(bytes).
+layer 1: input metadata size = 1886(bytes).
+layer 2: input metadata size = 1886(bytes).
+layer 3: input metadata size = 1886(bytes).
+layer 4: input metadata size = 1886(bytes).
+layer 5: input metadata size = 1886(bytes).
+layer 6: input metadata size = 1886(bytes).
+layer 7: input metadata size = 1886(bytes).
+layer 8: input metadata size = 1886(bytes).
+layer 9: input metadata size = 1886(bytes).
+layer 10: input metadata size = 1886(bytes).
+layer 11: input metadata size = 1886(bytes).
+layer 12: input metadata size = 1886(bytes).
+layer 13: input metadata size = 1886(bytes).
+layer 14: input metadata size = 1886(bytes).
+layer 15: input metadata size = 1886(bytes).
+layer 16: input metadata size = 1886(bytes).
+layer 17: input metadata size = 1886(bytes).
+layer 18: input metadata size = 1886(bytes).
+layer 19: input metadata size = 1886(bytes).
+layer 20: input metadata size = 1886(bytes).
+layer 21: input metadata size = 1886(bytes).
+layer 22: input metadata size = 1886(bytes).
+layer 23: input metadata size = 1886(bytes).
+layer 24: input metadata size = 1886(bytes).
+layer 25: input metadata size = 1886(bytes).
+layer 26: input metadata size = 1886(bytes).
+layer 27: input metadata size = 1886(bytes).
+layer 28: input metadata size = 1886(bytes).
+layer 29: input metadata size = 1886(bytes).
+layer 30: input metadata size = 1886(bytes).
+layer 31: input metadata size = 1886(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.470036
+[LOG] Interval of :Worker Excute model, 0 sec 97043 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.470064
+[LOG] Interval of :Engine Step, 0 sec 97189 us.
+[LOG]   Exit: RUNSTEP 29. Time NOW: 2023-12-05 20:35:08.470149
+[LOG] Interval of :RUNSTEP 29, 0 sec 97302 us.
+[LOG]   Enter: RUNSTEP 30. Time NOW: 2023-12-05 20:35:08.470173
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.470203
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.481661
+At first: input metadata size = 1889(bytes).
+layer 0: input metadata size = 1889(bytes).
+layer 1: input metadata size = 1889(bytes).
+layer 2: input metadata size = 1889(bytes).
+layer 3: input metadata size = 1889(bytes).
+layer 4: input metadata size = 1889(bytes).
+layer 5: input metadata size = 1889(bytes).
+layer 6: input metadata size = 1889(bytes).
+layer 7: input metadata size = 1889(bytes).
+layer 8: input metadata size = 1889(bytes).
+layer 9: input metadata size = 1889(bytes).
+layer 10: input metadata size = 1889(bytes).
+layer 11: input metadata size = 1889(bytes).
+layer 12: input metadata size = 1889(bytes).
+layer 13: input metadata size = 1889(bytes).
+layer 14: input metadata size = 1889(bytes).
+layer 15: input metadata size = 1889(bytes).
+layer 16: input metadata size = 1889(bytes).
+layer 17: input metadata size = 1889(bytes).
+layer 18: input metadata size = 1889(bytes).
+layer 19: input metadata size = 1889(bytes).
+layer 20: input metadata size = 1889(bytes).
+layer 21: input metadata size = 1889(bytes).
+layer 22: input metadata size = 1889(bytes).
+layer 23: input metadata size = 1889(bytes).
+layer 24: input metadata size = 1889(bytes).
+layer 25: input metadata size = 1889(bytes).
+layer 26: input metadata size = 1889(bytes).
+layer 27: input metadata size = 1889(bytes).
+layer 28: input metadata size = 1889(bytes).
+layer 29: input metadata size = 1889(bytes).
+layer 30: input metadata size = 1889(bytes).
+layer 31: input metadata size = 1889(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.604694
+[LOG] Interval of :Worker Excute model, 0 sec 123033 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.604721
+[LOG] Interval of :Engine Step, 0 sec 134518 us.
+[LOG]   Exit: RUNSTEP 30. Time NOW: 2023-12-05 20:35:08.604806
+[LOG] Interval of :RUNSTEP 30, 0 sec 134633 us.
+[LOG]   Enter: RUNSTEP 31. Time NOW: 2023-12-05 20:35:08.604831
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:35:08.604860
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:35:08.616327
+At first: input metadata size = 1892(bytes).
+layer 0: input metadata size = 1892(bytes).
+layer 1: input metadata size = 1892(bytes).
+layer 2: input metadata size = 1892(bytes).
+layer 3: input metadata size = 1892(bytes).
+layer 4: input metadata size = 1892(bytes).
+layer 5: input metadata size = 1892(bytes).
+layer 6: input metadata size = 1892(bytes).
+layer 7: input metadata size = 1892(bytes).
+layer 8: input metadata size = 1892(bytes).
+layer 9: input metadata size = 1892(bytes).
+layer 10: input metadata size = 1892(bytes).
+layer 11: input metadata size = 1892(bytes).
+layer 12: input metadata size = 1892(bytes).
+layer 13: input metadata size = 1892(bytes).
+layer 14: input metadata size = 1892(bytes).
+layer 15: input metadata size = 1892(bytes).
+layer 16: input metadata size = 1892(bytes).
+layer 17: input metadata size = 1892(bytes).
+layer 18: input metadata size = 1892(bytes).
+layer 19: input metadata size = 1892(bytes).
+layer 20: input metadata size = 1892(bytes).
+layer 21: input metadata size = 1892(bytes).
+layer 22: input metadata size = 1892(bytes).
+layer 23: input metadata size = 1892(bytes).
+layer 24: input metadata size = 1892(bytes).
+layer 25: input metadata size = 1892(bytes).
+layer 26: input metadata size = 1892(bytes).
+layer 27: input metadata size = 1892(bytes).
+layer 28: input metadata size = 1892(bytes).
+layer 29: input metadata size = 1892(bytes).
+layer 30: input metadata size = 1892(bytes).
+layer 31: input metadata size = 1892(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:35:08.679470
+[LOG] Interval of :Worker Excute model, 0 sec 63143 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:35:08.679498
+[LOG] Interval of :Engine Step, 0 sec 74638 us.
+[LOG]   Exit: RUNSTEP 31. Time NOW: 2023-12-05 20:35:08.679731
+[LOG] Interval of :RUNSTEP 31, 0 sec 74900 us.
+[LOG] Exit: 0 th request for batch size = 1. Time NOW: 2023-12-05 20:35:08.679875
+[LOG] Interval of :0 th request for batch size = 1, 2 sec 47886 us.
+max tokens: 32. Time cost for batch size = 1 : 2.0480 s
+
+Prompt: 'What are the risks of having high blood pressure?' 
+Generated text: "\n\nIt's important to know that high blood pressure is a serious disease. According to the World Health Organization (WHO), approximately 1 in 3 adults worldwide has"
+Memory footprint:42.07 GB

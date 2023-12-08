@@ -1,0 +1,200 @@
+经过进一步的查看，在prompt阶段，单纯进行add bias与实际运行一层之后，字节数仍然有变化
+在生成阶段则相同。
+总之，最保险的方法仍然是在运行一次之后再传输metadata。
+使用命令：CUDA_VISIBLE_DEVICES=2 python run.py -bsl 1 --max_tokens 3
+
+INFO 12-05 20:58:50 llm_engine.py:72] Initializing an LLM engine with config: model='facebook/opt-6.7b', tokenizer='facebook/opt-6.7b', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, quantization=None, seed=0)
+INFO 12-05 20:58:50 llm_engine.py:87] [WYQ] LLM Engine pipeline_parallel_size=1
+RANK0: AllReduce done.
+RANK0: initialize_model_parallel() done.
+At first : input metadata size = 28319(bytes).
+InputMetadata(num_valid_tokens=2048, num_prompt_tokens=2048, num_prompts=256, prompt_lens=[8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], num_generation_tokens=0, context_lens=tensor([], device='cuda:0', dtype=torch.int32), max_context_len=0), max_num_blocks_per_seq=0, block_tables=tensor([], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([0, 0, 0,  ..., 0, 0, 0], device='cuda:0', dtype=torch.int32)
+At first2: input metadata size = 30571(bytes).
+InputMetadata(num_valid_tokens=2048, num_prompt_tokens=2048, num_prompts=256, prompt_lens=[8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], num_generation_tokens=0, context_lens=tensor([], device='cuda:0', dtype=torch.int32), max_context_len=0), max_num_blocks_per_seq=0, block_tables=tensor([], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([0, 0, 0,  ..., 0, 0, 0], device='cuda:0', dtype=torch.int32)
+layer 0: input metadata size = 30574(bytes).
+InputMetadata(num_valid_tokens=2048, num_prompt_tokens=2048, num_prompts=256, prompt_lens=[8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], num_generation_tokens=0, context_lens=tensor([], device='cuda:0', dtype=torch.int32), max_context_len=0), max_num_blocks_per_seq=0, block_tables=tensor([], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([0, 0, 0,  ..., 0, 0, 0], device='cuda:0', dtype=torch.int32)
+layer 1: input metadata size = 30574(bytes).
+layer 2: input metadata size = 30574(bytes).
+layer 3: input metadata size = 30574(bytes).
+layer 4: input metadata size = 30574(bytes).
+layer 5: input metadata size = 30574(bytes).
+layer 6: input metadata size = 30574(bytes).
+layer 7: input metadata size = 30574(bytes).
+layer 8: input metadata size = 30574(bytes).
+layer 9: input metadata size = 30574(bytes).
+layer 10: input metadata size = 30574(bytes).
+layer 11: input metadata size = 30574(bytes).
+layer 12: input metadata size = 30574(bytes).
+layer 13: input metadata size = 30574(bytes).
+layer 14: input metadata size = 30574(bytes).
+layer 15: input metadata size = 30574(bytes).
+layer 16: input metadata size = 30574(bytes).
+layer 17: input metadata size = 30574(bytes).
+layer 18: input metadata size = 30574(bytes).
+layer 19: input metadata size = 30574(bytes).
+layer 20: input metadata size = 30574(bytes).
+layer 21: input metadata size = 30574(bytes).
+layer 22: input metadata size = 30574(bytes).
+layer 23: input metadata size = 30574(bytes).
+layer 24: input metadata size = 30574(bytes).
+layer 25: input metadata size = 30574(bytes).
+layer 26: input metadata size = 30574(bytes).
+layer 27: input metadata size = 30574(bytes).
+layer 28: input metadata size = 30574(bytes).
+layer 29: input metadata size = 30574(bytes).
+layer 30: input metadata size = 30574(bytes).
+layer 31: input metadata size = 30574(bytes).
+shape of hidden_states: torch.Size([2048, 4096])
+INFO 12-05 20:58:59 llm_engine.py:210] # GPU blocks: 3796, # CPU blocks: 512
+[LOG] Enter: 0 th request for batch size = 1. Time NOW: 2023-12-05 20:59:00.829152
+[LOG]   Enter: RUNSTEP 0. Time NOW: 2023-12-05 20:59:00.833270
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:59:00.833363
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:59:00.833757
+At first : input metadata size = 1798(bytes).
+InputMetadata(num_valid_tokens=11, num_prompt_tokens=11, num_prompts=1, prompt_lens=[11], num_generation_tokens=0, context_lens=tensor([], device='cuda:0', dtype=torch.int32), max_context_len=0), max_num_blocks_per_seq=0, block_tables=tensor([], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60720, 60721, 60722, 60723, 60724, 60725, 60726, 60727, 60728, 60729,
+        60730], device='cuda:0', dtype=torch.int32)
+At first2: input metadata size = 2275(bytes).
+InputMetadata(num_valid_tokens=11, num_prompt_tokens=11, num_prompts=1, prompt_lens=[11], num_generation_tokens=0, context_lens=tensor([], device='cuda:0', dtype=torch.int32), max_context_len=0), max_num_blocks_per_seq=0, block_tables=tensor([], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60720, 60721, 60722, 60723, 60724, 60725, 60726, 60727, 60728, 60729,
+        60730], device='cuda:0', dtype=torch.int32)
+layer 0: input metadata size = 2278(bytes).
+InputMetadata(num_valid_tokens=11, num_prompt_tokens=11, num_prompts=1, prompt_lens=[11], num_generation_tokens=0, context_lens=tensor([], device='cuda:0', dtype=torch.int32), max_context_len=0), max_num_blocks_per_seq=0, block_tables=tensor([], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60720, 60721, 60722, 60723, 60724, 60725, 60726, 60727, 60728, 60729,
+        60730], device='cuda:0', dtype=torch.int32)
+layer 1: input metadata size = 2278(bytes).
+layer 2: input metadata size = 2278(bytes).
+layer 3: input metadata size = 2278(bytes).
+layer 4: input metadata size = 2278(bytes).
+layer 5: input metadata size = 2278(bytes).
+layer 6: input metadata size = 2278(bytes).
+layer 7: input metadata size = 2278(bytes).
+layer 8: input metadata size = 2278(bytes).
+layer 9: input metadata size = 2278(bytes).
+layer 10: input metadata size = 2278(bytes).
+layer 11: input metadata size = 2278(bytes).
+layer 12: input metadata size = 2278(bytes).
+layer 13: input metadata size = 2278(bytes).
+layer 14: input metadata size = 2278(bytes).
+layer 15: input metadata size = 2278(bytes).
+layer 16: input metadata size = 2278(bytes).
+layer 17: input metadata size = 2278(bytes).
+layer 18: input metadata size = 2278(bytes).
+layer 19: input metadata size = 2278(bytes).
+layer 20: input metadata size = 2278(bytes).
+layer 21: input metadata size = 2278(bytes).
+layer 22: input metadata size = 2278(bytes).
+layer 23: input metadata size = 2278(bytes).
+layer 24: input metadata size = 2278(bytes).
+layer 25: input metadata size = 2278(bytes).
+layer 26: input metadata size = 2278(bytes).
+layer 27: input metadata size = 2278(bytes).
+layer 28: input metadata size = 2278(bytes).
+layer 29: input metadata size = 2278(bytes).
+layer 30: input metadata size = 2278(bytes).
+layer 31: input metadata size = 2278(bytes).
+shape of hidden_states: torch.Size([16, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:59:00.884503
+[LOG] Interval of :Worker Excute model, 0 sec 50746 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:59:00.884570
+[LOG] Interval of :Engine Step, 0 sec 51207 us.
+[LOG]   Exit: RUNSTEP 0. Time NOW: 2023-12-05 20:59:00.884922
+[LOG] Interval of :RUNSTEP 0, 0 sec 51652 us.
+[LOG]   Enter: RUNSTEP 1. Time NOW: 2023-12-05 20:59:00.884962
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:59:00.885019
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:59:00.885176
+At first : input metadata size = 1809(bytes).
+InputMetadata(num_valid_tokens=1, num_prompt_tokens=0, num_prompts=0, prompt_lens=[], num_generation_tokens=1, context_lens=tensor([12], device='cuda:0', dtype=torch.int32), max_context_len=12), max_num_blocks_per_seq=1, block_tables=tensor([[3795]], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60731], device='cuda:0', dtype=torch.int32)
+At first2: input metadata size = 2285(bytes).
+InputMetadata(num_valid_tokens=1, num_prompt_tokens=0, num_prompts=0, prompt_lens=[], num_generation_tokens=1, context_lens=tensor([12], device='cuda:0', dtype=torch.int32), max_context_len=12), max_num_blocks_per_seq=1, block_tables=tensor([[3795]], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60731], device='cuda:0', dtype=torch.int32)
+layer 0: input metadata size = 2285(bytes).
+InputMetadata(num_valid_tokens=1, num_prompt_tokens=0, num_prompts=0, prompt_lens=[], num_generation_tokens=1, context_lens=tensor([12], device='cuda:0', dtype=torch.int32), max_context_len=12), max_num_blocks_per_seq=1, block_tables=tensor([[3795]], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60731], device='cuda:0', dtype=torch.int32)
+layer 1: input metadata size = 2285(bytes).
+layer 2: input metadata size = 2285(bytes).
+layer 3: input metadata size = 2285(bytes).
+layer 4: input metadata size = 2285(bytes).
+layer 5: input metadata size = 2285(bytes).
+layer 6: input metadata size = 2285(bytes).
+layer 7: input metadata size = 2285(bytes).
+layer 8: input metadata size = 2285(bytes).
+layer 9: input metadata size = 2285(bytes).
+layer 10: input metadata size = 2285(bytes).
+layer 11: input metadata size = 2285(bytes).
+layer 12: input metadata size = 2285(bytes).
+layer 13: input metadata size = 2285(bytes).
+layer 14: input metadata size = 2285(bytes).
+layer 15: input metadata size = 2285(bytes).
+layer 16: input metadata size = 2285(bytes).
+layer 17: input metadata size = 2285(bytes).
+layer 18: input metadata size = 2285(bytes).
+layer 19: input metadata size = 2285(bytes).
+layer 20: input metadata size = 2285(bytes).
+layer 21: input metadata size = 2285(bytes).
+layer 22: input metadata size = 2285(bytes).
+layer 23: input metadata size = 2285(bytes).
+layer 24: input metadata size = 2285(bytes).
+layer 25: input metadata size = 2285(bytes).
+layer 26: input metadata size = 2285(bytes).
+layer 27: input metadata size = 2285(bytes).
+layer 28: input metadata size = 2285(bytes).
+layer 29: input metadata size = 2285(bytes).
+layer 30: input metadata size = 2285(bytes).
+layer 31: input metadata size = 2285(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:59:00.920366
+[LOG] Interval of :Worker Excute model, 0 sec 35190 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:59:00.920421
+[LOG] Interval of :Engine Step, 0 sec 35402 us.
+[LOG]   Exit: RUNSTEP 1. Time NOW: 2023-12-05 20:59:00.920636
+[LOG] Interval of :RUNSTEP 1, 0 sec 35674 us.
+[LOG]   Enter: RUNSTEP 2. Time NOW: 2023-12-05 20:59:00.920672
+[LOG]     Enter: Engine Step. Time NOW: 2023-12-05 20:59:00.920730
+[LOG]       Enter: Worker Excute model. Time NOW: 2023-12-05 20:59:00.920880
+At first : input metadata size = 1813(bytes).
+InputMetadata(num_valid_tokens=1, num_prompt_tokens=0, num_prompts=0, prompt_lens=[], num_generation_tokens=1, context_lens=tensor([13], device='cuda:0', dtype=torch.int32), max_context_len=13), max_num_blocks_per_seq=1, block_tables=tensor([[3795]], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60732], device='cuda:0', dtype=torch.int32)
+At first2: input metadata size = 2289(bytes).
+InputMetadata(num_valid_tokens=1, num_prompt_tokens=0, num_prompts=0, prompt_lens=[], num_generation_tokens=1, context_lens=tensor([13], device='cuda:0', dtype=torch.int32), max_context_len=13), max_num_blocks_per_seq=1, block_tables=tensor([[3795]], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60732], device='cuda:0', dtype=torch.int32)
+layer 0: input metadata size = 2289(bytes).
+InputMetadata(num_valid_tokens=1, num_prompt_tokens=0, num_prompts=0, prompt_lens=[], num_generation_tokens=1, context_lens=tensor([13], device='cuda:0', dtype=torch.int32), max_context_len=13), max_num_blocks_per_seq=1, block_tables=tensor([[3795]], device='cuda:0', dtype=torch.int32)), slot_mapping=tensor([60732], device='cuda:0', dtype=torch.int32)
+layer 1: input metadata size = 2289(bytes).
+layer 2: input metadata size = 2289(bytes).
+layer 3: input metadata size = 2289(bytes).
+layer 4: input metadata size = 2289(bytes).
+layer 5: input metadata size = 2289(bytes).
+layer 6: input metadata size = 2289(bytes).
+layer 7: input metadata size = 2289(bytes).
+layer 8: input metadata size = 2289(bytes).
+layer 9: input metadata size = 2289(bytes).
+layer 10: input metadata size = 2289(bytes).
+layer 11: input metadata size = 2289(bytes).
+layer 12: input metadata size = 2289(bytes).
+layer 13: input metadata size = 2289(bytes).
+layer 14: input metadata size = 2289(bytes).
+layer 15: input metadata size = 2289(bytes).
+layer 16: input metadata size = 2289(bytes).
+layer 17: input metadata size = 2289(bytes).
+layer 18: input metadata size = 2289(bytes).
+layer 19: input metadata size = 2289(bytes).
+layer 20: input metadata size = 2289(bytes).
+layer 21: input metadata size = 2289(bytes).
+layer 22: input metadata size = 2289(bytes).
+layer 23: input metadata size = 2289(bytes).
+layer 24: input metadata size = 2289(bytes).
+layer 25: input metadata size = 2289(bytes).
+layer 26: input metadata size = 2289(bytes).
+layer 27: input metadata size = 2289(bytes).
+layer 28: input metadata size = 2289(bytes).
+layer 29: input metadata size = 2289(bytes).
+layer 30: input metadata size = 2289(bytes).
+layer 31: input metadata size = 2289(bytes).
+shape of hidden_states: torch.Size([8, 4096])
+[LOG]       Exit: Worker Excute model. Time NOW: 2023-12-05 20:59:00.955245
+[LOG] Interval of :Worker Excute model, 0 sec 34365 us.
+[LOG]     Exit: Engine Step. Time NOW: 2023-12-05 20:59:00.955309
+[LOG] Interval of :Engine Step, 0 sec 34579 us.
+[LOG]   Exit: RUNSTEP 2. Time NOW: 2023-12-05 20:59:00.955742
+[LOG] Interval of :RUNSTEP 2, 0 sec 35070 us.
+[LOG] Exit: 0 th request for batch size = 1. Time NOW: 2023-12-05 20:59:00.955961
+[LOG] Interval of :0 th request for batch size = 1, 0 sec 126809 us.
+max tokens: 3. Time cost for batch size = 1 : 0.1269 s
+
+Prompt: 'What are the risks of having high blood pressure?' 
+Generated text: '\n\nIt'
+Memory footprint:42.07 GB

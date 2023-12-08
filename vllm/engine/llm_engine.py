@@ -84,6 +84,7 @@ class LLMEngine:
             f"tensor_parallel_size={parallel_config.tensor_parallel_size}, "
             f"quantization={model_config.quantization}, "
             f"seed={model_config.seed})")
+        logger.info(f"[WYQ] LLM Engine pipeline_parallel_size={parallel_config.pipeline_parallel_size}")
         # TODO(woosuk): Print more configs in debug mode.
 
         self.model_config = model_config
@@ -105,6 +106,8 @@ class LLMEngine:
 
         # Create the parallel GPU workers.
         if self.parallel_config.worker_use_ray:
+            logger.info(f"Now use ray. world_sz:{parallel_config.world_size}, tp_sz:{parallel_config.tensor_parallel_size}, pp_sz:{parallel_config.pipeline_parallel_size}")
+            assert(parallel_config.tensor_parallel_size == 1 or parallel_config.pipeline_parallel_size == 1), "Cannot support tp and pp simultaneously."
             self._init_workers_ray(placement_group)
         else:
             self._init_workers(distributed_init_method)
@@ -559,15 +562,21 @@ class LLMEngine:
             return ignored
 
         # Execute the model.
-        from vllm.utils import ctx_get_inteval_datetime
-        with ctx_get_inteval_datetime("Engine Step"):
-            output = self._run_workers(
-                "execute_model",
-                seq_group_metadata_list=seq_group_metadata_list,
-                blocks_to_swap_in=scheduler_outputs.blocks_to_swap_in,
-                blocks_to_swap_out=scheduler_outputs.blocks_to_swap_out,
-                blocks_to_copy=scheduler_outputs.blocks_to_copy,
-            )
+        # from vllm.utils import ctx_get_inteval_datetime
+        # with ctx_get_inteval_datetime("Engine Step"):
+        output = self._run_workers(
+            "execute_model",
+            seq_group_metadata_list=seq_group_metadata_list,
+            blocks_to_swap_in=scheduler_outputs.blocks_to_swap_in,
+            blocks_to_swap_out=scheduler_outputs.blocks_to_swap_out,
+            blocks_to_copy=scheduler_outputs.blocks_to_copy,
+        )
+        if scheduler_outputs.blocks_to_swap_in:
+            print("blocks_to_swap_in: {}".format(scheduler_outputs.blocks_to_swap_in))
+        if scheduler_outputs.blocks_to_swap_out:
+            print("blocks_to_swap_out: {}".format(scheduler_outputs.blocks_to_swap_out))
+        if scheduler_outputs.blocks_to_copy:
+            print("blocks_to_copy: {}".format(scheduler_outputs.blocks_to_copy))
 
         return self._process_model_outputs(output, scheduler_outputs) + ignored
 
@@ -709,7 +718,7 @@ class LLMEngine:
             return all_outputs
 
         # Make sure all workers have the same results.
-        output = all_outputs[0]
-        for other_output in all_outputs[1:]:
-            assert output == other_output
+        output = all_outputs[-1]
+        # for other_output in all_outputs[1:]:
+        #     assert output == other_output
         return output

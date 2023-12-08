@@ -110,3 +110,13 @@ ray.get(actors[3].receive_and_process_data.remote(data, actors[0]))
 ```
 
 请注意，这个代码是一个示例，可能需要根据实际情况进行调整。例如，你可能需要添加逻辑来优雅地终止处理线程，以及处理可能的异常和竞争条件。此外，由于Ray是为分布式环境设计的，所以这段代码应该在一个Ray环境中运行，才能充分利用其分布式计算能力。
+
+RAY_DEDUP_LOGS=0 python run.py --max_tokens 3 --pipeline_parallel_size 1 --gpu_memory_utilization 0.9 -bsl 1
+INFO 12-06 15:08:07 llm_engine.py:210] # GPU blocks: 3796, # CPU blocks: 512
+
+RAY_DEDUP_LOGS=0 python run.py --max_tokens 3 --pipeline_parallel_size 2 --gpu_memory_utilization 0.9 -bsl 1
+INFO 12-06 15:06:56 llm_engine.py:210] # GPU blocks: 7592, # CPU blocks: 1024
+
+CMD: RAY_DEDUP_LOGS=0 python run.py --max_tokens 3 --pipeline_parallel_size 4 --gpu_memory_utilization 0.9 -bsl 1
+INFO 12-06 15:05:27 llm_engine.py:210] # GPU blocks: 15185, # CPU blocks: 2048
+

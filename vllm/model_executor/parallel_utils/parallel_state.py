@@ -168,6 +168,11 @@ def get_pipeline_model_parallel_prev_rank():
     world_size = get_pipeline_model_parallel_world_size()
     return _PIPELINE_GLOBAL_RANKS[(rank_in_pipeline - 1) % world_size]
 
+def is_first_pipeline_stage():
+    return get_pipeline_model_parallel_rank() == get_pipeline_model_parallel_first_rank()
+
+def is_last_pipeline_stage():
+    return get_pipeline_model_parallel_rank() == get_pipeline_model_parallel_last_rank()
 
 def destroy_model_parallel():
     """Set the groups to none."""

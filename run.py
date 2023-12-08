@@ -44,6 +44,16 @@ def _parse_args():
         default="1,2,4,8",
         help="A list of batch size. e.g.: --batch_sizes_list 1,2,4,8"
     )
+    parser.add_argument(
+        "--pipeline_parallel_size",
+        type=int,
+        default=1
+    )
+    parser.add_argument(
+        "--gpu_memory_utilization",
+        type=float,
+        default=0.90
+    )
     return parser.parse_args()
     
 prompts = [
@@ -67,18 +77,21 @@ if __name__ == "__main__":
                                     top_p=0.95,
                                     max_tokens=max_token)
 
-    llm = LLM(model=args.model)
+    llm = LLM(model=args.model,
+              pipeline_parallel_size=args.pipeline_parallel_size,
+              gpu_memory_utilization=args.gpu_memory_utilization
+            )
 
     if args.pipeline:
         print("PIPELINE ENABLED")
         # send_test()
 
 
-    st = time.time()
-    with ctx_get_inteval_datetime("Warm Up"):
-        outputs = llm.generate(prompts[:1], SamplingParams(temperature=0.8, top_p=0.95, max_tokens=2))
-    ed = time.time()
-    print(f"Time cost_1: {ed-st:.4f} s")
+    # st = time.time()
+    # with ctx_get_inteval_datetime("Warm Up"):
+    #     outputs = llm.generate(prompts[:1], SamplingParams(temperature=0.8, top_p=0.95, max_tokens=2))
+    # ed = time.time()
+    # print(f"Time cost_1: {ed-st:.4f} s")
 
     time.sleep(0.3)
 

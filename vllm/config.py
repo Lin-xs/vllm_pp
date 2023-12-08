@@ -254,6 +254,8 @@ class ParallelConfig:
 
     def _verify_args(self) -> None:
         if self.pipeline_parallel_size > 1:
+            print("Pipeline parallelism is supported now.")
+            return
             raise NotImplementedError(
                 "Pipeline parallelism is not supported yet.")
 

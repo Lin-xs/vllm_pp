@@ -10,6 +10,7 @@ from vllm.config import (CacheConfig, ModelConfig, ParallelConfig,
 from vllm.model_executor import get_model, InputMetadata, set_random_seed
 from vllm.model_executor.parallel_utils.parallel_state import (
     initialize_model_parallel)
+from vllm.model_executor.parallel_utils.parallel_state import get_pipeline_model_parallel_rank
 from vllm.sampling_params import SamplingParams
 from vllm.sequence import SamplerOutput, SequenceData, SequenceGroupMetadata
 from vllm.worker.cache_engine import CacheEngine
@@ -319,16 +320,16 @@ class Worker:
         input_tokens, input_positions, input_metadata = self._prepare_inputs(
             seq_group_metadata_list)
         #TODO
-        from vllm.utils import ctx_get_inteval_datetime
-        with ctx_get_inteval_datetime("Worker Excute model"):
+        # from vllm.utils import ctx_get_inteval_datetime
+        # with ctx_get_inteval_datetime(f"[RANK{get_pipeline_model_parallel_rank()}]: Worker Excute model"):
         # Execute the model.
-            output = self.model(
-                input_ids=input_tokens,
-                positions=input_positions,
-                kv_caches=self.gpu_cache,
-                input_metadata=input_metadata,
-                cache_events=cache_events,
-            )
+        output = self.model(
+            input_ids=input_tokens,
+            positions=input_positions,
+            kv_caches=self.gpu_cache,
+            input_metadata=input_metadata,
+            cache_events=cache_events,
+        )
         return output
 
 
@@ -359,8 +360,10 @@ def _init_distributed_environment(
 
     # A small all_reduce for warmup.
     torch.distributed.all_reduce(torch.zeros(1).cuda())
+    print(f"RANK{torch.distributed.get_rank()}: AllReduce done.")
     initialize_model_parallel(parallel_config.tensor_parallel_size,
                               parallel_config.pipeline_parallel_size)
+    print(f"RANK{torch.distributed.get_rank()}: initialize_model_parallel() done.")
 
 
 def _pad_to_alignment(x: List[int], multiple_of: int) -> List[int]:
