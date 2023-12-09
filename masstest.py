@@ -6,6 +6,7 @@ except ImportError:
 import time
 import argparse
 import torch
+from transformers import AutoTokenizer
 
 def _parse_args():
     parser = argparse.ArgumentParser("vLLM model run test")
@@ -48,7 +49,7 @@ def _parse_args():
     return parser.parse_args()
 
 prompts = []
-with open("./prompts.txt", "r") as f:
+with open("/home/v-yuanqwang/vllm_pp/prompts.txt", "r") as f:
     for line in f:
         prompts.append(line)
 
@@ -69,8 +70,12 @@ if __name__ == "__main__":
     with ctx_get_inteval_datetime("RUN ALL"):
         outputs = llm.generate(prompts, sampling_params)
 
+    tokenizer = AutoTokenizer.from_pretrained(args.model)
+    len_ls = []
     for output in outputs:
             prompt = output.prompt
             generated_text = output.outputs[0].text
-            print(f"\nPrompt: {prompt!r} \nGenerated text: {generated_text!r}")
+            len_ls.append(len(tokenizer(generated_text)["input_ids"]))
+            # print(f"\nPrompt: {prompt!r} \nGenerated text: {generated_text!r}")
+    print(f"Total len: {sum(len_ls)}")
         

@@ -177,7 +177,7 @@ class LLM:
         nums = 0
         from vllm.utils import ctx_get_inteval_datetime
         while self.llm_engine.has_unfinished_requests():
-            with ctx_get_inteval_datetime(f"RUNSTEP {nums}", sync=True):
+            with ctx_get_inteval_datetime(f"RUNSTEP {nums:>3}", sync=True):
                 step_outputs = self.llm_engine.step()
                 for output in step_outputs:
                     if output.finished:

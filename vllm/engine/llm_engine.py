@@ -564,6 +564,7 @@ class LLMEngine:
         # Execute the model.
         # from vllm.utils import ctx_get_inteval_datetime
         # with ctx_get_inteval_datetime("Engine Step"):
+        print(f"num_seq_group:{len(seq_group_metadata_list)}")
         output = self._run_workers(
             "execute_model",
             seq_group_metadata_list=seq_group_metadata_list,

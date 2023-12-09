@@ -1,1 +1,3 @@
 RAY_DEDUP_LOGS=0 python actor_test.py
+
+# CUDA_LAUNCH_BLOCKING=1

@@ -43,6 +43,7 @@ from vllm.sequence import SamplerOutput
 from vllm.model_executor.parallel_utils.utils import send_metadata, send_tensor_and_shape, recv_metadata, recv_tensor
 
 KVCache = Tuple[torch.Tensor, torch.Tensor]
+import copy
 
 
 class OPTLearnedPositionalEmbedding(nn.Embedding):
@@ -235,6 +236,7 @@ class OPTDecoder(nn.Module):
         kv_caches: List[KVCache],
         input_metadata: InputMetadata,
         cache_events: Optional[List[torch.cuda.Event]],
+        metadata_stream: Optional[torch.cuda.Stream],
     ) -> torch.Tensor:
         use_pipeline = get_pipeline_model_parallel_world_size() > 1
         if is_first_pipeline_stage():
@@ -261,8 +263,10 @@ class OPTDecoder(nn.Module):
             hidden_states = layer(hidden_states, kv_caches[i], input_metadata,
                                 cache_event)
             if use_pipeline and is_first_pipeline_stage() and i == 0:
-                send_metadata(input_metadata=input_metadata)
-
+                with torch.cuda.stream(metadata_stream):
+                    send_metadata(input_metadata=input_metadata)
+        
+        print(f"rank {get_pipeline_model_parallel_rank()}: layer cal over. shape: {hidden_states.shape}")
         
         # print(f"shape of hidden_states: {hidden_states.shape}")
         if is_last_pipeline_stage():
@@ -272,7 +276,13 @@ class OPTDecoder(nn.Module):
             if self.project_out is not None:
                 hidden_states = self.project_out(hidden_states)
         else:
-            send_tensor_and_shape(hidden_states, get_pipeline_model_parallel_next_rank())
+            # if is_first_pipeline_stage():
+            #     metadata_stream.synchronize()
+            try:
+                send_tensor_and_shape(hidden_states, get_pipeline_model_parallel_next_rank())
+            except Exception as e:
+                print("error rank = {}".format(get_pipeline_model_parallel_rank()))
+                raise e
         return hidden_states
 
 
@@ -281,7 +291,7 @@ class OPTModel(nn.Module):
     def __init__(self, config: OPTConfig):
         super().__init__()
         self.decoder = OPTDecoder(config)
-
+        self.metadata_stream = torch.cuda.Stream()
     def forward(
         self,
         input_ids: torch.Tensor,
@@ -291,7 +301,7 @@ class OPTModel(nn.Module):
         cache_events: Optional[List[torch.cuda.Event]],
     ) -> torch.Tensor:
         return self.decoder(input_ids, positions, kv_caches, input_metadata,
-                            cache_events)
+                            cache_events, self.metadata_stream)
 
 
 class OPTForCausalLM(nn.Module):

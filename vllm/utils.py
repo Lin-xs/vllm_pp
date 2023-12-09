@@ -97,13 +97,15 @@ def ctx_get_inteval_datetime(name: str, sync: bool = False, device: int | None =
     global ctx_layer
     if sync:
         torch.cuda.synchronize(device)
-    start = _print_time("  "*ctx_layer +"Enter: "+name)
-    ctx_layer += 1
+    # start = _print_time("  "*ctx_layer +"Enter: "+name)
+    start = current_time = datetime.now()
+    # ctx_layer += 1
     try:
         yield
     finally:
         if sync:
             torch.cuda.synchronize(device)
-        ctx_layer -= 1
-        end = _print_time("  "*ctx_layer+"Exit: "+name)
+        # ctx_layer -= 1
+        # end = _print_time("  "*ctx_layer+"Exit: "+name)
+        end = current_time = datetime.now()
         _print_time_interval(start, end, name)

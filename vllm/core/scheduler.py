@@ -199,9 +199,11 @@ class Scheduler:
         while self.running:
             seq_group = self.running.pop(0)
             while not self.block_manager.can_append_slot(seq_group):
+                logger.warning("\nblock is not sufficient. seq_group:{}".format(seq_group))
                 if self.running:
                     # Preempt the lowest-priority sequence groups.
                     victim_seq_group = self.running.pop(-1)
+                    logger.warning("Preempt victim: {}".format(victim_seq_group))
                     self._preempt(victim_seq_group, blocks_to_swap_out)
                     preempted.append(victim_seq_group)
                 else:

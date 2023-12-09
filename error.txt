@@ -1,0 +1,186 @@
+(vllm_my) v-yuanqwang@SRGWS-13:~/vllm_pp$ RAY_DEDUP_LOGS=0 python masstest.py --max_tokens 1024 --pipeline_parallel_size 4 --gpu_memory_utilization 0.3
+Pipeline parallelism is supported now.
+2023-12-09 15:55:08,485 INFO worker.py:1673 -- Started a local Ray instance.
+INFO 12-09 15:55:09 llm_engine.py:72] Initializing an LLM engine with config: model='facebook/opt-6.7b', tokenizer='facebook/opt-6.7b', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, quantization=None, seed=0)
+INFO 12-09 15:55:09 llm_engine.py:87] [WYQ] LLM Engine pipeline_parallel_size=4
+INFO 12-09 15:55:09 llm_engine.py:109] Now use ray. world_sz:4, tp_sz:1, pp_sz:4
+(RayWorker pid=61611) RANK0: AllReduce done.
+(RayWorker pid=61611) RANK0: initialize_model_parallel() done.
+(RayWorker pid=61613) RANK2: AllReduce done.
+(RayWorker pid=61613) RANK2: initialize_model_parallel() done.
+(RayWorker pid=61614) RANK3: AllReduce done.
+(RayWorker pid=61614) RANK3: initialize_model_parallel() done.
+(RayWorker pid=61612) RANK1: AllReduce done.
+(RayWorker pid=61612) RANK1: initialize_model_parallel() done.
+(RayWorker pid=61611) rank 0: layer cal over. shape: torch.Size([2048, 4096])
+(RayWorker pid=61613) Byte data size:30574
+(RayWorker pid=61614) Byte data size:30574
+(RayWorker pid=61612) Byte data size:30574
+(RayWorker pid=61611) [W ProcessGroupNCCL.cpp:1849] Warning: 0NCCL_AVOID_RECORD_STREAMS=1 has no effect for point-to-point collectives. (function operator())
+(RayWorker pid=61611) a = tensor([2048, 4096], dtype=torch.int32)
+(RayWorker pid=61614) [W ProcessGroupNCCL.cpp:1849] Warning: 0NCCL_AVOID_RECORD_STREAMS=1 has no effect for point-to-point collectives. (function operator())
+(RayWorker pid=61612) [W ProcessGroupNCCL.cpp:1849] Warning: 0NCCL_AVOID_RECORD_STREAMS=1 has no effect for point-to-point collectives. (function operator())
+(RayWorker pid=61613) [W ProcessGroupNCCL.cpp:1849] Warning: 0NCCL_AVOID_RECORD_STREAMS=1 has no effect for point-to-point collectives. (function operator())
+(RayWorker pid=61612) rank 1: layer cal over. shape: torch.Size([2048, 4096])
+(RayWorker pid=61612) a = tensor([2048, 4096], dtype=torch.int32)
+(RayWorker pid=61612) [W ProcessGroupNCCL.cpp:1849] Warning: 0NCCL_AVOID_RECORD_STREAMS=1 has no effect for point-to-point collectives. (function operator())
+(RayWorker pid=61613) rank 2: layer cal over. shape: torch.Size([2048, 4096])
+(RayWorker pid=61613) a = tensor([2048, 4096], dtype=torch.int32)
+(RayWorker pid=61613) [W ProcessGroupNCCL.cpp:1849] Warning: 0NCCL_AVOID_RECORD_STREAMS=1 has no effect for point-to-point collectives. (function operator())
+(RayWorker pid=61614) rank 3: layer cal over. shape: torch.Size([2048, 4096])
+INFO 12-09 15:55:21 llm_engine.py:210] # GPU blocks: 5191, # CPU blocks: 2048
+Processed prompts:   0%|                                                                                                                                           | 0/306 [00:00<?, ?it/s]num_seq_group:118
+(RayWorker pid=61611) rank 0: layer cal over. shape: torch.Size([2040, 4096])
+(RayWorker pid=61611) a = tensor([2040, 4096], dtype=torch.int32)
+(RayWorker pid=61613) Byte data size:23212
+(RayWorker pid=61614) Byte data size:23212
+(RayWorker pid=61612) Byte data size:23212
+(RayWorker pid=61612) rank 1: layer cal over. shape: torch.Size([2040, 4096])
+(RayWorker pid=61613) rank 2: layer cal over. shape: torch.Size([2040, 4096])
+(RayWorker pid=61613) a = tensor([2040, 4096], dtype=torch.int32)
+(RayWorker pid=61614) rank 3: layer cal over. shape: torch.Size([2040, 4096])
+(RayWorker pid=61612) a = tensor([2040, 4096], dtype=torch.int32)
+[LOG] Interval of :RUNSTEP   0, 0 sec 315307 us.
+num_seq_group:131
+(RayWorker pid=61613) Byte data size:23984
+(RayWorker pid=61614) Byte data size:23984
+(RayWorker pid=61612) Byte data size:23984
+(RayWorker pid=61611) rank 0: layer cal over. shape: torch.Size([2040, 4096])
+(RayWorker pid=61611) a = tensor([2040, 4096], dtype=torch.int32)
+(RayWorker pid=61612) rank 1: layer cal over. shape: torch.Size([2040, 4096])
+[LOG] Interval of :RUNSTEP   1, 0 sec 196480 us.
+[LOG] Interval of :RUN ALL, 0 sec 631942 us.
+Traceback (most recent call last):
+  File "/home/v-yuanqwang/vllm_pp/masstest.py", line 71, in <module>
+    outputs = llm.generate(prompts, sampling_params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/entrypoints/llm.py", line 157, in generate
+    return self._run_engine(use_tqdm)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/entrypoints/llm.py", line 181, in _run_engine
+    step_outputs = self.llm_engine.step()
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/engine/llm_engine.py", line 568, in step
+    output = self._run_workers(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/engine/llm_engine.py", line 716, in _run_workers
+    all_outputs = ray.get(all_outputs)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/ray/_private/auto_init_hook.py", line 24, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/ray/_private/worker.py", line 2563, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): ray::RayWorker.execute_method() (pid=61612, ip=10.190.175.139, actor_id=38f02b229ca3ca9aa005fa9001000000, repr=<vllm.engine.ray_utils.RayWorker object at 0x7ef960faa550>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/engine/ray_utils.py", line 32, in execute_method
+    return executor(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/worker/worker.py", line 326, in execute_model
+    output = self.model(
+             ^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/model_executor/models/opt.py", line 332, in forward
+    hidden_states = self.model(input_ids, positions, kv_caches,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/model_executor/models/opt.py", line 303, in forward
+    return self.decoder(input_ids, positions, kv_caches, input_metadata,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/v-yuanqwang/vllm_pp/vllm/model_executor/models/opt.py", line 285, in forward
+    raise e
+  File "/home/v-yuanqwang/vllm_pp/vllm/model_executor/models/opt.py", line 282, in forward
+    send_tensor_and_shape(hidden_states, get_pipeline_model_parallel_next_rank())
+  File "/home/v-yuanqwang/vllm_pp/vllm/model_executor/parallel_utils/utils.py", line 86, in send_tensor_and_shape
+    torch.cuda.synchronize()
+  File "/home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/cuda/__init__.py", line 783, in synchronize
+    return torch._C._cuda_synchronize()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: an illegal memory access was encountered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+(RayWorker pid=61612) error rank = 1
+(RayWorker pid=61612) [E ProcessGroupNCCL.cpp:915] [Rank 1] NCCL watchdog thread terminated with exception: CUDA error: an illegal memory access was encountered
+(RayWorker pid=61612) CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+(RayWorker pid=61612) For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+(RayWorker pid=61612) Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+(RayWorker pid=61612) 
+(RayWorker pid=61612) Exception raised from c10_cuda_check_implementation at ../c10/cuda/CUDAException.cpp:44 (most recent call first):
+(RayWorker pid=61612) frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x57 (0x7f071c456617 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libc10.so)
+(RayWorker pid=61612) frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::string const&) + 0x64 (0x7f071c41198d in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libc10.so)
+(RayWorker pid=61612) frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x118 (0x7f071c507518 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
+(RayWorker pid=61612) frame #3: c10d::ProcessGroupNCCL::WorkNCCL::finishedGPUExecutionInternal() const + 0x80 (0x7ef9769cb150 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #4: c10d::ProcessGroupNCCL::WorkNCCL::isCompleted() + 0x58 (0x7ef9769cef78 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #5: c10d::ProcessGroupNCCL::workCleanupLoop() + 0x24b (0x7ef9769e57bb in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #6: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x78 (0x7ef9769e5ac8 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #7: <unknown function> + 0xdbbf4 (0x7f0742a54bf4 in /dataHDD16T/v-yuanqwang/miniconda3/envs/vllm_my/bin/../lib/libstdc++.so.6)
+(RayWorker pid=61612) frame #8: <unknown function> + 0x76db (0x7f07457676db in /lib/x86_64-linux-gnu/libpthread.so.0)
+(RayWorker pid=61612) frame #9: clone + 0x3f (0x7f0744ceb61f in /lib/x86_64-linux-gnu/libc.so.6)
+(RayWorker pid=61612) 
+(RayWorker pid=61612) [2023-12-09 15:55:23,996 E 61612 61928] logging.cc:97: Unhandled exception: St13runtime_error. what(): [Rank 1] NCCL watchdog thread terminated with exception: CUDA error: an illegal memory access was encountered
+(RayWorker pid=61612) CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+(RayWorker pid=61612) For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+(RayWorker pid=61612) Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+(RayWorker pid=61612) 
+(RayWorker pid=61612) Exception raised from c10_cuda_check_implementation at ../c10/cuda/CUDAException.cpp:44 (most recent call first):
+(RayWorker pid=61612) frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x57 (0x7f071c456617 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libc10.so)
+(RayWorker pid=61612) frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::string const&) + 0x64 (0x7f071c41198d in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libc10.so)
+(RayWorker pid=61612) frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x118 (0x7f071c507518 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
+(RayWorker pid=61612) frame #3: c10d::ProcessGroupNCCL::WorkNCCL::finishedGPUExecutionInternal() const + 0x80 (0x7ef9769cb150 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #4: c10d::ProcessGroupNCCL::WorkNCCL::isCompleted() + 0x58 (0x7ef9769cef78 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #5: c10d::ProcessGroupNCCL::workCleanupLoop() + 0x24b (0x7ef9769e57bb in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #6: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x78 (0x7ef9769e5ac8 in /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+(RayWorker pid=61612) frame #7: <unknown function> + 0xdbbf4 (0x7f0742a54bf4 in /dataHDD16T/v-yuanqwang/miniconda3/envs/vllm_my/bin/../lib/libstdc++.so.6)
+(RayWorker pid=61612) frame #8: <unknown function> + 0x76db (0x7f07457676db in /lib/x86_64-linux-gnu/libpthread.so.0)
+(RayWorker pid=61612) frame #9: clone + 0x3f (0x7f0744ceb61f in /lib/x86_64-linux-gnu/libc.so.6)
+(RayWorker pid=61612) 
+(RayWorker pid=61612) [2023-12-09 15:55:24,007 E 61612 61928] logging.cc:104: Stack trace: 
+(RayWorker pid=61612)  /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/ray/_raylet.so(+0xf1733a) [0x7f0743ccb33a] ray::operator<<()
+(RayWorker pid=61612) /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/ray/_raylet.so(+0xf19af8) [0x7f0743ccdaf8] ray::TerminateHandler()
+(RayWorker pid=61612) /dataHDD16T/v-yuanqwang/miniconda3/envs/vllm_my/bin/../lib/libstdc++.so.6(+0xb135a) [0x7f0742a2a35a] __cxxabiv1::__terminate()
+(RayWorker pid=61612) /dataHDD16T/v-yuanqwang/miniconda3/envs/vllm_my/bin/../lib/libstdc++.so.6(+0xb13c5) [0x7f0742a2a3c5]
+(RayWorker pid=61612) /dataHDD16T/v-yuanqwang/miniconda3/envs/vllm_my/bin/../lib/libstdc++.so.6(+0xb134f) [0x7f0742a2a34f]
+(RayWorker pid=61612) /home/v-yuanqwang/miniconda3/envs/vllm_my/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so(+0x10195fb) [0x7ef9766a85fb] c10d::ProcessGroupNCCL::ncclCommWatchdog()
+(RayWorker pid=61612) /dataHDD16T/v-yuanqwang/miniconda3/envs/vllm_my/bin/../lib/libstdc++.so.6(+0xdbbf4) [0x7f0742a54bf4] execute_native_thread_routine
+(RayWorker pid=61612) /lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7f07457676db] start_thread
+(RayWorker pid=61612) /lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f0744ceb61f] __clone
+(RayWorker pid=61612) 
+(RayWorker pid=61612) *** SIGABRT received at time=1702108524 on cpu 57 ***
+(RayWorker pid=61612) PC: @     0x7f0744c08e87  (unknown)  raise
+(RayWorker pid=61612)     @     0x7f0745772980       3792  (unknown)
+(RayWorker pid=61612)     @     0x7f0742a2a35a  (unknown)  __cxxabiv1::__terminate()
+(RayWorker pid=61612)     @     0x7f0742a2a070  (unknown)  (unknown)
+(RayWorker pid=61612) [2023-12-09 15:55:24,008 E 61612 61928] logging.cc:361: *** SIGABRT received at time=1702108524 on cpu 57 ***
+(RayWorker pid=61612) [2023-12-09 15:55:24,008 E 61612 61928] logging.cc:361: PC: @     0x7f0744c08e87  (unknown)  raise
+(RayWorker pid=61612) [2023-12-09 15:55:24,008 E 61612 61928] logging.cc:361:     @     0x7f0745772980       3792  (unknown)
+(RayWorker pid=61612) [2023-12-09 15:55:24,008 E 61612 61928] logging.cc:361:     @     0x7f0742a2a35a  (unknown)  __cxxabiv1::__terminate()
+(RayWorker pid=61612) [2023-12-09 15:55:24,008 E 61612 61928] logging.cc:361:     @     0x7f0742a2a070  (unknown)  (unknown)
+(RayWorker pid=61612) Fatal Python error: Aborted
+(RayWorker pid=61612) 
+(RayWorker pid=61612) 
+(RayWorker pid=61612) Extension modules: msgpack._cmsgpack, google._upb._message, psutil._psutil_linux, psutil._psutil_posix, setproctitle, yaml._yaml, uvloop.loop, ray._raylet, charset_normalizer.md, numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, torch._C, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, pydantic.typing, pydantic.errors, pydantic.version, pydantic.utils, pydantic.class_validators, pydantic.config, pydantic.color, pydantic.datetime_parse, pydantic.validators, pydantic.networks, pydantic.types, pydantic.json, pydantic.error_wrappers, pydantic.fields, pydantic.parse, pydantic.schema, pydantic.main, pydantic.dataclasses, pydantic.annotated_types, pydantic.decorator, pydantic.env_settings, pydantic.tools, pydantic, sentencepiece._sentencepiece, pyarrow.lib, pyarrow._hdfsio, pyarrow._fs, pyarrow._hdfs, pyarrow._gcsfs, pyarrow._s3fs, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pandas._libs.ops, pyarrow._compute, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.indexing, pandas._libs.index, pandas._libs.internals, pandas._libs.join, pandas._libs.writers, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, pyarrow._parquet, pyarrow._json, PIL._imaging (total: 102)
+Processed prompts:   0%|                                                                                                                                           | 0/306 [00:02<?, ?it/s]

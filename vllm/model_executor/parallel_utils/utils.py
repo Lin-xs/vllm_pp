@@ -80,7 +80,19 @@ class VocabUtility:
             per_partition_vocab_size, rank)
 
 def send_tensor_and_shape(tensor: torch.Tensor, dst: int):
-    a = torch.tensor(tensor.shape, dtype=torch.int).to(tensor.device)
+    b = tensor.shape
+    c = get_pipeline_model_parallel_rank()
+    a = torch.tensor(b, dtype=torch.int)
+    torch.cuda.synchronize()
+    try:
+        print(f"a = {a}")
+    except Exception as e:
+        raise e
+    try:
+        a = a.to(c)
+    except Exception as e:
+        print(f"b = {b}, c = {c}")
+        raise e
     #_print_log(f"send shape tensor: {a}")
     assert a.shape[0] == 2, "dist send: tensor dim != 2"
 
