@@ -15,7 +15,7 @@ from vllm.sampling_params import SamplingParams
 from vllm.sequence import SamplerOutput, SequenceData, SequenceGroupMetadata
 from vllm.worker.cache_engine import CacheEngine
 from vllm.utils import get_gpu_memory, get_max_shared_memory_bytes
-
+from ray.util.queue import Queue
 
 class Worker:
     """A worker class that executes (a partition of) the model on a GPU.
@@ -47,6 +47,9 @@ class Worker:
         self.cache_engine = None
         self.cache_events = None
         self.gpu_cache = None
+
+        self.swap_queue = Queue()
+        self.output_queue = Queue()
 
     def init_model(self):
         # This env var set by Ray causes exceptions with graph building.
@@ -331,6 +334,36 @@ class Worker:
             cache_events=cache_events,
         )
         return output
+    
+    async def put_swap_data(
+              self,
+              item: Optional[Tuple[List[SequenceGroupMetadata], Dict[int, int],Dict[int, int],Dict[int, List[int]]]]
+    ):
+        print("swap put(): get item: ", item)
+        await self.swap_queue.put_async(item=item)
+        return None
+
+    async def get_output(
+              self
+    ):
+        return await self.output_queue.get_async()
+    async def execute_model_pipeline(self):
+        while True:
+            swap_data_tuple = await self.swap_queue.get_async()
+            if swap_data_tuple is None:
+                print("Worker has No request.")
+                break
+            seq_group_metadata_list, blocks_to_swap_in, blocks_to_swap_out, blocks_to_copy = swap_data_tuple
+            # print(f"rank{get_pipeline_model_parallel_rank()}: get queue data: {swap_data_tuple}")
+            output = self.execute_model(
+                seq_group_metadata_list=seq_group_metadata_list,
+                blocks_to_swap_in=blocks_to_swap_in,
+                blocks_to_swap_out=blocks_to_swap_out,
+                blocks_to_copy=blocks_to_copy
+            )
+            self.output_queue.put_nowait(output)
+        return None
+            
 
 
 def _init_distributed_environment(

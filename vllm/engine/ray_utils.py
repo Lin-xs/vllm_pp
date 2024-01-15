@@ -30,6 +30,10 @@ try:
         def execute_method(self, method, *args, **kwargs):
             executor = getattr(self, method)
             return executor(*args, **kwargs)
+        
+        async def execute_method_async(self, method, *args, **kwargs):
+            executor = getattr(self, method)
+            return await executor(*args, **kwargs)
 
 except ImportError as e:
     logger.warning(f"Failed to import Ray with {e!r}. "
@@ -109,6 +113,7 @@ def initialize_cluster(
                 "available GPUs in the cluster.")
         # Create a new placement group
         current_placement_group = ray.util.placement_group([{
+            "CPU": 1,
             "GPU": 1
         }] * parallel_config.world_size)
         # Wait until PG is ready - this will block until all

@@ -564,12 +564,17 @@ class LLMEngine:
         # Execute the model.
         # from vllm.utils import ctx_get_inteval_datetime
         # with ctx_get_inteval_datetime("Engine Step"):
-        output = self._run_workers(
-            "execute_model",
-            seq_group_metadata_list=seq_group_metadata_list,
-            blocks_to_swap_in=scheduler_outputs.blocks_to_swap_in,
-            blocks_to_swap_out=scheduler_outputs.blocks_to_swap_out,
-            blocks_to_copy=scheduler_outputs.blocks_to_copy,
+        # output = self._run_workers(
+        #     "execute_model",
+        #     seq_group_metadata_list=seq_group_metadata_list,
+        #     blocks_to_swap_in=scheduler_outputs.blocks_to_swap_in,
+        #     blocks_to_swap_out=scheduler_outputs.blocks_to_swap_out,
+        #     blocks_to_copy=scheduler_outputs.blocks_to_copy,
+        # )
+        self._run_workers(
+            "put_swap_data",
+            item=(seq_group_metadata_list, scheduler_outputs.blocks_to_swap_in, scheduler_outputs.blocks_to_swap_out, scheduler_outputs.blocks_to_copy),
+            async_method=True
         )
         if scheduler_outputs.blocks_to_swap_in:
             print("blocks_to_swap_in: {}".format(scheduler_outputs.blocks_to_swap_in))
@@ -577,6 +582,12 @@ class LLMEngine:
             print("blocks_to_swap_out: {}".format(scheduler_outputs.blocks_to_swap_out))
         if scheduler_outputs.blocks_to_copy:
             print("blocks_to_copy: {}".format(scheduler_outputs.blocks_to_copy))
+
+        output = self._get_last_worker(
+            "get_output",
+            async_method=True
+        )
+        # logger.info(f"main process get output: {output}")
 
         return self._process_model_outputs(output, scheduler_outputs) + ignored
 
@@ -698,19 +709,27 @@ class LLMEngine:
         method: str,
         *args,
         get_all_outputs: bool = False,
+        get_no_outputs: bool = False,
+        async_method: bool = False,
         **kwargs,
     ) -> Any:
         """Runs the given method on all workers."""
         all_outputs = []
         for worker in self.workers:
             if self.parallel_config.worker_use_ray:
-                executor = partial(worker.execute_method.remote, method)
+                if async_method:
+                    executor = partial(worker.execute_method_async.remote, method)
+                else:
+                    executor = partial(worker.execute_method.remote, method)
             else:
                 executor = getattr(worker, method)
 
             output = executor(*args, **kwargs)
             all_outputs.append(output)
+        # print("all_outputs:", all_outputs)
 
+        if get_no_outputs:
+            return None
         if self.parallel_config.worker_use_ray:
             all_outputs = ray.get(all_outputs)
 
@@ -722,3 +741,31 @@ class LLMEngine:
         # for other_output in all_outputs[1:]:
         #     assert output == other_output
         return output
+
+    def _get_last_worker(
+        self,
+        method: str,
+        *args,
+        get_all_outputs: bool = False,
+        async_method: bool = False,
+        **kwargs,
+    ):
+        worker = self.workers[-1]
+        if self.parallel_config.worker_use_ray:
+            if async_method:
+                executor = partial(worker.execute_method_async.remote, method)
+            else:
+                executor = partial(worker.execute_method.remote, method)
+        else:
+            executor = getattr(worker, method)
+        output = executor(*args, **kwargs)
+        if self.parallel_config.worker_use_ray:
+            output = ray.get(output)
+        return output
+    
+    def init_pipeline(self):
+        self._run_workers(
+            "execute_model_pipeline",
+            get_no_outputs=True,
+            async_method=True
+        )

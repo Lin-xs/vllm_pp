@@ -246,7 +246,7 @@ class OPTDecoder(nn.Module):
             hidden_states = inputs_embeds + pos_embeds
         elif use_pipeline:
             # Use pipeline, but not the first
-            input_metadata = recv_metadata()
+            input_metadata = recv_metadata(broadcast=False)
             hidden_states = recv_tensor(torch.cuda.current_device(), src=get_pipeline_model_parallel_prev_rank())
 
         #  TODO: wyq add
@@ -260,8 +260,9 @@ class OPTDecoder(nn.Module):
             layer = self.layers[i]
             hidden_states = layer(hidden_states, kv_caches[i], input_metadata,
                                 cache_event)
-            if use_pipeline and is_first_pipeline_stage() and i == 0:
-                send_metadata(input_metadata=input_metadata)
+            # if use_pipeline and is_first_pipeline_stage() and i == 0:
+            if use_pipeline and (not is_last_pipeline_stage()) and i == 0:
+                send_metadata(input_metadata=input_metadata, broadcast=False)
 
         
         # print(f"shape of hidden_states: {hidden_states.shape}")

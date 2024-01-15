@@ -175,6 +175,7 @@ class LLM:
         outputs: List[RequestOutput] = []
         # TODO:(wyq) changed
         nums = 0
+        self.llm_engine.init_pipeline()
         from vllm.utils import ctx_get_inteval_datetime
         while self.llm_engine.has_unfinished_requests():
             with ctx_get_inteval_datetime(f"RUNSTEP {nums}", sync=True):

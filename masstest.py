@@ -11,7 +11,7 @@ def _parse_args():
     parser = argparse.ArgumentParser("vLLM model run test")
     parser.add_argument(
         "--model",
-        default="facebook/opt-6.7b",
+        default="facebook/opt-30b",
         choices=["facebook/opt-6.7b", "facebook/opt-125m", "facebook/opt-2.7b"]
     )
     parser.add_argument(
@@ -45,12 +45,19 @@ def _parse_args():
         type=float,
         default=0.90
     )
+    parser.add_argument(
+         "--verbose",
+         "-v",
+         action="store_true"
+    )
     return parser.parse_args()
 
 prompts = []
 with open("./prompts.txt", "r") as f:
     for line in f:
         prompts.append(line)
+
+# prompts = prompts[:10]
 
 if __name__ == "__main__":
     args = _parse_args()
@@ -59,13 +66,19 @@ if __name__ == "__main__":
     sampling_params = SamplingParams(temperature=0.8,
                                     top_p=0.95,
                                     max_tokens=max_token)
-
-    llm = LLM(model=args.model,
-              tensor_parallel_size=args.tensor_parallel_size,
-              pipeline_parallel_size=args.pipeline_parallel_size,
-              gpu_memory_utilization=args.gpu_memory_utilization
-            )
-
+    if args.verbose:
+        llm = LLM(model=args.model,
+                tensor_parallel_size=args.tensor_parallel_size,
+                pipeline_parallel_size=args.pipeline_parallel_size,
+                gpu_memory_utilization=args.gpu_memory_utilization,
+                disable_log_stats=False
+                )
+    else:
+        llm = LLM(model=args.model,
+                tensor_parallel_size=args.tensor_parallel_size,
+                pipeline_parallel_size=args.pipeline_parallel_size,
+                gpu_memory_utilization=args.gpu_memory_utilization,
+                )
     with ctx_get_inteval_datetime("RUN ALL"):
         outputs = llm.generate(prompts, sampling_params)
 

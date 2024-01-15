@@ -83,6 +83,9 @@ class Scheduler:
         # Sequence groups in the SWAPPED state.
         self.swapped: List[SequenceGroup] = []
 
+        # Sequence groups in the PIPELINE
+        self.inpipe: List[SequenceGroup] = []
+
     def add_seq_group(self, seq_group: SequenceGroup) -> None:
         # Add sequence groups to the waiting queue.
         self.waiting.append(seq_group)

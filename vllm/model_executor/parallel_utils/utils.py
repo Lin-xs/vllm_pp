@@ -123,7 +123,7 @@ def recv_metadata(broadcast = True) -> "InputMetadata":
     print("Byte data size:{}".format(data_size))
     if data_size == 0:
         print("EXIT PIPELINE.")
-        if get_pipeline_model_parallel_rank != get_pipeline_model_parallel_last_rank():
+        if get_pipeline_model_parallel_rank() != get_pipeline_model_parallel_last_rank():
             dist.send(size_tensor, dst=get_pipeline_model_parallel_next_rank())
         raise KeyboardInterrupt
 
