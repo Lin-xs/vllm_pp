@@ -10,7 +10,7 @@ from vllm.config import (CacheConfig, ModelConfig, ParallelConfig,
 from vllm.model_executor import get_model, InputMetadata, set_random_seed
 from vllm.model_executor.parallel_utils.parallel_state import (
     initialize_model_parallel)
-from vllm.model_executor.parallel_utils.parallel_state import get_pipeline_model_parallel_rank
+from vllm.model_executor.parallel_utils.parallel_state import get_pipeline_model_parallel_rank, get_pipeline_model_parallel_world_size, get_pipeline_model_parallel_last_rank
 from vllm.sampling_params import SamplingParams
 from vllm.sequence import SamplerOutput, SequenceData, SequenceGroupMetadata
 from vllm.worker.cache_engine import CacheEngine
@@ -339,7 +339,7 @@ class Worker:
               self,
               item: Optional[Tuple[List[SequenceGroupMetadata], Dict[int, int],Dict[int, int],Dict[int, List[int]]]]
     ):
-        print("swap put(): get item: ", item)
+        # print("swap put(): get item: ", item)
         await self.swap_queue.put_async(item=item)
         return None
 
@@ -349,19 +349,40 @@ class Worker:
         return await self.output_queue.get_async()
     async def execute_model_pipeline(self):
         while True:
+            output_ls = []
             swap_data_tuple = await self.swap_queue.get_async()
             if swap_data_tuple is None:
                 print("Worker has No request.")
                 break
             seq_group_metadata_list, blocks_to_swap_in, blocks_to_swap_out, blocks_to_copy = swap_data_tuple
             # print(f"rank{get_pipeline_model_parallel_rank()}: get queue data: {swap_data_tuple}")
-            output = self.execute_model(
-                seq_group_metadata_list=seq_group_metadata_list,
-                blocks_to_swap_in=blocks_to_swap_in,
-                blocks_to_swap_out=blocks_to_swap_out,
-                blocks_to_copy=blocks_to_copy
-            )
-            self.output_queue.put_nowait(output)
+
+            input_list = []
+            div, mod = divmod(len(seq_group_metadata_list), get_pipeline_model_parallel_world_size())
+            for i in range(get_pipeline_model_parallel_world_size()):
+                if i < mod:
+                    input_list.append(seq_group_metadata_list[div * i: div * (i + 1)])
+                else:
+                    input_list.append(seq_group_metadata_list[div * i:])
+
+            for i, input in enumerate(input_list):
+                if i == 0:
+                    output = self.execute_model(
+                        seq_group_metadata_list=input,
+                        blocks_to_swap_in=blocks_to_swap_in,
+                        blocks_to_swap_out=blocks_to_swap_out,
+                        blocks_to_copy=blocks_to_copy
+                    )
+                else:
+                    output = self.execute_model(
+                        seq_group_metadata_list=input,
+                        blocks_to_swap_in={},
+                        blocks_to_swap_out={},
+                        blocks_to_copy={}
+                    )
+                if get_pipeline_model_parallel_rank() == get_pipeline_model_parallel_last_rank():
+                    output_ls.extend(output)
+            self.output_queue.put_nowait(output_ls)
         return None
             
 

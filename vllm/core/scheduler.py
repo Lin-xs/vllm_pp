@@ -219,6 +219,7 @@ class Scheduler:
                 running.append(seq_group)
         self.running = running
 
+        # TODO(wyq): assert no swapping. This is not true when using beam search.
         # Swap in the sequence groups in the SWAPPED state if possible.
         self.swapped = self.policy.sort_by_priority(now, self.swapped)
         if not preempted:

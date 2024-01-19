@@ -11,8 +11,8 @@ def _parse_args():
     parser = argparse.ArgumentParser("vLLM model run test")
     parser.add_argument(
         "--model",
-        default="facebook/opt-30b",
-        choices=["facebook/opt-6.7b", "facebook/opt-125m", "facebook/opt-2.7b"]
+        default="facebook/opt-6.7b",
+        choices=["facebook/opt-6.7b", "facebook/opt-125m", "facebook/opt-2.7b", "facebook/opt-30b"]
     )
     parser.add_argument(
         "--max_tokens",
@@ -57,7 +57,7 @@ with open("./prompts.txt", "r") as f:
     for line in f:
         prompts.append(line)
 
-# prompts = prompts[:10]
+prompts = prompts[:10]
 
 if __name__ == "__main__":
     args = _parse_args()
