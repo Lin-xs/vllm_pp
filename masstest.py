@@ -55,6 +55,11 @@ def _parse_args():
         type=int,
         default=10
     )
+    parser.add_argument(
+        "--max_num_seqs",
+        type=int,
+        default=256
+    )
     return parser.parse_args()
 
 prompts = []
@@ -76,6 +81,7 @@ if __name__ == "__main__":
                 tensor_parallel_size=args.tensor_parallel_size,
                 pipeline_parallel_size=args.pipeline_parallel_size,
                 gpu_memory_utilization=args.gpu_memory_utilization,
+                max_num_seqs = args.max_num_seqs,
                 disable_log_stats=False
                 )
     else:
@@ -83,6 +89,7 @@ if __name__ == "__main__":
                 tensor_parallel_size=args.tensor_parallel_size,
                 pipeline_parallel_size=args.pipeline_parallel_size,
                 gpu_memory_utilization=args.gpu_memory_utilization,
+                max_num_seqs = args.max_num_seqs,
                 )
     with ctx_get_inteval_datetime("RUN ALL"):
         outputs = llm.generate(prompts[:args.num_seqs], sampling_params)

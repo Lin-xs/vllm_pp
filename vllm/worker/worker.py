@@ -10,7 +10,7 @@ from vllm.config import (CacheConfig, ModelConfig, ParallelConfig,
 from vllm.model_executor import get_model, InputMetadata, set_random_seed
 from vllm.model_executor.parallel_utils.parallel_state import (
     initialize_model_parallel)
-from vllm.model_executor.parallel_utils.parallel_state import get_pipeline_model_parallel_rank, get_pipeline_model_parallel_world_size, get_pipeline_model_parallel_last_rank
+from vllm.model_executor.parallel_utils.parallel_state import get_pipeline_model_parallel_rank, get_pipeline_model_parallel_world_size, get_pipeline_model_parallel_last_rank, get_pipeline_model_parallel_first_rank, get_pipeline_model_parallel_next_rank, get_pipeline_model_parallel_prev_rank
 from vllm.sampling_params import SamplingParams
 from vllm.sequence import SamplerOutput, SequenceData, SequenceGroupMetadata
 from vllm.worker.cache_engine import CacheEngine
@@ -134,6 +134,8 @@ class Worker:
         num_gpu_blocks = max(num_gpu_blocks, 0)
         num_cpu_blocks = max(num_cpu_blocks, 0)
         torch.cuda.empty_cache()
+
+        print(f"[Rank {self.rank}]: peak mem:{peak_memory / 1024 ** 2:.4f} MB, cache block size(blk sz={block_size}): {cache_block_size / 1024**2:.4f} MB. num_gpu_blocks: {num_gpu_blocks}, num_cpu_blocks: {num_cpu_blocks}")
 
         # Reset the seed to ensure that the random state is not affected by
         # the model initialization and profiling.
@@ -385,7 +387,21 @@ class Worker:
             self.output_queue.put_nowait(output_ls)
         return None
             
+    def nccl_warmup(self):
+        shape = (100, 100)
+        data = torch.ones(*shape, dtype=torch.float32, device="cuda")
+        torch.distributed.broadcast(data, src=get_pipeline_model_parallel_first_rank())
+        
+        if get_pipeline_model_parallel_rank() == get_pipeline_model_parallel_first_rank():
+            torch.distributed.send(data, get_pipeline_model_parallel_next_rank())
+        elif get_pipeline_model_parallel_rank() != get_pipeline_model_parallel_last_rank():
+            torch.distributed.recv(data, get_pipeline_model_parallel_prev_rank())
+            torch.distributed.send(data, get_pipeline_model_parallel_next_rank())
+        else:
+            torch.distributed.recv(data, get_pipeline_model_parallel_prev_rank())
 
+        print(f"[Rank{get_pipeline_model_parallel_rank()}]: nccl warmup done.")
+        return None
 
 def _init_distributed_environment(
     parallel_config: ParallelConfig,

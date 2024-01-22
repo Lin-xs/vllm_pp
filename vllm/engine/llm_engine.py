@@ -192,6 +192,12 @@ class LLMEngine:
 
     def _init_cache(self) -> None:
         """Profiles the memory usage and initializes the KV cache."""
+        # nccl warmup
+        if self.parallel_config.pipeline_parallel_size > 1:
+            logger.info("Pipeline parallelism initialization: NCCL warmup...")
+            self._run_workers("nccl_warmup", get_all_outputs=True)
+            logger.info("NCCL Warmup done.")
+
         # Get the maximum number of blocks that can be allocated on GPU and CPU.
         num_blocks = self._run_workers(
             "profile_num_available_blocks",
