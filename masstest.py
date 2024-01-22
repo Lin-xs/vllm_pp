@@ -50,6 +50,11 @@ def _parse_args():
          "-v",
          action="store_true"
     )
+    parser.add_argument(
+        "--num_seqs",
+        type=int,
+        default=10
+    )
     return parser.parse_args()
 
 prompts = []
@@ -57,7 +62,7 @@ with open("./prompts.txt", "r") as f:
     for line in f:
         prompts.append(line)
 
-prompts = prompts[:10]
+# prompts = prompts[:10]
 
 if __name__ == "__main__":
     args = _parse_args()
@@ -80,9 +85,9 @@ if __name__ == "__main__":
                 gpu_memory_utilization=args.gpu_memory_utilization,
                 )
     with ctx_get_inteval_datetime("RUN ALL"):
-        outputs = llm.generate(prompts, sampling_params)
+        outputs = llm.generate(prompts[:args.num_seqs], sampling_params)
 
-    for output in outputs:
+    for output in outputs[:5]:
             prompt = output.prompt
             generated_text = output.outputs[0].text
             print(f"\nPrompt: {prompt!r} \nGenerated text: {generated_text!r}")

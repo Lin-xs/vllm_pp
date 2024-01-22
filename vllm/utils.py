@@ -93,7 +93,7 @@ from contextlib import contextmanager
 ctx_layer = 0
 
 @contextmanager
-def ctx_get_inteval_datetime(name: str, sync: bool = False, device: int | None = None):
+def ctx_get_inteval_datetime(name: str, sync: bool = False, device: int | None = None, record_list: list | None = None):
     global ctx_layer
     if sync:
         torch.cuda.synchronize(device)
@@ -107,3 +107,5 @@ def ctx_get_inteval_datetime(name: str, sync: bool = False, device: int | None =
         ctx_layer -= 1
         end = _print_time("  "*ctx_layer+"Exit: "+name)
         _print_time_interval(start, end, name)
+        if record_list is not None:
+            record_list.append(end - start)

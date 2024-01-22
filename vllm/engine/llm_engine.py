@@ -571,6 +571,15 @@ class LLMEngine:
         #     blocks_to_swap_out=scheduler_outputs.blocks_to_swap_out,
         #     blocks_to_copy=scheduler_outputs.blocks_to_copy,
         # )
+
+        # FIXME: >>> wyq add
+        num_seq_group = len(scheduler_outputs.scheduled_seq_groups)
+        num_seq = 0
+        for seq_group in scheduler_outputs.scheduled_seq_groups:
+            num_seq += len(seq_group.get_seqs(status=SequenceStatus.RUNNING))
+        print(f"\t###>num_seq_group: {num_seq_group:>3}, num_seq: {num_seq:>4}")
+        # <<<
+
         self._run_workers(
             "put_swap_data",
             item=(seq_group_metadata_list, scheduler_outputs.blocks_to_swap_in, scheduler_outputs.blocks_to_swap_out, scheduler_outputs.blocks_to_copy),
@@ -587,7 +596,6 @@ class LLMEngine:
             "get_output",
             async_method=True
         )
-        # logger.info(f"main process get output: {output}")
 
         return self._process_model_outputs(output, scheduler_outputs) + ignored
 

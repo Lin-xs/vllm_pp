@@ -120,7 +120,7 @@ def recv_metadata(broadcast = True) -> "InputMetadata":
     else:
         dist.recv(size_tensor, src=get_pipeline_model_parallel_prev_rank())
     data_size = size_tensor.item()
-    print("Byte data size:{}".format(data_size))
+    # print("Byte data size:{}".format(data_size))
     if data_size == 0:
         print("EXIT PIPELINE.")
         if get_pipeline_model_parallel_rank() != get_pipeline_model_parallel_last_rank():

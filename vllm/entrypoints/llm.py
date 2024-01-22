@@ -177,8 +177,9 @@ class LLM:
         nums = 0
         self.llm_engine.init_pipeline()
         from vllm.utils import ctx_get_inteval_datetime
+        time_ls = []
         while self.llm_engine.has_unfinished_requests():
-            with ctx_get_inteval_datetime(f"RUNSTEP {nums}", sync=True):
+            with ctx_get_inteval_datetime(f"RUNSTEP {nums}", sync=True, record_list=time_ls):
                 step_outputs = self.llm_engine.step()
                 for output in step_outputs:
                     if output.finished:
@@ -188,6 +189,7 @@ class LLM:
             nums += 1
         if use_tqdm:
             pbar.close()
+        print(f"record {len(time_ls)} steps. {[tt.seconds * 10**6 + tt.microseconds for tt in time_ls]}")
         # Sort the outputs by request ID.
         # This is necessary because some requests may be finished earlier than
         # its previous requests.
