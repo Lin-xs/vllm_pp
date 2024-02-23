@@ -227,6 +227,9 @@ class OPTDecoder(nn.Module):
         assert config.num_hidden_layers % get_pipeline_model_parallel_world_size() == 0
         self.layers = nn.ModuleList(
             [OPTDecoderLayer(config) for _ in range(config.num_hidden_layers // get_pipeline_model_parallel_world_size())])
+        
+        self.recorder_start = torch.cuda.Event(enable_timing=True)
+        self.recorder_end = torch.cuda.Event(enable_timing=True)
 
     def forward(
         self,
@@ -252,6 +255,8 @@ class OPTDecoder(nn.Module):
         #  TODO: wyq add
         # from vllm.utils import ctx_get_inteval_datetime
         # with ctx_get_inteval_datetime("Transformer blocks"):
+        time_log_file = f"/home/v-yuanqwang/vllm_pp/nsys-rep/pp_time_record/rank_{get_pipeline_model_parallel_rank()}.log"
+        self.recorder_start.record()
         for i in range(len(self.layers)):
             if cache_events is None:
                 cache_event = None
@@ -263,6 +268,10 @@ class OPTDecoder(nn.Module):
             # if use_pipeline and is_first_pipeline_stage() and i == 0:
             if use_pipeline and (not is_last_pipeline_stage()) and i == 0:
                 send_metadata(input_metadata=input_metadata, broadcast=False)
+        self.recorder_end.record()
+        torch.cuda.synchronize()
+        with open(time_log_file, "a") as f:
+            f.write(f"{self.recorder_start.elapsed_time(self.recorder_end)}, ")
 
         
         # print(f"shape of hidden_states: {hidden_states.shape}")

@@ -31,6 +31,7 @@ class EngineArgs:
     revision: Optional[str] = None
     tokenizer_revision: Optional[str] = None
     quantization: Optional[str] = None
+    minibatch_chunk: int = 1
 
     def __post_init__(self):
         if self.tokenizer is None:
@@ -166,6 +167,11 @@ class EngineArgs:
                             choices=['awq', None],
                             default=None,
                             help='Method used to quantize the weights')
+        # minibatch settings.
+        parser.add_argument('--minibatch-chunk',
+                            type=int,
+                            default=EngineArgs.minibatch_chunk,
+                            help='minibatch chunk size')
         return parser
 
     @classmethod
@@ -190,7 +196,8 @@ class EngineArgs:
             getattr(model_config.hf_config, 'sliding_window', None))
         parallel_config = ParallelConfig(self.pipeline_parallel_size,
                                          self.tensor_parallel_size,
-                                         self.worker_use_ray)
+                                         self.worker_use_ray,
+                                         self.minibatch_chunk)
         scheduler_config = SchedulerConfig(self.max_num_batched_tokens,
                                            self.max_num_seqs,
                                            model_config.max_model_len)

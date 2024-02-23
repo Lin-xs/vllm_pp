@@ -554,7 +554,7 @@ class LLMEngine:
                                    scheduler_outputs.num_batched_tokens)
         return request_outputs
 
-    def step(self) -> List[RequestOutput]:
+    def step(self, num) -> Tuple[List[RequestOutput], int, int]:
         """Performs one decoding iteration and returns newly generated results.
 
         This function performs one decoding iteration of the engine. It first
@@ -583,6 +583,11 @@ class LLMEngine:
         num_seq = 0
         for seq_group in scheduler_outputs.scheduled_seq_groups:
             num_seq += len(seq_group.get_seqs(status=SequenceStatus.RUNNING))
+        # if num == 1023:
+        #     with open("/home/v-yuanqwang/vllm_pp/nsys-rep/longprompts.txt", "w") as f:
+        #         for seq_group in scheduler_outputs.scheduled_seq_groups:
+        #             for seq in seq_group.get_seqs(status=SequenceStatus.RUNNING):
+        #                 f.write(seq.prompt + "\n")
         print(f"\t###>num_seq_group: {num_seq_group:>3}, num_seq: {num_seq:>4}")
         # <<<
 
@@ -603,7 +608,7 @@ class LLMEngine:
             async_method=True
         )
 
-        return self._process_model_outputs(output, scheduler_outputs) + ignored
+        return self._process_model_outputs(output, scheduler_outputs) + ignored, num_seq, num_seq_group
 
     def _log_system_stats(
         self,

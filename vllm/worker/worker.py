@@ -350,6 +350,7 @@ class Worker:
     ):
         return await self.output_queue.get_async()
     async def execute_model_pipeline(self):
+        minibatch_chunk =  self.parallel_config.minibatch_chunk
         while True:
             output_ls = []
             swap_data_tuple = await self.swap_queue.get_async()
@@ -357,17 +358,24 @@ class Worker:
                 print("Worker has No request.")
                 break
             seq_group_metadata_list, blocks_to_swap_in, blocks_to_swap_out, blocks_to_copy = swap_data_tuple
-            # print(f"rank{get_pipeline_model_parallel_rank()}: get queue data: {swap_data_tuple}")
 
+            # 23 seq, 4 chunk -> [5, 6, 6, 6]
             input_list = []
-            div, mod = divmod(len(seq_group_metadata_list), get_pipeline_model_parallel_world_size())
-            for i in range(get_pipeline_model_parallel_world_size()):
-                if i < mod:
-                    input_list.append(seq_group_metadata_list[div * i: div * (i + 1)])
-                else:
-                    input_list.append(seq_group_metadata_list[div * i:])
-
+            div, mod = divmod(len(seq_group_metadata_list), minibatch_chunk)
+            if div == 0:
+                input_list = [[data] for data in seq_group_metadata_list]
+            elif minibatch_chunk == 1:
+                input_list = [seq_group_metadata_list]
+            else:
+                for i in range(minibatch_chunk):
+                    if i < minibatch_chunk - mod:
+                        l, r = div*i, div*(i+1)
+                    else:
+                        l = div*i + (i-minibatch_chunk+mod)
+                        r = l + div + 1
+                    input_list.append(seq_group_metadata_list[l:r])
             for i, input in enumerate(input_list):
+                # just swap/copy all the blocks at the first chunk
                 if i == 0:
                     output = self.execute_model(
                         seq_group_metadata_list=input,

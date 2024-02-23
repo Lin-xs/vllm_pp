@@ -242,10 +242,12 @@ class ParallelConfig:
         pipeline_parallel_size: int,
         tensor_parallel_size: int,
         worker_use_ray: bool,
+        minibatch_chunk: int = 1
     ) -> None:
         self.pipeline_parallel_size = pipeline_parallel_size
         self.tensor_parallel_size = tensor_parallel_size
         self.worker_use_ray = worker_use_ray
+        self.minibatch_chunk = minibatch_chunk
 
         self.world_size = pipeline_parallel_size * tensor_parallel_size
         if self.world_size > 1:
@@ -254,10 +256,12 @@ class ParallelConfig:
 
     def _verify_args(self) -> None:
         if self.pipeline_parallel_size > 1:
-            print("Pipeline parallelism is supported now.")
+            logger.info("Pipeline parallelism is supported now.")
             return
             raise NotImplementedError(
                 "Pipeline parallelism is not supported yet.")
+        elif self.minibatch_chunk > 1:
+            raise NotImplementedError(f"minibatch_chunk is set to {self.minibatch_chunk} but pipeline is not used. Please set pipeline parallelism to use minibatch_chunk > 1.")
 
 
 class SchedulerConfig:

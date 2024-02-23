@@ -178,18 +178,29 @@ class LLM:
         self.llm_engine.init_pipeline()
         from vllm.utils import ctx_get_inteval_datetime
         time_ls = []
+        num_seq_ls = []
         while self.llm_engine.has_unfinished_requests():
             with ctx_get_inteval_datetime(f"RUNSTEP {nums}", sync=True, record_list=time_ls):
-                step_outputs = self.llm_engine.step()
+                step_outputs, num_seq, num_seq_group = self.llm_engine.step(nums)
                 for output in step_outputs:
                     if output.finished:
                         outputs.append(output)
                         if use_tqdm:
                             pbar.update(1)
+                num_seq_ls.append(num_seq)
             nums += 1
         if use_tqdm:
             pbar.close()
-        print(f"record {len(time_ls)} steps. {[tt.seconds * 10**6 + tt.microseconds for tt in time_ls]}")
+            
+        ls = [tt.seconds * 10**6 + tt.microseconds for tt in time_ls]
+        import json
+        with open("./nsys-rep/time.json", "a") as f:
+            json.dump(ls, f)
+            f.write("\n")
+        with open("./nsys-rep/num_seq.json", "a") as f:
+            json.dump(num_seq_ls, f)
+            f.write("\n")
+        print(f"record {len(time_ls)} == {len(num_seq_ls)} steps.")
         # Sort the outputs by request ID.
         # This is necessary because some requests may be finished earlier than
         # its previous requests.
