@@ -77,10 +77,10 @@ def write_log(text: str):
 
 
 prompts = []
-with open("./nsys-rep/longprompts5.txt", "r") as f:
+with open("./nsys-rep/prompts/inclen_english_30.txt", "r") as f:
     for line in f:
         prompts.append(line)
-prompts = prompts * 500
+# prompts = prompts * 500
 # prompts = prompts[:10]
 
 if __name__ == "__main__":
@@ -104,11 +104,12 @@ if __name__ == "__main__":
                 pipeline_parallel_size=args.pipeline_parallel_size,
                 gpu_memory_utilization=args.gpu_memory_utilization,
                 max_num_seqs = args.max_num_seqs,
-                minibatch_chunk = args.minibatch_chunk
+                minibatch_chunk = args.minibatch_chunk,
+                max_num_batched_tokens = 3000,
                 )
     # with ctx_get_inteval_datetime("RUN ALL"):
         
-    prompts_source = "./nsys-rep/prompts/longprompts-{}.txt"
+    # prompts_source = "./nsys-rep/prompts/longprompts-{}.txt"
     # for plen in [100, 200, 300, 400, 500, 600]:
     #     prompts = []
     #     with open(prompts_source.format(plen), "r") as f:
@@ -123,12 +124,18 @@ if __name__ == "__main__":
     #     write_log("\n")
 
     # prompts = ["La maladie"] * 500
-    prompts = ["La maladie de Creutzfeldt-Jakob (MCJ) est une affection"] * 800
+    # prompts = ["La maladie de Creutzfeldt-Jakob (MCJ) est une affection"] * 800
     # batch_ls = [1, 2, 4, 8, 16, 32, 64, 128, 192, 256, 320, 384, 448, 512]
-    for bs in range(8, 512+1, 8):
+    # for bs in range(8, 512+1, 8):
+    #     write_log("[")
+    #     outputs = llm.generate(prompts[:bs], sampling_params)
+    #     write_log("]\n")
+    
+    for _ in range(2):
         write_log("[")
-        outputs = llm.generate(prompts[:bs], sampling_params)
+        outputs = llm.generate(prompts, sampling_params)
         write_log("]\n")
+
 
     # for output in outputs[:1]:
     #         prompt = output.prompt
